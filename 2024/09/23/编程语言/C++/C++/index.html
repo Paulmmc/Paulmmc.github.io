@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>C++ | Paul的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="C++ | Paul的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="知识点一 位运算符将数值转换为2进制，在进行位运算 一、位与 &amp;对位运算，有0则0int a &#x3D; 1;      &#x2F;&#x2F;001int b &#x3D; 5;      &#x2F;&#x2F;101int c &#x3D; a &amp; b;  &#x2F;&#x2F;001   所以 c &#x3D; 1 二、位或 |对位运算，有1则1int a &amp;#x3D">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Paul的博客">
+<meta property="og:url" content="https://paulmmc.github.io/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C#/C#%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="Paul的博客">
+<meta property="og:description" content="知识点一 位运算符将数值转换为2进制，在进行位运算 一、位与 &amp;对位运算，有0则0int a &#x3D; 1;      &#x2F;&#x2F;001int b &#x3D; 5;      &#x2F;&#x2F;101int c &#x3D; a &amp; b;  &#x2F;&#x2F;001   所以 c &#x3D; 1 二、位或 |对位运算，有1则1int a &amp;#x3D">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-09-23T10:24:39.611Z">
+<meta property="article:modified_time" content="2024-08-19T13:29:19.356Z">
+<meta property="article:author" content="Paul">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>Paul</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/Paulmmc"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:3095627551@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=3095627551&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(12)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="Unity笔记">
+            <i class="fold iconfont icon-right"></i>
+            Unity笔记
+            <small>(7)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="Unity笔记&lt;---&gt;Unity进阶">
+            
+            Unity进阶
+            <small>(7)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="理论基础">
+            <i class="fold iconfont icon-right"></i>
+            理论基础
+            <small>(2)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="理论基础&lt;---&gt;编程语言">
+            
+            编程语言
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="CoscosCretor笔记">
+            
+            CoscosCretor笔记
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="12">
+<input type="hidden" id="yelog_site_word_count" value="30.8k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 "
+           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C#/C#%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2024-09-23 18:24:39">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/InputSystem/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="InputSystem">InputSystem</span>
+            <span class="post-date" title="2024-09-23 18:11:34">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 CoscosCretor笔记 "
+           href="/2024/09/23/CocosCreator%E7%AC%94%E8%AE%B0/TS/TypeScript%E8%AF%AD%E8%A8%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TypeScript语言">TypeScript语言</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Excel%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/GameFramework/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GameFramework">GameFramework</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96%E4%B9%8B2%E8%BF%9B%E5%88%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Unity数据持久化之2进制">Unity数据持久化之2进制</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E4%B8%AD%E7%9A%84MVC%E6%80%9D%E6%83%B3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Unity中的MVC思想">Unity中的MVC思想</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Unity编辑器">Unity编辑器</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E7%BD%91%E7%BB%9C%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Unity网络开发基础">Unity网络开发基础</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 理论基础 编程语言 "
+           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/C++/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++">C++</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 理论基础 编程语言 "
+           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TS/TypeScript%E8%AF%AD%E8%A8%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TypeScript">TypeScript</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/09/21/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2024-09-21 00:02:38">2024/09/21</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-编程语言/C++/C++" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">C++</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="理论基础">理论基础</a> > 
+            
+            <a  data-rel="理论基础&lt;---&gt;编程语言">编程语言</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-09-23 18:25:19'>2024-09-23 18:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.4k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-C-%E4%BB%8B%E7%BB%8D"><span class="toc-text">知识点一 C++介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%8C-C-%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84"><span class="toc-text">知识点二 C++是如何工作的</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-text">一、预处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81main%E5%87%BD%E6%95%B0"><span class="toc-text">二、main函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81C-%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%8F%AF%E8%BF%90%E8%A1%8C%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E6%B5%81%E7%A8%8B"><span class="toc-text">三、C++转化为可运行的二进制文件流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%89-C-%E7%BC%96%E8%AF%91%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84"><span class="toc-text">知识点三 C++编译器是如何工作的</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BC%96%E8%AF%91%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E5%B0%86-cpp%E7%BC%96%E8%AF%91%E4%B8%BA-obj%E7%9A%84"><span class="toc-text">二、编译器是如何将.cpp编译为.obj的</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%9B%9B-C-%E9%93%BE%E6%8E%A5%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84"><span class="toc-text">知识点四 C++链接器是如何工作的</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B-1"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81inline%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">二、inline关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%B3%A8%E6%84%8F"><span class="toc-text">三、注意</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%94-c-%E5%8F%98%E9%87%8F"><span class="toc-text">知识点五 c++变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E7%A1%80%E5%8F%98%E9%87%8F"><span class="toc-text">一、基础变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%A6%82%E4%BD%95%E7%9F%A5%E9%81%93%E4%B8%80%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%A4%A7%E5%B0%8F"><span class="toc-text">二、如何知道一个变量的大小</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%85%AD-%E5%87%BD%E6%95%B0"><span class="toc-text">知识点六 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BD%9C%E7%94%A8"><span class="toc-text">一、作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-text">二、基本结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%B3%A8%E6%84%8F-1"><span class="toc-text">三、注意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%A3%B0%E6%98%8E%E5%92%8C%E5%AE%9A%E4%B9%89"><span class="toc-text">四、声明和定义</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%83-C-%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-text">知识点七 C++头文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B-2"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81-pragma-once-%E8%AF%AD%E5%8F%A5"><span class="toc-text">二、#pragma once 语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%B8%80%E7%A7%8D%E7%B1%BB%E4%BC%BC-pragma-once-%E7%9A%84%E8%AF%AD%E5%8F%A5"><span class="toc-text">三、一种类似 #pragma once 的语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%B8%A4%E7%A7%8Dinclude%E8%AF%AD%E5%8F%A5%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="toc-text">四、两种include语句的差异</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%85%AB-%E5%A6%82%E4%BD%95%E5%9C%A8Visual-Studio%E4%B8%AD%E8%B0%83%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-text">知识点八 如何在Visual Studio中调试代码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B-3"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BD%BF%E7%94%A8"><span class="toc-text">二、使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-step-into-%E9%80%90%E8%AF%AD%E5%8F%A5"><span class="toc-text">1.step into(逐语句)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-step-over-%E9%80%90%E8%BF%87%E7%A8%8B"><span class="toc-text">2.step over(逐过程)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-step-out-%E8%B7%B3%E5%87%BA"><span class="toc-text">3.step out(跳出)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%AF%BB%E5%86%85%E5%AD%98"><span class="toc-text">4.读内存</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B9%9D-%E6%9D%A1%E4%BB%B6%E4%B8%8E%E5%88%86%E6%94%AF"><span class="toc-text">知识点九 条件与分支</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B-4"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-text">二、例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%8D%81-C-%E5%BE%AA%E7%8E%AF"><span class="toc-text">知识点十 C++循环</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81for%E5%BE%AA%E7%8E%AF"><span class="toc-text">一、for循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81while%E5%BE%AA%E7%8E%AF"><span class="toc-text">二、while循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81do-while%E5%BE%AA%E7%8E%AF"><span class="toc-text">三、do while循环</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%8D%81%E4%B8%80-c-%E6%8E%A7%E5%88%B6%E6%B5%81%E8%AF%AD%E5%8F%A5"><span class="toc-text">知识点十一 c++控制流语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B-5"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81continue"><span class="toc-text">二、continue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81break"><span class="toc-text">三、break</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81return"><span class="toc-text">四、return</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%8D%81%E4%BA%8C-C-%E6%8C%87%E9%92%88"><span class="toc-text">知识点十二 C++指针</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B-6"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E6%8C%87%E9%92%88"><span class="toc-text">二、声明一个指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%8E%B7%E5%BE%97%E4%B8%80%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%9C%B0%E5%9D%80"><span class="toc-text">三、获得一个变量的地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%80%86%E5%90%91%E6%8C%87%E9%92%88"><span class="toc-text">四、逆向指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%8C%87%E5%AE%9A%E7%94%B5%E8%84%91%E5%88%86%E9%85%8D%E6%8C%87%E5%AE%9A%E5%A4%A7%E5%B0%8F%E7%9A%84%E5%86%85%E5%AD%98"><span class="toc-text">五、指定电脑分配指定大小的内存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E4%BA%8C%E7%BA%A7%E6%8C%87%E9%92%88"><span class="toc-text">六、二级指针</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%8D%81%E4%B8%89-c-%E5%BC%95%E7%94%A8"><span class="toc-text">知识点十三 c++引用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B-7"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%86%99%E6%B3%95"><span class="toc-text">二、写法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%B3%A8%E6%84%8F-2"><span class="toc-text">三、注意</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%8D%81%E5%9B%9B-c-%E7%B1%BB"><span class="toc-text">知识点十四 c++类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B-8"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-text">二、基本使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-text">三、结构体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8"><span class="toc-text">1.使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%8Eclass%E5%8C%BA%E5%88%AB"><span class="toc-text">2.与class区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BD%95%E6%97%B6%E4%BD%BF%E7%94%A8"><span class="toc-text">3.何时使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%B8%AA%E7%B1%BB"><span class="toc-text">三、如何写一个类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%8D%81%E4%BA%94-%E9%9D%99%E6%80%81"><span class="toc-text">知识点十五 静态</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%B1%BB%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93%E5%A4%96%E9%83%A8%E7%9A%84%E9%9D%99%E6%80%81%EF%BC%88%E5%85%A8%E5%B1%80%E9%9D%99%E6%80%81%EF%BC%89"><span class="toc-text">一、类和结构体外部的静态（全局静态）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%B1%BB%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93%E4%B8%AD%E7%9A%84%E9%9D%99%E6%80%81%EF%BC%88%E9%9D%99%E6%80%81%E7%B1%BB%E6%88%90%E5%91%98%EF%BC%89"><span class="toc-text">二、类和结构体中的静态（静态类成员）</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="知识点一-C-介绍"><a href="#知识点一-C-介绍" class="headerlink" title="知识点一 C++介绍"></a>知识点一 C++介绍</h1><p>C++具有面向对象的特性<br>与C#和JAVA不同，C#和JAVA会在被编译为一个中间代码，然后再程序运行时，虚拟机再翻译为机器码<br>C++可以被编译器直接编译为机器码，机器码直接控制硬件<br>因此，C++几乎可以在任何平台上使用</p>
+<h1 id="知识点二-C-是如何工作的"><a href="#知识点二-C-是如何工作的" class="headerlink" title="知识点二 C++是如何工作的"></a>知识点二 C++是如何工作的</h1><pre><code class="c++">#include &lt;iostream&gt;
+
+int main()
+&#123;
+    std::cout &lt;&lt; &quot;Hello World!&quot; &lt;&lt; std::endl;
+    std::cin.get();
+&#125;
+</code></pre>
+<h2 id="一、预处理"><a href="#一、预处理" class="headerlink" title="一、预处理"></a>一、预处理</h2><p>在以上实例代码中，<br>第一行，#include <iostream><br>所有在#以后的语句都是预处理语句，编译器在收到源文件后，先处理这个预处理语句<br>#include 语句的意思是: 他会找到一个iostream 文件，并且拷贝进来使用，这些文件一般称为“头文件”</p>
+<h2 id="二、main函数"><a href="#二、main函数" class="headerlink" title="二、main函数"></a>二、main函数</h2><p>是程序的入口<br>程序运行时，从这个函数开始执行代码<br>main函数比较特殊，不需要返回int，若不写返回值，默认返回0 </p>
+<h2 id="三、C-转化为可运行的二进制文件流程"><a href="#三、C-转化为可运行的二进制文件流程" class="headerlink" title="三、C++转化为可运行的二进制文件流程"></a>三、C++转化为可运行的二进制文件流程</h2><ol>
+<li>编译器对预处理语句进行预处理</li>
+<li>项目中的每一个cpp文件都会被单独编译为一个.obj类型文件，而头文件不会被编译</li>
+<li>链接器将所有obj文件合并成一个.exe文件</li>
+</ol>
+<h1 id="知识点三-C-编译器是如何工作的"><a href="#知识点三-C-编译器是如何工作的" class="headerlink" title="知识点三 C++编译器是如何工作的"></a>知识点三 C++编译器是如何工作的</h1><h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p>一段C++代码是如何转变为可执行的二进制文件的？<br>先被编译，再被链接<br>编译器的作用就是，将一段代码编译成一个成为目标文件的中间格式，例如将.cpp文件编译为.obj文件</p>
+<h2 id="二、编译器是如何将-cpp编译为-obj的"><a href="#二、编译器是如何将-cpp编译为-obj的" class="headerlink" title="二、编译器是如何将.cpp编译为.obj的"></a>二、编译器是如何将.cpp编译为.obj的</h2><ol>
+<li>先将预处理语句进行预处理(最常用的预处理语句是 #include 是将头文件的代码直接复制粘贴过来)</li>
+<li>编译器将.cpp文件编译为.obj文件(机器码)</li>
+</ol>
+<h1 id="知识点四-C-链接器是如何工作的"><a href="#知识点四-C-链接器是如何工作的" class="headerlink" title="知识点四 C++链接器是如何工作的"></a>知识点四 C++链接器是如何工作的</h1><h2 id="一、简介-1"><a href="#一、简介-1" class="headerlink" title="一、简介"></a>一、简介</h2><p>编译器将每个脚本编译为一个个单独的.obj格式的二进制文件后，链接器将他们链接到一起，生成一个.exe的可执行文件<br>链接器会是找到每个符号和函数，将他们链接在一起</p>
+<h2 id="二、inline关键字"><a href="#二、inline关键字" class="headerlink" title="二、inline关键字"></a>二、inline关键字</h2><pre><code class="c++">inline void Log(const char* message)
+&#123;
+    std::cout &lt;&lt; message &lt;&lt; std::endl;
+&#125;
+
+//当使用 具有inline关键字的函数时，以下InitLog函数，等同于InitLog1函数
+void InitLog()
+&#123;
+    Log(&quot;InitLog&quot;);    
+&#125;
+
+void InitLog1()
+&#123;
+    std::cout &lt;&lt; &quot;InitLog&quot; &lt;&lt; std::endl;
+&#125;
+</code></pre>
+<h2 id="三、注意"><a href="#三、注意" class="headerlink" title="三、注意"></a>三、注意</h2><p>声明可以重复，但定义只能有一个</p>
+<pre><code class="c++">//这是声明，可以重复
+void Log(const char* message);
+void Log(const char* message);
+
+//这是定义，只能有一个
+void Log(const char* message)
+&#123;
+    std::cout &lt;&lt; message &lt;&lt; std::endl;
+&#125;
+</code></pre>
+<h1 id="知识点五-c-变量"><a href="#知识点五-c-变量" class="headerlink" title="知识点五 c++变量"></a>知识点五 c++变量</h1><h2 id="一、基础变量"><a href="#一、基础变量" class="headerlink" title="一、基础变量"></a>一、基础变量</h2><p>char                        1字节</p>
+<p>short                       2字节<br>int 有符号整型              4字节 32byte<br>unsigned int 无符号整型     4字节<br>long                        4字节<br>long long                   8字节</p>
+<p>float                       4字节<br>double                      8字节</p>
+<p>bool                        1字节</p>
+<h2 id="二、如何知道一个变量的大小"><a href="#二、如何知道一个变量的大小" class="headerlink" title="二、如何知道一个变量的大小"></a>二、如何知道一个变量的大小</h2><p>sizeof()函数</p>
+<pre><code class="c++">int main()
+&#123;
+    std::cout &lt;&lt; sizeof(int) &lt;&lt; std::endl;
+&#125;
+</code></pre>
+<h1 id="知识点六-函数"><a href="#知识点六-函数" class="headerlink" title="知识点六 函数"></a>知识点六 函数</h1><h2 id="一、作用"><a href="#一、作用" class="headerlink" title="一、作用"></a>一、作用</h2><p>函数可以减少代码的复用，提高工作效率</p>
+<h2 id="二、基本结构"><a href="#二、基本结构" class="headerlink" title="二、基本结构"></a>二、基本结构</h2><pre><code class="c++">int Fun(int a, int b)
+&#123;
+    retrun a + b;
+&#125;
+</code></pre>
+<h2 id="三、注意-1"><a href="#三、注意-1" class="headerlink" title="三、注意"></a>三、注意</h2><p>过多的函数会影响<br>代码的可读性<br>程序的运行效率</p>
+<h2 id="四、声明和定义"><a href="#四、声明和定义" class="headerlink" title="四、声明和定义"></a>四、声明和定义</h2><pre><code class="c++">//这是声明，可以重复
+void Log(const char* message);
+void Log(const char* message);
+
+//这是定义，只能有一个
+void Log(const char* message)
+&#123;
+    std::cout &lt;&lt; message &lt;&lt; std::endl;
+&#125;
+</code></pre>
+<p>因此声明一般会写在头文件中，告诉这个脚本，有这个函数<br>而定义会写在脚本中，若写在头文件中，容易重复定义，造成链接错误</p>
+<h1 id="知识点七-C-头文件"><a href="#知识点七-C-头文件" class="headerlink" title="知识点七 C++头文件"></a>知识点七 C++头文件</h1><h2 id="一、简介-2"><a href="#一、简介-2" class="headerlink" title="一、简介"></a>一、简介</h2><p>当在脚本A里使用另脚本B的函数B时，需要在脚本A声明函数B，让此脚本知道函数的存在。<br>而头文件一般是一个公共的地方，用于存储声明</p>
+<h2 id="二、-pragma-once-语句"><a href="#二、-pragma-once-语句" class="headerlink" title="二、#pragma once 语句"></a>二、#pragma once 语句</h2><p>在创建一个头文件时，VS会自动在头文件脚本中为我们加上 #pragma once<br>#pragma once 可以阻止我们单个头文件被多次包含</p>
+<h2 id="三、一种类似-pragma-once-的语句"><a href="#三、一种类似-pragma-once-的语句" class="headerlink" title="三、一种类似 #pragma once 的语句"></a>三、一种类似 #pragma once 的语句</h2><pre><code class="c++">#ifndef _LOG_H      //如果已经定义了头文件，则不会执行以下代码
+#define _LOG_H      //定义一个头文件
+
+struct Player &#123;&#125;;
+
+#endif
+</code></pre>
+<h2 id="四、两种include语句的差异"><a href="#四、两种include语句的差异" class="headerlink" title="四、两种include语句的差异"></a>四、两种include语句的差异</h2><pre><code class="c++">//通常用于自定义的头文件，是相对当前文件的路径
+#include &quot;Log.h&quot;
+//通常用于在 “包含目录” 的文件夹下的文件,比如标准库头文件，不需要写路径
+#includ &lt;iostream&gt;
+</code></pre>
+<h1 id="知识点八-如何在Visual-Studio中调试代码"><a href="#知识点八-如何在Visual-Studio中调试代码" class="headerlink" title="知识点八 如何在Visual Studio中调试代码"></a>知识点八 如何在Visual Studio中调试代码</h1><h2 id="一、简介-3"><a href="#一、简介-3" class="headerlink" title="一、简介"></a>一、简介</h2><p>断点、读内存</p>
+<h2 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h2><h3 id="1-step-into-逐语句"><a href="#1-step-into-逐语句" class="headerlink" title="1.step into(逐语句)"></a>1.step into(逐语句)</h3><p>跳入到当前行的函数中</p>
+<h3 id="2-step-over-逐过程"><a href="#2-step-over-逐过程" class="headerlink" title="2.step over(逐过程)"></a>2.step over(逐过程)</h3><p>到下一行代码</p>
+<h3 id="3-step-out-跳出"><a href="#3-step-out-跳出" class="headerlink" title="3.step out(跳出)"></a>3.step out(跳出)</h3><p>跳出当前函数，回到调用这个函数的位置</p>
+<h3 id="4-读内存"><a href="#4-读内存" class="headerlink" title="4.读内存"></a>4.读内存</h3><p>将鼠标放在一个变量上，会自动显示内存</p>
+<h1 id="知识点九-条件与分支"><a href="#知识点九-条件与分支" class="headerlink" title="知识点九 条件与分支"></a>知识点九 条件与分支</h1><h2 id="一、简介-4"><a href="#一、简介-4" class="headerlink" title="一、简介"></a>一、简介</h2><p>当条件符合时，会执行特定语句块<br>本质上，在程序运行时，程序会加载到内存中，当有条件分支语句时，它会在内存之间跳跃，这表示if语句会有比较大的开销</p>
+<h2 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h2><pre><code class="c++">int main()
+&#123;
+    int x = 5;
+    if(x == 5)
+    &#123;
+        std::cout &lt;&lt; &quot;Hello World&quot; &lt;&lt; std::endl;
+    &#125;
+
+    const char* ptr = nullptr;
+    if(ptr)
+        std::cout &lt;&lt; ptr &lt;&lt; std::endl;
+    else if(ptr == &quot;h&quot;)
+        std::cout &lt;&lt; &quot;h&quot; &lt;&lt; std::endl;
+    else
+         std::cout &lt;&lt; &quot;ptr is null!&quot; &lt;&lt; std::endl;
+&#125; 
+</code></pre>
+<h1 id="知识点十-C-循环"><a href="#知识点十-C-循环" class="headerlink" title="知识点十 C++循环"></a>知识点十 C++循环</h1><h2 id="一、for循环"><a href="#一、for循环" class="headerlink" title="一、for循环"></a>一、for循环</h2><pre><code class="c++">int main()
+&#123;
+    for(int i = 0; i &lt; 5; i++)
+    &#123;
+        std::cout &lt;&lt; &quot;Hello World&quot; &lt;&lt; std:endl;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="二、while循环"><a href="#二、while循环" class="headerlink" title="二、while循环"></a>二、while循环</h2><pre><code class="c++">int main()
+&#123;
+    int i = 0;
+    while(i &lt; 5)
+    &#123;
+        std::cout &lt;&lt; &quot;Hello World&quot; &lt;&lt; std:endl;
+        i++;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="三、do-while循环"><a href="#三、do-while循环" class="headerlink" title="三、do while循环"></a>三、do while循环</h2><pre><code class="c++">int main()
+&#123;
+    //与while不同的是，先执行后判断，while是先判断后执行
+    int i = 0;
+    do
+    &#123;
+       std::cout &lt;&lt; &quot;Hello World&quot; &lt;&lt; std:endl;
+        i++;
+    &#125;while(i &lt; 5)
+&#125;
+</code></pre>
+<h1 id="知识点十一-c-控制流语句"><a href="#知识点十一-c-控制流语句" class="headerlink" title="知识点十一 c++控制流语句"></a>知识点十一 c++控制流语句</h1><h2 id="一、简介-5"><a href="#一、简介-5" class="headerlink" title="一、简介"></a>一、简介</h2><p>控制流语句是与循环语句配合使用的，它可以控制循环语句的执行流程</p>
+<h2 id="二、continue"><a href="#二、continue" class="headerlink" title="二、continue"></a>二、continue</h2><pre><code class="c++">int main()
+&#123;
+    for(int i = 0; i &lt; 0; i++)
+    &#123;
+        if(i == 2)
+            continue;
+
+        std::cout &lt;&lt; &quot;Hello World&quot; &lt;&lt; std:endl;
+
+        if(i == 4)
+            break;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="三、break"><a href="#三、break" class="headerlink" title="三、break"></a>三、break</h2><pre><code class="c++">int main()
+&#123;
+    for(int i = 0; i &lt; 0; i++)
+    &#123;
+        std::cout &lt;&lt; &quot;Hello World&quot; &lt;&lt; std:endl;
+
+        if(i == 4)
+            break;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="四、return"><a href="#四、return" class="headerlink" title="四、return"></a>四、return</h2><pre><code class="c++">int main()
+&#123;
+    for(int i = 0; i &lt; 0; i++)
+    &#123;
+        std::cout &lt;&lt; &quot;Hello World&quot; &lt;&lt; std:endl;
+
+        if(i == 4)
+            return 0; //整个函数结束
+    &#125;
+&#125;
+</code></pre>
+<h1 id="知识点十二-C-指针"><a href="#知识点十二-C-指针" class="headerlink" title="知识点十二 C++指针"></a>知识点十二 C++指针</h1><h2 id="一、简介-6"><a href="#一、简介-6" class="headerlink" title="一、简介"></a>一、简介</h2><p>指针是int，一种存储内存地址的数字</p>
+<h2 id="二、声明一个指针"><a href="#二、声明一个指针" class="headerlink" title="二、声明一个指针"></a>二、声明一个指针</h2><pre><code class="c++">int main()
+&#123;
+    //一个变量类型后面加 * ，表示这个类型是一个地址类型，而前面的变量类型是无意义的，只是给我们看的
+    //为地址赋值为0，0不是一个有效的内存地址，说明这个是无效指针
+    void* ptr = 0;
+    //与0同理
+    ptr = NULL;
+    //与0同理
+    ptr = nullptr;
+
+   
+&#125;
+</code></pre>
+<h2 id="三、获得一个变量的地址"><a href="#三、获得一个变量的地址" class="headerlink" title="三、获得一个变量的地址"></a>三、获得一个变量的地址</h2><pre><code class="c++">int main()
+&#123;
+    int var = 8;
+    //在一个值前面加 &amp; ，表示他的地址，此时将 var 变量的地址赋给了 intptr
+    void* voidptr = &amp;var;
+    int* intptr1 = &amp;var;
+&#125;
+</code></pre>
+<h2 id="四、逆向指针"><a href="#四、逆向指针" class="headerlink" title="四、逆向指针"></a>四、逆向指针</h2><pre><code class="c++">int main()
+&#123;
+    int var = 8;
+    void* voidptr = &amp;var;
+    int* intptr1 = &amp;var;
+
+    //逆向指针
+    //可以通过地址，为地址指向的内存赋值
+    //会报错，因为前面是 void* ，编译器不知道他的内存大小
+    voidptr = 10;
+    //不会报错，因为声明时，指定了类型 int*，编译器知道他的内存大小为4个字节
+    *intptr1 = 10;
+&#125;
+</code></pre>
+<h2 id="五、指定电脑分配指定大小的内存"><a href="#五、指定电脑分配指定大小的内存" class="headerlink" title="五、指定电脑分配指定大小的内存"></a>五、指定电脑分配指定大小的内存</h2><pre><code class="c++">int main()
+&#123;
+    //指定电脑分配指定大小的内存
+    //一个char是一字节，八个char的数组，就是八字节，此时我们让电脑分配了一个八个字节的内存
+    char* buffer = new char[8];
+    //将buffer指向的地址，前8字节(这里buffer刚好是八个字节，所以全部都被设置为0)，设置为0，用于初始化内存
+    memset(buffer, 0, 8);
+    //删除 buffer 数据，释放内存
+    delete[] buffer;
+&#125;
+</code></pre>
+<h2 id="六、二级指针"><a href="#六、二级指针" class="headerlink" title="六、二级指针"></a>六、二级指针</h2><pre><code class="c++">int main()
+&#123;
+    int a = 5;
+    int* intPtr = &amp;a;
+
+     //指向指针的指针
+    int** ptr = &amp;intPtr;
+&#125;
+</code></pre>
+<h1 id="知识点十三-c-引用"><a href="#知识点十三-c-引用" class="headerlink" title="知识点十三 c++引用"></a>知识点十三 c++引用</h1><h2 id="一、简介-7"><a href="#一、简介-7" class="headerlink" title="一、简介"></a>一、简介</h2><p>引用只是指针的伪装，作用与指针相似，是指针的语法糖<br>引用不占空间，引用不能像二级指针一样，引用一个引用<br>声明一个引用时，必须对他赋值</p>
+<h2 id="二、写法"><a href="#二、写法" class="headerlink" title="二、写法"></a>二、写法</h2><pre><code class="c++">//普通
+void Increment(int value)
+&#123;
+    value++;
+&#125;
+
+//指针
+void IncrementPtr(int* value)
+&#123;
+    (*value)++;
+&#125;
+
+void IncrementRef(int&amp; value)
+&#123;
+    value++;
+&#125;
+
+
+int main()
+&#123;
+    int a = 5;
+    //一个引用，不是变量，引用了a
+    int&amp; ref = a;
+    //改变该引用，同时改变了a本身，类似别名
+    ref = 2;
+
+    //普通增加，函数内部复制了一个value变量，对这个复制体进行了增加，对外部的 a 没有影响
+    Increment(a);
+
+    //使用了指针，传递的是 a 这个变量的地址，内部对其内存进行了更改，所以外部的 a 也会更改
+    IncrementPtr(&amp;a);
+
+    //使用了引用，只是引用了a，内部会对外部的 a 进行增加
+    IncrementRef(a);
+&#125;
+</code></pre>
+<h2 id="三、注意-2"><a href="#三、注意-2" class="headerlink" title="三、注意"></a>三、注意</h2><pre><code class="c++">int main()
+&#123;
+    int a = 5;
+    int b = 8;
+
+    //声明一个引用时，必须对他赋值
+    int&amp; ref = a;
+    //此时并不是改变了引用，引用变为了引用b，而是直接将 a 赋值成了 b
+    ref = b;
+&#125;
+</code></pre>
+<h1 id="知识点十四-c-类"><a href="#知识点十四-c-类" class="headerlink" title="知识点十四 c++类"></a>知识点十四 c++类</h1><h2 id="一、简介-8"><a href="#一、简介-8" class="headerlink" title="一、简介"></a>一、简介</h2><p>封装、继承、多态<br>数据和功能组合在一起</p>
+<h2 id="二、基本使用"><a href="#二、基本使用" class="headerlink" title="二、基本使用"></a>二、基本使用</h2><pre><code class="c++">class Player
+&#123;
+    //类的成员，默认为private
+public:
+    int x, y;
+    int speed;
+
+    void Move()
+    &#123;
+        x += x * speed;
+        y += y * speed;
+    &#125;
+&#125;;
+
+int main()
+&#123;
+    Player player;
+    player.x = 5;
+    player.y = 6;
+    player.speed = 10;
+
+    player.Move();
+&#125;
+</code></pre>
+<h2 id="三、结构体"><a href="#三、结构体" class="headerlink" title="三、结构体"></a>三、结构体</h2><h3 id="1-使用"><a href="#1-使用" class="headerlink" title="1.使用"></a>1.使用</h3><pre><code class="c++">struct position
+&#123;
+    int x;
+private:
+    int y;
+&#125;;
+
+int main()
+&#123;
+
+&#125;
+</code></pre>
+<h3 id="2-与class区别"><a href="#2-与class区别" class="headerlink" title="2.与class区别"></a>2.与class区别</h3><p>结构体成员默认为 public，与class不同<br>struct结构体存在的原因是，希望与C语言保持向后兼容，因为C语言没有类，只有结构体</p>
+<h3 id="3-何时使用"><a href="#3-何时使用" class="headerlink" title="3.何时使用"></a>3.何时使用</h3><p>结构体和类只存在一点区别，何时使用因人而异<br>一般来说<br>结构体用于表示一堆变量集合，比如Position、Vector2，里面的方法都是在操纵这些变量<br>结构体一般不会用继承<br>类用于表示很多功能集合，比如一个玩家类Player</p>
+<h2 id="三、如何写一个类"><a href="#三、如何写一个类" class="headerlink" title="三、如何写一个类"></a>三、如何写一个类</h2><pre><code class="c++">//比如写一个Log类
+class Log
+&#123;
+public:
+    const int LogLevelError = 0;
+    const int LogLevelWarning = 1;
+    const int LogLevelInfo = 2;
+private:
+    int m_LogLevel = LogLevelInfo;
+public:
+    void SetLevel(int level)
+    &#123;
+        m_LogLevel = level;
+    &#125;
+
+    void Error(const char* message)
+    &#123;
+        if(m_LogLevel &gt;= LogLevelError)
+            std::cout &lt;&lt; &quot;[ERROR]: &quot; &lt;&lt; message &lt;&lt; std::endl;
+    &#125;
+    
+    void Warn(const char* message)
+    &#123;
+        if(m_LogLevel &gt;= LogLevelWarning)
+            std::cout &lt;&lt; &quot;[WARNING]: &quot; &lt;&lt; message &lt;&lt; std::endl;
+    &#125;
+
+    void Info(const char* message)
+    &#123;
+        if(m_LogLevel &gt;= LogLevelInfo)
+            std::cout &lt;&lt; &quot;[INFO]: &quot; &lt;&lt; message &lt;&lt; std::endl;
+    &#125;
+&#125;;
+
+int main()
+&#123;
+    Log log;
+    log.SetLevel(log.LogLevelWarning);
+    log.Warn(&quot;Hello&quot;);
+
+    std::cin.get();
+&#125;
+</code></pre>
+<h1 id="知识点十五-静态"><a href="#知识点十五-静态" class="headerlink" title="知识点十五 静态"></a>知识点十五 静态</h1><h2 id="一、类和结构体外部的静态（全局静态）"><a href="#一、类和结构体外部的静态（全局静态）" class="headerlink" title="一、类和结构体外部的静态（全局静态）"></a>一、类和结构体外部的静态（全局静态）</h2><p>不需要变量是全局变量时，就可以使用静态变量</p>
+<pre><code class="c++">//extern 表示使用了其他 .cpp文件的 var 名的变量
+//类似，函数的声明，而实现在其他 .cpp文件（实际上函数只是隐式地使用了 extern 关键字）
+extern int var = 5;
+
+//static 在类和结构体外部的关键字，会使得其他所有翻译单元(如.cpp文件)都无法链接到这个变量，即使使用 extern 关键字都不行，类似类中的私有变量
+static int var2 = 12;
+
+//函数也一样
+static void Function()
+&#123;
+
+&#125;
+
+int main()
+&#123;
+
+&#125;
+</code></pre>
+<h2 id="二、类和结构体中的静态（静态类成员）"><a href="#二、类和结构体中的静态（静态类成员）" class="headerlink" title="二、类和结构体中的静态（静态类成员）"></a>二、类和结构体中的静态（静态类成员）</h2><p>在所有类的实例中，静态类成员都是同一个<br>因此，在某一个实例中改变这个静态类成员，他会反映到所有实例的静态类成员中</p>
+<p>静态类成员函数无法使用普通的成员变量，只能使用静态成员变量<br>因为每个非静态成员方法，会获得当前类的一个实例作为参数，而静态类方法不会获得任何类的实例</p>
+<pre><code class="c++">class Entity
+&#123;
+public:
+    int x,y;
+
+    void Print()
+    &#123;
+        std::cout &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl;
+    &#125;
+&#125;;
+
+class StaticEntity
+&#123;
+public:
+    static int x, y;
+
+    void Print()
+    &#123;
+        std::cout &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl;
+    &#125;
+
+    static void StaticPrint()
+    &#123;
+        std::cout &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl;
+    &#125;
+&#125;
+
+//静态的成员变量需要定义一下，才能在外部使用，这样链接器才能链接到
+int StaticEntity::x;
+int StaticEntity::y;
+
+int main()
+&#123;
+    //普通成员
+    Entity e;
+    e.x = 2;
+    e.y = 3;
+    //初始化
+    Entity e1 = &#123;5, 8&#125;;
+    e.Print();      //打印2, 3
+    e1.Print();     //打印5, 8
+
+    StaticEntity se;
+    se.x = 2;
+    se.y = 3;
+    Entity se1;
+    //由于x，y是静态成员，第二次赋值时，实际上和上面那次是同样的变量
+    se1.x = 5;
+    se1.y = 8;
+    se.Print();     //打印5, 8
+    se1.Print();    //打印5, 8
+
+    //可以这样使用静态成员
+    StaticEntity::x = 10;
+    StaticEntity::y = 12;
+    StaticEntity::StaticPrint();
+&#125;
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2024 Paul
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 562px;
+    }
+    .nav.fullscreen {
+        margin-left: -562px;
+    }
+    .nav-left {
+        width: 140px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 512px;
+        }
+        .nav.fullscreen {
+            margin-left: -512px;
+        }
+        .nav-left {
+            width: 120px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 512px;
+            margin-left: -512px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
