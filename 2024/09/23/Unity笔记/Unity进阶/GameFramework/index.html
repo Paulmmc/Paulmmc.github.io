@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Excel数据读取 | Paul的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Excel数据读取 | Paul的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="知识点一：InputSystem导入InputSystem包导入PackageManager 中导入 Input System 选择开启哪一种输入模式选择 InputSystem 和 老InputManager 的启用情况File &gt; Build Setting &gt; Player Setting &gt; Other &gt; Active Input Handing可以同时启用也可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="InputSystem">
+<meta property="og:url" content="https://paulmmc.github.io/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/InputSystem/index.html">
+<meta property="og:site_name" content="Paul的博客">
+<meta property="og:description" content="知识点一：InputSystem导入InputSystem包导入PackageManager 中导入 Input System 选择开启哪一种输入模式选择 InputSystem 和 老InputManager 的启用情况File &gt; Build Setting &gt; Player Setting &gt; Other &gt; Active Input Handing可以同时启用也可以">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-09-23T10:11:34.000Z">
+<meta property="article:modified_time" content="2024-09-23T10:13:55.392Z">
+<meta property="article:author" content="Paul">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>Paul</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/Paulmmc"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:3095627551@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=3095627551&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(8)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="Unity笔记">
+            <i class="fold iconfont icon-right"></i>
+            Unity笔记
+            <small>(7)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="Unity笔记&lt;---&gt;Unity进阶">
+            
+            Unity进阶
+            <small>(7)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="8">
+<input type="hidden" id="yelog_site_word_count" value="21.6k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/InputSystem/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="InputSystem">InputSystem</span>
+            <span class="post-date" title="2024-09-23 18:11:34">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Excel%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/GameFramework/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E4%B8%AD%E7%9A%84MVC%E6%80%9D%E6%83%B3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96%E4%B9%8B2%E8%BF%9B%E5%88%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E7%BD%91%E7%BB%9C%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/09/21/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2024-09-21 00:02:38">2024/09/21</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Unity笔记/Unity进阶/GameFramework" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Excel数据读取</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Unity笔记">Unity笔记</a> > 
+            
+            <a  data-rel="Unity笔记&lt;---&gt;Unity进阶">Unity进阶</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-09-23 18:15:56'>2024-09-23 18:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2.2k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-GameEntry%E7%B1%BB"><span class="toc-text">知识点一 GameEntry类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AAGameEntry%E7%B1%BB%E7%9A%84%E7%BB%84%E4%BB%B6"><span class="toc-text">二、如何自定义一个GameEntry类的组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%BB%A7%E6%89%BFGameFrameworkComponent"><span class="toc-text">1.继承GameFrameworkComponent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9C%A8GameEntryCustom%E6%96%87%E4%BB%B6%E4%B8%AD%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB"><span class="toc-text">2.在GameEntryCustom文件中声明一个静态的自定义类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%8C-%E6%B5%81%E7%A8%8B-Procedure"><span class="toc-text">知识点二 流程 Procedure</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%86%99%E4%B8%80%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B5%81%E7%A8%8B%E7%B1%BB"><span class="toc-text">一、写一个自定义流程类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%94%B9%E5%8F%98%E6%B5%81%E7%A8%8BAPI"><span class="toc-text">二、改变流程API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%80%BB%E6%B5%81%E7%A8%8B"><span class="toc-text">三、总流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%BB%E6%B5%81%E7%A8%8B"><span class="toc-text">1.主流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%98%AF%E5%90%A6%E7%BC%96%E8%BE%91%E5%99%A8%E6%A8%A1%E5%BC%8F%E4%B8%8B"><span class="toc-text">2.是否编辑器模式下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%88%87%E6%8D%A2%E5%9C%BA%E6%99%AF%E6%B5%81%E7%A8%8B"><span class="toc-text">3.切换场景流程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%89-%E7%8A%B6%E6%80%81%E6%9C%BA-FSM"><span class="toc-text">知识点三 状态机 FSM</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%9B%9B-%E6%95%B0%E6%8D%AE%E8%A1%A8-DataTable"><span class="toc-text">知识点四 数据表 DataTable</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B-1"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8%E6%95%B0%E6%8D%AE%E8%A1%A8%E5%82%A8%E5%AD%98%E6%95%B0%E6%8D%AE%EF%BC%9F"><span class="toc-text">二、为什么用数据表储存数据？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%95%B0%E6%8D%AE%E8%A1%A8txt%E6%96%87%E4%BB%B6"><span class="toc-text">三、数据表txt文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-txt%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="toc-text">1.txt文件格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%96%B0%E5%BB%BA%E6%95%B0%E6%8D%AE%E8%A1%A8txt"><span class="toc-text">2.新建数据表txt</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BF%AE%E6%94%B9%E9%87%8C%E9%9D%A2%E6%95%B0%E5%80%BC"><span class="toc-text">3.修改里面数值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B1%BB%E6%96%87%E4%BB%B6"><span class="toc-text">四、数据结构类文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%A6%82%E4%BD%95%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90"><span class="toc-text">1.如何自动生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%89%B9%E6%AE%8A%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.特殊类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%9A%84%E8%AF%BB%E5%8F%96"><span class="toc-text">五、数据表的读取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%9A%84TXT%E8%AF%BB%E5%8F%96%E5%A1%AB%E5%85%85%E5%88%B0Code%E4%B8%AD"><span class="toc-text">1.数据表的TXT读取填充到Code中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E8%A1%A8TXT%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E6%95%B0%E5%80%BC%E8%8E%B7%E5%8F%96"><span class="toc-text">2.数据表TXT指定位置数值获取</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81DataTableGenerator%E7%B1%BB"><span class="toc-text">六、DataTableGenerator类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%90%84%E7%A7%8D%E8%B7%AF%E5%BE%84"><span class="toc-text">1.各种路径</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%94-%E4%BA%8B%E4%BB%B6%E7%B3%BB%E7%BB%9F-Event"><span class="toc-text">知识点五 事件系统 Event</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B-2"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81GameEventArgs%E7%B1%BB"><span class="toc-text">二、GameEventArgs类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%AE%A2%E9%98%85%E4%BA%8B%E4%BB%B6"><span class="toc-text">三、订阅事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%8A%9B%E5%87%BA%E4%BA%8B%E4%BB%B6"><span class="toc-text">四、抛出事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%8F%96%E6%B6%88%E8%AE%A2%E9%98%85%E4%BA%8B%E4%BB%B6"><span class="toc-text">五、取消订阅事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%85%AD-%E8%B5%84%E6%BA%90-Resource"><span class="toc-text">知识点六 资源 Resource</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%83-%E5%BC%95%E7%94%A8%E6%B1%A0-Reference-Pool"><span class="toc-text">知识点七 引用池 Reference Pool</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B-3"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%87%A0%E7%A7%8D%E8%AE%A1%E6%95%B0%E6%A0%87%E8%AE%B0"><span class="toc-text">二、几种计数标记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%B7%BB%E5%8A%A0%E5%BC%95%E7%94%A8"><span class="toc-text">三、添加引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%8E%B7%E5%8F%96%E5%BC%95%E7%94%A8"><span class="toc-text">四、获取引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E9%87%8A%E6%94%BE%E5%BC%95%E7%94%A8"><span class="toc-text">五、释放引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E7%A7%BB%E9%99%A4%E5%BC%95%E7%94%A8"><span class="toc-text">六、移除引用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%85%AB-%E7%89%A9%E4%BD%93%E6%B1%A0-Object-Pool"><span class="toc-text">知识点八 物体池 Object Pool</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B-4"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%8E%B7%E5%8F%96%E5%BC%95%E7%94%A8"><span class="toc-text">二、获取引用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B9%9D-%E5%AE%9E%E4%BD%93-Entity"><span class="toc-text">知识点九 实体 Entity</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B-5"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81"><span class="toc-text">二、</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="知识点一-GameEntry类"><a href="#知识点一-GameEntry类" class="headerlink" title="知识点一 GameEntry类"></a>知识点一 GameEntry类</h1><h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p>GameEntry类是一个静态类，可以通过它获取到GF框架的其他的组件进行使用，比如FSM、Procedure等<br>GameEntry在Start()中会调用两个方法：InitBuiltinComponents()和InitCustomComponent()，InitBuiltinComponents()中会对GF框架自带的组件进行初始化，而InitCustomComponent()中主要用于对自定义组件进行初始化</p>
+<h2 id="二、如何自定义一个GameEntry类的组件"><a href="#二、如何自定义一个GameEntry类的组件" class="headerlink" title="二、如何自定义一个GameEntry类的组件"></a>二、如何自定义一个GameEntry类的组件</h2><h3 id="1-继承GameFrameworkComponent"><a href="#1-继承GameFrameworkComponent" class="headerlink" title="1.继承GameFrameworkComponent"></a>1.继承GameFrameworkComponent</h3><p>声明一个类，继承GameFrameworkComponent，GameFrameworkComponent内部会自动将此类注册到GameEntry类中</p>
+<h3 id="2-在GameEntryCustom文件中声明一个静态的自定义类"><a href="#2-在GameEntryCustom文件中声明一个静态的自定义类" class="headerlink" title="2.在GameEntryCustom文件中声明一个静态的自定义类"></a>2.在GameEntryCustom文件中声明一个静态的自定义类</h3><p>在文件GameEntryCustom中（实际上还是GameEntry类）声明一个静态自定义属性，并且在InitCustomComponent()方法中使用 UnityGameFramework.Runtime.GameEntry.GetComponent&lt;&gt;()方法进行获取</p>
+<h1 id="知识点二-流程-Procedure"><a href="#知识点二-流程-Procedure" class="headerlink" title="知识点二 流程 Procedure"></a>知识点二 流程 Procedure</h1><p>GF框架中的流程是基于FSM状态机实现的</p>
+<h2 id="一、写一个自定义流程类"><a href="#一、写一个自定义流程类" class="headerlink" title="一、写一个自定义流程类"></a>一、写一个自定义流程类</h2><p>继承 ProcedureBase</p>
+<h2 id="二、改变流程API"><a href="#二、改变流程API" class="headerlink" title="二、改变流程API"></a>二、改变流程API</h2><p>ChangeState&lt;&gt;();</p>
+<h2 id="三、总流程"><a href="#三、总流程" class="headerlink" title="三、总流程"></a>三、总流程</h2><h3 id="1-主流程"><a href="#1-主流程" class="headerlink" title="1.主流程"></a>1.主流程</h3><p>ProcedureLaunch(配置游戏基础信息) &gt; ProcedureSplash(编辑器模式下，直接进入预加载流程；否则，检查版本，看是否需要热更新)</p>
+<h3 id="2-是否编辑器模式下"><a href="#2-是否编辑器模式下" class="headerlink" title="2.是否编辑器模式下"></a>2.是否编辑器模式下</h3><p>非编辑器模式下 &gt; ProcedureCheckVersion(版本检测，热更新流程) &gt; ProcedurePreload<br>编辑器模式 &gt; ProcedurePreload(开始加载游戏运行所必不可少的资源) &gt; ProcedureChangeScene</p>
+<h3 id="3-切换场景流程"><a href="#3-切换场景流程" class="headerlink" title="3.切换场景流程"></a>3.切换场景流程</h3><p>ProcedureChangeScene(切换场景)<br>ProcedureMain(游戏主流程，从中实现了游戏逻辑)<br>ProcedureMenu(游戏菜单流程)<br>切换场景流程，会根据条件，切换游戏主流程和游戏菜单流程</p>
+<h1 id="知识点三-状态机-FSM"><a href="#知识点三-状态机-FSM" class="headerlink" title="知识点三 状态机 FSM"></a>知识点三 状态机 FSM</h1><pre><code class="C#">//状态机
+public class FSM
+&#123;
+    public IFSM&lt;FSM&gt; m_Fsm = null;
+    public FSM()
+    &#123;
+        //得到 GameEntry 的 FsmConponent组件
+        FsmComponent fsmComponent = GameEntry.GetComponent&lt;FsmConponent&gt;();
+
+        //注册一个自定义状态机，传入有限状态机名、拥有者和所有需要的状态
+        m_Fsm = fsmComponent.CreateFsm(&quot;CustomFSM&quot;, this, new IdleState(), new MoveState());
+
+        //启动状态机，开始于IdleState状态
+        m_Fsm.Start&lt;IdleState&gt;();
+    &#125;
+&#125;
+
+//待机状态
+public class IdleState : FsmState&lt;Fsm&gt;
+&#123;
+    protected override void OnInit(IFsm&lt;FSM&gt; fsm)
+    &#123;
+
+    &#125;
+
+    protected override void OnDestroy(IFsm&lt;FSM&gt; fsm)
+    &#123;
+        
+    &#125;
+    protected override void OnEnter(IFsm&lt;FSM&gt; fsm)
+    &#123;
+        
+    &#125;
+    protected override void OnLeave(IFsm&lt;FSM&gt; fsm, bool isShutdown)
+    &#123;
+        
+    &#125;
+    protected override void OnUpdate(IFsm&lt;FSM&gt; fsm, float elapseSecond, float realElapseSeconds)
+    &#123;
+        
+    &#125;
+&#125;
+
+//移动状态
+public class MoveState : FsmState&lt;FSM&gt;
+&#123;
+    protected override void OnUpdate(IFsm&lt;FSM&gt; fsm, float elapseSecond, float realElapseSeconds)
+    &#123;
+        
+    &#125;
+&#125;
+</code></pre>
+<h1 id="知识点四-数据表-DataTable"><a href="#知识点四-数据表-DataTable" class="headerlink" title="知识点四 数据表 DataTable"></a>知识点四 数据表 DataTable</h1><h2 id="一、简介-1"><a href="#一、简介-1" class="headerlink" title="一、简介"></a>一、简介</h2><p>将游戏数据以表格形式进行配置后，使用此组件加载这些数据表，数据表是可以自定义的</p>
+<h2 id="二、为什么用数据表储存数据？"><a href="#二、为什么用数据表储存数据？" class="headerlink" title="二、为什么用数据表储存数据？"></a>二、为什么用数据表储存数据？</h2><p>当游戏制作到一定完成度，只需要对配置表进行配置，游戏就会自动实现其中的功能<br>这样可以方便以后动态扩展与改变，容易进行调试</p>
+<h2 id="三、数据表txt文件"><a href="#三、数据表txt文件" class="headerlink" title="三、数据表txt文件"></a>三、数据表txt文件</h2><h3 id="1-txt文件格式"><a href="#1-txt文件格式" class="headerlink" title="1.txt文件格式"></a>1.txt文件格式</h3><p>本身是一个excel形式存储的<br>使用Excel打开txt文件进行修改<br>修改完毕，保存时，点击另存为 &gt; 文本文件(制表符分隔)(*.txt)<br>若修改后出现乱码：打开txt文件 &gt; 文件 &gt; 另存为 &gt; 编码 &gt; UTF-16 LE</p>
+<h3 id="2-新建数据表txt"><a href="#2-新建数据表txt" class="headerlink" title="2.新建数据表txt"></a>2.新建数据表txt</h3><p>用Excel，按照规定进行填写并保存</p>
+<h3 id="3-修改里面数值"><a href="#3-修改里面数值" class="headerlink" title="3.修改里面数值"></a>3.修改里面数值</h3><h2 id="四、数据结构类文件"><a href="#四、数据结构类文件" class="headerlink" title="四、数据结构类文件"></a>四、数据结构类文件</h2><h3 id="1-如何自动生成"><a href="#1-如何自动生成" class="headerlink" title="1.如何自动生成"></a>1.如何自动生成</h3><p>上方菜单栏 &gt; Star Forece &gt; Generate DataTables</p>
+<h3 id="2-特殊类型"><a href="#2-特殊类型" class="headerlink" title="2.特殊类型"></a>2.特殊类型</h3><p>GF框架内部有很多自带的特殊类型，也可以自定义特殊类型<br>以下代码是一个自定义特殊类型的方式</p>
+<pre><code class="c#">//自定义一个特殊类型数据，用于从Excel表生成数据结构类时，可以使用，比如Vector3
+public sealed partial class DataTableProcessor
+&#123;
+    private sealed class Vector3ListProcessor : GenericDataProcessor&lt;List&lt;Vector3&gt;&gt;
+    &#123;
+    //是否是系统类型
+        public override bool IsSystem
+        &#123;
+            get
+            &#123;
+                return false;
+            &#125;
+        &#125;
+        //关键字
+        public override string LanguageKeyword
+        &#123;
+            get
+            &#123;
+                return &quot;List&lt;Vector3&gt;&quot;;
+            &#125;
+        &#125;
+        //type类型名
+        public override string[] GetTypeString()
+        &#123;
+            return new string[]
+            &#123;
+                &quot;List&lt;Vector3&gt;&quot;,
+                &quot;System.Collections.Generic.List&quot;
+            &#125;
+        &#125;
+        public override List&lt;Vector3&gt; Parse(string value)
+        &#123;
+            List&lt;Vector3&gt; temp = new List&lt;Vector3&gt;();
+            if(value == &quot;empty&quot; || value == &quot;&quot;)
+            &#123;
+                return temp;
+            &#125;
+            //分隔方式是自定义的
+            string[] splitValues = value.Split(&#39;;&#39;);
+            for(int i = 0; i &lt; splitValues.Length; i++)
+            &#123;
+                string[] splitValue = splitValues[i].Split(&#39;,&#39;);
+                temp.Add(new Vector3(float.Parse(splitValue[0]), float.Parse(splitValue[1]), float.Parse(splitValue[2])));
+            &#125;
+            return temp;
+        &#125;
+
+        public override void WriteToStream(DataTableProcessor dataTableProcessor, BinaryWriter binaryWriter, string value)
+        &#123;
+            List&lt;Vector3&gt; listVector3 = Parse(value);
+            binaryWriter.Write((float)listVector3.Count);
+            for(int i = 0; i &lt; listVector3.Count; i++)
+            &#123;
+                binaryWriter.Writer(listVector3[i].x);
+                binaryWriter.Writer(listVector3[i].y);
+                binaryWriter.Writer(listVector3[i].z);
+            &#125;
+        &#125;
+    &#125;
+&#125;
+
+//自定义读取自定义二进制数据的方法 Scripts &gt; DataTable &gt; BinaryReaderExtension 
+//在该扩张类中增加自己的读取方法
+public static List&lt;Vector3&gt; ReadListVector3(this BinaryReader binaryReader)
+&#123;
+    List&lt;Vector3&gt; temp = new List&lt;Vector3&gt;();
+
+    float count = binaryReader.ReadSingle();
+    for(int i = 0; i &lt; count; i++)
+    &#123;
+        temp.Add(new Vector3(binaryReader.ReadSingle(), binaryReader.ReadSingle(), binaryReader.ReadSingle()));
+    &#125;
+
+    return temp;
+&#125;
+
+//自定义读取自定义数据表的方法 Scripts &gt; DataTable &gt; DataTableExtension 
+//在该扩张类中增加自己的读取方法
+public static List&lt;Vector3&gt; ParseListVector3(string value)
+&#123;
+    List&lt;Vector3&gt; temp = new List&lt;Vector3&gt;();
+    if(value == &quot;empty&quot; || value == &quot;&quot;)
+    &#123;
+        return temp;
+    &#125;
+    //分隔方式是自定义的
+    string[] splitValues = value.Split(&#39;;&#39;);
+    for(int i = 0; i &lt; splitValues.Length; i++)
+    &#123;
+        string[] splitValue = splitValues[i].Split(&#39;,&#39;);
+        temp.Add(new Vector3(float.Parse(splitValue[0]), float.Parse(splitValue[1]), float.Parse(splitValue[2])));
+    &#125;
+    return temp;
+&#125;
+
+//在 DataTableGenerator类中的 GenerateDataTableParser方法中，增加判断
+</code></pre>
+<h2 id="五、数据表的读取"><a href="#五、数据表的读取" class="headerlink" title="五、数据表的读取"></a>五、数据表的读取</h2><h3 id="1-数据表的TXT读取填充到Code中"><a href="#1-数据表的TXT读取填充到Code中" class="headerlink" title="1.数据表的TXT读取填充到Code中"></a>1.数据表的TXT读取填充到Code中</h3><h3 id="2-数据表TXT指定位置数值获取"><a href="#2-数据表TXT指定位置数值获取" class="headerlink" title="2.数据表TXT指定位置数值获取"></a>2.数据表TXT指定位置数值获取</h3><pre><code class="c#">//获取到自定义数据表的IDataTable类
+IDataTable&lt;CustomDataTable&gt; customDataTable = GameEntry.DataTable.GetDataTable&lt;CustomDataTable&gt;();
+//通过id获取一行
+CustomDataTable cRow = customDataTable.GetDataRow(0);
+//获取目标列，直接用 . 名字
+</code></pre>
+<h2 id="六、DataTableGenerator类"><a href="#六、DataTableGenerator类" class="headerlink" title="六、DataTableGenerator类"></a>六、DataTableGenerator类</h2><h3 id="1-各种路径"><a href="#1-各种路径" class="headerlink" title="1.各种路径"></a>1.各种路径</h3><ul>
+<li>DataTablePath（2进制和excel表存放的路径）   </li>
+<li>CSharpCodePath（数据结构生成的路径）</li>
+<li>CSharpCodeTemplateFileName（不需要更改，是一个代码生成的模板）</li>
+</ul>
+<h1 id="知识点五-事件系统-Event"><a href="#知识点五-事件系统-Event" class="headerlink" title="知识点五 事件系统 Event"></a>知识点五 事件系统 Event</h1><h2 id="一、简介-2"><a href="#一、简介-2" class="headerlink" title="一、简介"></a>一、简介</h2><p>事件系统可以方便地订阅、抛出事件<br>在游戏开发中，开发一些成就系统，比如杀死一个怪物，需要通知玩家的经验值增加等<br>都可以使用事件系统来方便地获取信息</p>
+<h2 id="二、GameEventArgs类"><a href="#二、GameEventArgs类" class="headerlink" title="二、GameEventArgs类"></a>二、GameEventArgs类</h2><p>GameEventArgs类，是一个事件信息类，可以继承它，创建自己的事件信息数据结构，用于在事件的回调中传输数据<br>GF框架内部有自己准备好的一些GameEventArgs类</p>
+<h2 id="三、订阅事件"><a href="#三、订阅事件" class="headerlink" title="三、订阅事件"></a>三、订阅事件</h2><p>API：   GameEntry.EventComponent.Subscribe(int id, EventHandler<GameEventArgs> handler)<br>参数一：事件id，不能重复订阅相同id且相同逻辑的事件，除非使用了取消订阅<br>参数二：委托，public delegate void EventHandler<TEventArgs>(object sender, TEventArgs e); 其中sender就是发送者，e是EventArgs类<br>注意：订阅时，并未真正调用委托，只是记录了事件的信息</p>
+<h2 id="四、抛出事件"><a href="#四、抛出事件" class="headerlink" title="四、抛出事件"></a>四、抛出事件</h2><p>API：   GameEntry.EventComponent.Fire(object sender, GameEventArgs e)<br>参数一：发送者<br>参数二：GameEventArgs类的实例<br>注意：<br>此时才真正调用委托，其中的 GameEventArgs类的实例 在委托函数结束后，会被释放掉，可以在传入时，new 实例</p>
+<h2 id="五、取消订阅事件"><a href="#五、取消订阅事件" class="headerlink" title="五、取消订阅事件"></a>五、取消订阅事件</h2><p>API:    GameEntry.EventComponent.Unsubscribe(int id, EventHandler<GameEventArgs> handler)<br>参数一：事件id，不能重复订阅相同id的事件，除非使用了取消订阅<br>参数二：委托，public delegate void EventHandler<TEventArgs>(object sender, TEventArgs e); 其中sender就是发送者，e是EventArgs类<br>此时，事件被取消订阅，该事件id又可以被用于订阅事件</p>
+<h1 id="知识点六-资源-Resource"><a href="#知识点六-资源-Resource" class="headerlink" title="知识点六 资源 Resource"></a>知识点六 资源 Resource</h1><h1 id="知识点七-引用池-Reference-Pool"><a href="#知识点七-引用池-Reference-Pool" class="headerlink" title="知识点七 引用池 Reference Pool"></a>知识点七 引用池 Reference Pool</h1><h2 id="一、简介-3"><a href="#一、简介-3" class="headerlink" title="一、简介"></a>一、简介</h2><p>即对象池，使用对象池，有助于减少Unity的GC，减少性能消耗<br>与 Object Pool 作用类似，但 Object Pool 是主要是用于Unity中的物体</p>
+<h2 id="二、几种计数标记"><a href="#二、几种计数标记" class="headerlink" title="二、几种计数标记"></a>二、几种计数标记</h2><p>Unused：未使用的，在引用池中，还未使用的对象<br>Using：正在使用，从引用池中取出来，正在使用的对象<br>Acquire：获取的，从引用池中获取的对象<br>Release：释放的，使用完的对象，释放回引用池中<br>Add：添加的，所有添加和添加过到引用池中的对象的数量<br>Remove：移除的，已从引用池中移除的对象的数量，无法再得到</p>
+<h2 id="三、添加引用"><a href="#三、添加引用" class="headerlink" title="三、添加引用"></a>三、添加引用</h2><p>API:    ReferencePool.Add()<br>向引用池中添加引用，但未使用</p>
+<h2 id="四、获取引用"><a href="#四、获取引用" class="headerlink" title="四、获取引用"></a>四、获取引用</h2><p>API:    ReferencePool.Acquire()<br>从引用池中获取引用，若引用池中没有空闲(Unused)的对象，则直接创建一个对象</p>
+<h2 id="五、释放引用"><a href="#五、释放引用" class="headerlink" title="五、释放引用"></a>五、释放引用</h2><p>API:    ReferencePool.Release()<br>释放一个对象回引用池中</p>
+<h2 id="六、移除引用"><a href="#六、移除引用" class="headerlink" title="六、移除引用"></a>六、移除引用</h2><p>API:    ReferencePool.Remove()<br>从引用池中移除引用，引用池无法再次使用该对象</p>
+<h1 id="知识点八-物体池-Object-Pool"><a href="#知识点八-物体池-Object-Pool" class="headerlink" title="知识点八 物体池 Object Pool"></a>知识点八 物体池 Object Pool</h1><h2 id="一、简介-4"><a href="#一、简介-4" class="headerlink" title="一、简介"></a>一、简介</h2><p>即对象池，使用对象池，有助于减少Unity的GC，减少性能消耗<br>与 Reference Pool 类似</p>
+<h2 id="二、获取引用"><a href="#二、获取引用" class="headerlink" title="二、获取引用"></a>二、获取引用</h2><h1 id="知识点九-实体-Entity"><a href="#知识点九-实体-Entity" class="headerlink" title="知识点九 实体 Entity"></a>知识点九 实体 Entity</h1><h2 id="一、简介-5"><a href="#一、简介-5" class="headerlink" title="一、简介"></a>一、简介</h2><p>游戏场景中各种动态创建的物体定义为实体，比如玩家本身控制的主角的实体模型</p>
+<h2 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、</h2>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2024 Paul
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 562px;
+    }
+    .nav.fullscreen {
+        margin-left: -562px;
+    }
+    .nav-left {
+        width: 140px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 512px;
+        }
+        .nav.fullscreen {
+            margin-left: -512px;
+        }
+        .nav-left {
+            width: 120px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 512px;
+            margin-left: -512px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

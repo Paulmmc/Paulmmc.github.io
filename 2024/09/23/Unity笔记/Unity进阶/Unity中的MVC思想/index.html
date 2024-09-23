@@ -338,7 +338,7 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-Unity笔记/Unity进阶/Excel数据读取" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Unity笔记/Unity进阶/Unity中的MVC思想" class="article article-type-post" itemscope itemprop="blogPost">
     
         <h1 class="article-title">Excel数据读取</h1>
     
@@ -360,12 +360,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-09-23 18:01:37'>2024-09-23 18:00</time>
+            发布时间 : <time class="date" title='最后更新: 2024-09-23 18:16:20'>2024-09-23 18:00</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:684</span>
+        <span>字数:281</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -384,7 +384,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-%E5%AF%BC%E5%85%A5Excel%E7%9B%B8%E5%85%B3DLL%E5%8C%85"><span class="toc-text">知识点一 导入Excel相关DLL包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BA%86%E8%A7%A3Excel%E8%A1%A8%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-text">一、了解Excel表的本质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AF%BC%E5%85%A5%E5%AE%98%E6%96%B9%E6%8F%90%E4%BE%9B%E7%9A%84Excel%E7%9B%B8%E5%85%B3DLL%E6%96%87%E4%BB%B6"><span class="toc-text">二、导入官方提供的Excel相关DLL文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%8C-Excel%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96"><span class="toc-text">知识点二 Excel数据读取</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%89%93%E5%BC%80Excel%E8%A1%A8"><span class="toc-text">一、打开Excel表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%8E%B7%E5%8F%96Excel%E8%A1%A8%E4%B8%AD%E5%8D%95%E5%85%83%E6%A0%BC%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="toc-text">二、获取Excel表中单元格的信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%8E%B7%E5%8F%96Excel%E8%A1%A8%E4%B8%AD%E4%BF%A1%E6%81%AF%E5%AF%B9%E4%BA%8E%E6%88%91%E4%BB%AC%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-text">三、获取Excel表中信息对于我们的意义</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-MVC%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">知识点一 MVC的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81MVC%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="toc-text">一、MVC的历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81MVC%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">二、MVC的基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81MVC%E5%9C%A8%E6%B8%B8%E6%88%8F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">三、MVC在游戏中的应用</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -400,73 +400,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="知识点一-导入Excel相关DLL包"><a href="#知识点一-导入Excel相关DLL包" class="headerlink" title="知识点一 导入Excel相关DLL包"></a>知识点一 导入Excel相关DLL包</h1><h2 id="一、了解Excel表的本质"><a href="#一、了解Excel表的本质" class="headerlink" title="一、了解Excel表的本质"></a>一、了解Excel表的本质</h2><p>Excel表本质就是数据，有自己的存储读取规则<br>如果我们想要通过代码读取它<br>那么必须知道它的存储规则</p>
-<p>官网提供了对应的DLL文件用来解析Excel文件</p>
-<p>DLL文件：库文件，可以理解为许多代码的集合<br>将相关代码集合在库文件中，可以方便迁移和使用<br>有了某个DLL文件，我们就可以使用其中已经写好的代码</p>
-<p>而Excel的DLL包就是官方已经把解析Excel表的相关类和方法写好了<br>方便用户使用</p>
-<h2 id="二、导入官方提供的Excel相关DLL文件"><a href="#二、导入官方提供的Excel相关DLL文件" class="headerlink" title="二、导入官方提供的Excel相关DLL文件"></a>二、导入官方提供的Excel相关DLL文件</h2><p>直接将 .dll 后缀的文件导入到工程文件夹下</p>
-<h1 id="知识点二-Excel数据读取"><a href="#知识点二-Excel数据读取" class="headerlink" title="知识点二 Excel数据读取"></a>知识点二 Excel数据读取</h1><h2 id="一、打开Excel表"><a href="#一、打开Excel表" class="headerlink" title="一、打开Excel表"></a>一、打开Excel表</h2><p>知识点</p>
-<ol>
-<li>FileStream读取文件流</li>
-<li>IExcelDataReader类，从流中读取Excel数据</li>
-<li>DataSet 数据集合类 将Excel数据转存进其中方便读取</li>
-</ol>
-<p>代码</p>
-<pre><code class="C#">using Excel;
-
-using(FileStream fs = File.Open(application.dataPath + &quot;PlayerInfo.xlsx&quot;, FileMode.Open, FileAccess.Read))
-&#123;
-    //通过我们的文件流获取Excel数据
-    IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(fs);
-    //将Excel表中的数据转换为DataSet素具类型，方便我们获取其中的内容
-    DataSet dataSet = excelReader.AsDataSet();
-    //得到Excel文件中的所有表信息，遍历所有表
-    for(int i = 0; i &lt; dataSet.Tables.Count; i++)
-    &#123;
-        //打印表的名字
-        print( dataSet.Tables[i].TableName );
-        //打印表的行数
-        print( dataSet.Tables[i].Rows.Count );
-        //打印表的列数
-        print( dataSet.Tables[i].Columns.Count );
-    &#125;
-    fs.Dispose();
-&#125;
-</code></pre>
-<h2 id="二、获取Excel表中单元格的信息"><a href="#二、获取Excel表中单元格的信息" class="headerlink" title="二、获取Excel表中单元格的信息"></a>二、获取Excel表中单元格的信息</h2><p>知识点</p>
-<ol>
-<li>FileStream读取文件流</li>
-<li>IExcelDataReader类，从流中读取Excel数据</li>
-<li>DataSet 数据集合类 将Excel数据转存进其中方便读取</li>
-<li>DataTable 数据表类 表示Excel文件中的一个表</li>
-<li>DataRow 数据行类 表示某张表中的一行数据</li>
-</ol>
-<p>代码</p>
-<pre><code class="c#">using( FileStream fs = File.Open(application.dataPath + &quot;PlayerInfo.xlsx&quot;, FileMode.Open, FileAccess.Read))
-&#123;
-    //通过我们的文件流获取Excel数据
-    IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(fs);
-    //将Excel表中的数据转换为DataSet素具类型，方便我们获取其中的内容
-    DataSet dataSet = excelReader.AsDataSet(); 
-    //得到其中第一张表的数据
-    DataTable table = dataSet.Tables[0];
-    //得到表中第一行的数据
-    DataRow dataRow = table.Row[0];
-    //得到该行的第一列的数据，返回值是一个object类型
-    object obj = dataRow[0];
-&#125;
-</code></pre>
-<h2 id="三、获取Excel表中信息对于我们的意义"><a href="#三、获取Excel表中信息对于我们的意义" class="headerlink" title="三、获取Excel表中信息对于我们的意义"></a>三、获取Excel表中信息对于我们的意义</h2><p>既然能获取Excel表中的所有数据<br>那么我们就可以根据表中数据来动态的生成相关数据</p>
-<ol>
-<li>数据结构类</li>
-<li>容器类</li>
-<li>2进制数据</li>
-</ol>
-<p>为什么不直接读取Excel表而要将他转成2进制数据？</p>
-<ol>
-<li>提升读取效率</li>
-<li>提升数据安全性</li>
-</ol>
+        <h1 id="知识点一-MVC的基本概念"><a href="#知识点一-MVC的基本概念" class="headerlink" title="知识点一 MVC的基本概念"></a>知识点一 MVC的基本概念</h1><h2 id="一、MVC的历史"><a href="#一、MVC的历史" class="headerlink" title="一、MVC的历史"></a>一、MVC的历史</h2><p>是一种软件开发的编程思想<br>自定前提：粗略地将计算机上的使用工具分为应用软件、网页、游戏<br>MVC是应用软件开发、网页开发最常用和流行的通用开发框架<br>应用软件和网页基本是由UI、Data(数据)构成</p>
+<h2 id="二、MVC的基本概念"><a href="#二、MVC的基本概念" class="headerlink" title="二、MVC的基本概念"></a>二、MVC的基本概念</h2><p>全名是 Model View Controller<br>模型(Model) - 视图(View) - 控制器(Controller) 的缩写<br>是一种软件设计规范，用一种业务逻辑、数据、界面显示 分离的方法组织代码<br>将业务逻辑聚集到一个部件里，再改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑</p>
+<h2 id="三、MVC在游戏中的应用"><a href="#三、MVC在游戏中的应用" class="headerlink" title="三、MVC在游戏中的应用"></a>三、MVC在游戏中的应用</h2><p>注意：<br>它不是必备内容<br>它主要用于开发游戏UI系统逻辑</p>
+<p>将UI面板逻辑一分为三，数据、界面、业务逻辑</p>
+<p>好处：降低耦合，方便修改、逻辑清晰，适合协同开发<br>坏处：脚本变多，体量变大，流程变复杂</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>

@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Excel数据读取 | Paul的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Excel数据读取 | Paul的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="知识点一：InputSystem导入InputSystem包导入PackageManager 中导入 Input System 选择开启哪一种输入模式选择 InputSystem 和 老InputManager 的启用情况File &gt; Build Setting &gt; Player Setting &gt; Other &gt; Active Input Handing可以同时启用也可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="InputSystem">
+<meta property="og:url" content="https://paulmmc.github.io/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/InputSystem/index.html">
+<meta property="og:site_name" content="Paul的博客">
+<meta property="og:description" content="知识点一：InputSystem导入InputSystem包导入PackageManager 中导入 Input System 选择开启哪一种输入模式选择 InputSystem 和 老InputManager 的启用情况File &gt; Build Setting &gt; Player Setting &gt; Other &gt; Active Input Handing可以同时启用也可以">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-09-23T10:11:34.000Z">
+<meta property="article:modified_time" content="2024-09-23T10:13:55.392Z">
+<meta property="article:author" content="Paul">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>Paul</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/Paulmmc"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:3095627551@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=3095627551&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(8)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="Unity笔记">
+            <i class="fold iconfont icon-right"></i>
+            Unity笔记
+            <small>(7)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="Unity笔记&lt;---&gt;Unity进阶">
+            
+            Unity进阶
+            <small>(7)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="8">
+<input type="hidden" id="yelog_site_word_count" value="21.6k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/InputSystem/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="InputSystem">InputSystem</span>
+            <span class="post-date" title="2024-09-23 18:11:34">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Excel%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/GameFramework/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E4%B8%AD%E7%9A%84MVC%E6%80%9D%E6%83%B3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96%E4%B9%8B2%E8%BF%9B%E5%88%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E7%BD%91%E7%BB%9C%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/09/21/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2024-09-21 00:02:38">2024/09/21</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Unity笔记/Unity进阶/Unity数据持久化之2进制" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Excel数据读取</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Unity笔记">Unity笔记</a> > 
+            
+            <a  data-rel="Unity笔记&lt;---&gt;Unity进阶">Unity进阶</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-09-23 18:16:11'>2024-09-23 18:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:4.1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-%E5%90%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84"><span class="toc-text">知识点一 各类型转字节数组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%812%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-text">一、2进制文件读写的本质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%90%84%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%92%8C%E5%AD%97%E8%8A%82%E6%95%B0%E6%8D%AE%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-text">二、各类型数据和字节数据相互转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%B0%86%E5%90%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E5%AD%97%E8%8A%82"><span class="toc-text">1.将各类型转字节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84%E8%BD%AC%E5%90%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.字节数组转各类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%A0%87%E5%87%86%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F"><span class="toc-text">三、标准编码格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%A5%E6%8C%87%E5%AE%9A%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F%E8%BD%AC%E5%AD%97%E8%8A%82"><span class="toc-text">1.将字符串以指定编码格式转字节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84%E4%BB%A5%E6%8C%87%E5%AE%9A%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">2.字节数组以指定编码格式转字符串</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%8C-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6"><span class="toc-text">知识点二 文件操作相关——文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">一、代码中的文件操作是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C%E5%85%AC%E5%85%B1%E7%B1%BB"><span class="toc-text">二、文件相关操作公共类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9CFile%E7%B1%BB%E7%9A%84%E5%B8%B8%E7%94%A8%E5%86%85%E5%AE%B9"><span class="toc-text">三、文件操作File类的常用内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="toc-text">1.判断文件是否存在</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6"><span class="toc-text">2.创建文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6"><span class="toc-text">3.写入文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6"><span class="toc-text">4.读取文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-text">5.删除文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6"><span class="toc-text">6.复制文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E6%96%87%E4%BB%B6%E6%9B%BF%E6%8D%A2"><span class="toc-text">7.文件替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E4%BB%A5%E6%B5%81%E7%9A%84%E5%BD%A2%E5%BC%8F%EF%BC%8C%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E5%B9%B6%E5%86%99%E5%85%A5%E6%88%96%E8%AF%BB%E5%8F%96"><span class="toc-text">8.以流的形式，打开文件并写入或读取</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%89-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E6%B5%81"><span class="toc-text">知识点三 文件操作相关——文件流</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E6%96%87%E4%BB%B6%E6%B5%81"><span class="toc-text">一、什么是文件流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81FileStream%E6%96%87%E4%BB%B6%E6%B5%81%E7%B1%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">二、FileStream文件流类常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%89%93%E5%BC%80%E6%88%96%E8%80%85%E5%88%9B%E5%BB%BA%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6"><span class="toc-text">1.打开或者创建指定文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9Anew-FileStream"><span class="toc-text">方法一：new FileStream</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9AFile-Create"><span class="toc-text">方法二：File.Create</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%89%EF%BC%9AFile-Open"><span class="toc-text">方法三：File.Open</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%87%8D%E8%A6%81%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-text">2.重要属性和方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%86%99%E5%85%A5%E5%AD%97%E8%8A%82"><span class="toc-text">3.写入字节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%AF%BB%E5%8F%96%E5%AD%97%E8%8A%82"><span class="toc-text">4.读取字节</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E6%8C%A8%E4%B8%AA%E8%AF%BB%E5%8F%96%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84"><span class="toc-text">方法一：挨个读取字节数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A%E4%B8%80%E6%AC%A1%E6%80%A7%E8%AF%BB%E5%8F%96%E5%86%8D%E6%8C%A8%E4%B8%AA%E8%AF%BB%E5%8F%96"><span class="toc-text">方法二：一次性读取再挨个读取</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%9B%B4%E5%8A%A0%E5%AE%89%E5%85%A8%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E6%B5%81%E5%AF%B9%E8%B1%A1"><span class="toc-text">三、更加安全的使用文件流对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%80%BB%E7%BB%93"><span class="toc-text">四、总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%9B%9B-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">知识点四 文件操作相关——文件夹</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%96%87%E4%BB%B6%E5%A4%B9%E6%93%8D%E4%BD%9C%E6%98%AF%E6%8C%87%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">一、文件夹操作是指什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81C-%E6%8F%90%E4%BE%9B%E7%BB%99%E6%88%91%E4%BB%AC%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E6%93%8D%E4%BD%9C%E5%85%AC%E5%85%B1%E7%B1%BB"><span class="toc-text">二、C#提供给我们的文件夹操作公共类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E5%A4%B9%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="toc-text">1.判断文件夹是否存在</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">2.创建文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">3.删除文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%9F%A5%E6%89%BE%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E6%96%87%E4%BB%B6"><span class="toc-text">4.查找文件夹和文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">5.移动文件夹</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81DirectoryInfo%E5%92%8CFileInfo"><span class="toc-text">三、DirectoryInfo和FileInfo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DirectoryInfo%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF%E7%B1%BB"><span class="toc-text">DirectoryInfo目录信息类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FileInfo%E6%96%87%E4%BB%B6%E4%BF%A1%E6%81%AF%E7%B1%BB"><span class="toc-text">FileInfo文件信息类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%80%BB%E7%BB%93-1"><span class="toc-text">四、总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%94-C-%E7%B1%BB%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">知识点五 C#类对象的序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%BA%8F%E5%88%97%E5%8C%96%E7%B1%BB%E5%AF%B9%E8%B1%A1%E7%AC%AC%E4%B8%80%E6%AD%A5%E2%80%94%E2%80%94%E7%94%B3%E6%98%8E%E7%B1%BB%E5%AF%B9%E8%B1%A1"><span class="toc-text">一、序列化类对象第一步——申明类对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%BA%8F%E5%88%97%E5%8C%96%E7%B1%BB%E5%AF%B9%E8%B1%A1%E7%AC%AC%E4%BA%8C%E9%83%A8%E2%80%94%E2%80%94%E5%B0%86%E5%AF%B9%E8%B1%A1%E8%BF%9B%E8%A1%8C2%E8%BF%9B%E5%88%B6%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">二、序列化类对象第二部——将对象进行2进制序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E4%BD%BF%E7%94%A8%E5%86%85%E5%AD%98%E6%B5%81%E5%BE%97%E5%88%B02%E8%BF%9B%E5%88%B6%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84"><span class="toc-text">方法一：使用内存流得到2进制字节数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E6%B5%81%E8%BF%9B%E8%A1%8C%E5%AD%98%E5%82%A8"><span class="toc-text">方法二：使用文件流进行存储</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%80%BB%E7%BB%93"><span class="toc-text">三、总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%85%AD-C-%E7%B1%BB%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">知识点六 C#类对象的反序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-text">一、反序列化文件中的数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E7%BD%91%E6%A0%BC%E4%BC%A0%E8%BE%93%E8%BF%87%E6%9D%A5%E7%9A%842%E8%BF%9B%E5%88%B6%E6%95%B0%E6%8D%AE"><span class="toc-text">二、反序列化网格传输过来的2进制数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%83-C-%E7%B1%BB%E5%AF%B9%E8%B1%A1%E7%9A%842%E8%BF%9B%E5%88%B6%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86"><span class="toc-text">知识点七 C#类对象的2进制数据加密</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%B8%B8%E7%94%A8%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><span class="toc-text">一、常用加密算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%94%A8%E7%AE%80%E5%8D%95%E7%9A%84%E5%BC%82%E6%88%96%E5%8A%A0%E5%AF%86"><span class="toc-text">二、用简单的异或加密</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86"><span class="toc-text">加密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%AF%86"><span class="toc-text">解密</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%85%AB-%E6%80%BB%E7%BB%93"><span class="toc-text">知识点八 总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%B8%B8%E7%94%A8%E5%85%AC%E5%85%B1%E7%B1%BB"><span class="toc-text">一、常用公共类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%A3%B0%E6%98%8E%E7%9A%84%E7%B1%BB"><span class="toc-text">二、声明的类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">三、常用方法</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="知识点一-各类型转字节数组"><a href="#知识点一-各类型转字节数组" class="headerlink" title="知识点一 各类型转字节数组"></a>知识点一 各类型转字节数组</h1><h2 id="一、2进制文件读写的本质"><a href="#一、2进制文件读写的本质" class="headerlink" title="一、2进制文件读写的本质"></a>一、2进制文件读写的本质</h2><p>将各类型变量转换为字节数组<br>将字节数组直接存储到文件中<br>一般人是看不懂的存储数据<br>可以节约存储空间，提升效率和安全性<br>在网络通信中，我们直接传输的数据也是字节数据（2进制数据）</p>
+<h2 id="二、各类型数据和字节数据相互转换"><a href="#二、各类型数据和字节数据相互转换" class="headerlink" title="二、各类型数据和字节数据相互转换"></a>二、各类型数据和字节数据相互转换</h2><p>C#提供的公共类<br>类名：BitConverter<br>命名空间：using System</p>
+<h3 id="1-将各类型转字节"><a href="#1-将各类型转字节" class="headerlink" title="1.将各类型转字节"></a>1.将各类型转字节</h3><pre><code class="c#">//直接传入一个变量
+byte[] bytes = BitConverter.GetBytes(99);
+</code></pre>
+<h3 id="2-字节数组转各类型"><a href="#2-字节数组转各类型" class="headerlink" title="2.字节数组转各类型"></a>2.字节数组转各类型</h3><pre><code class="c#">//参数一：byte[] 数组   参数二：开始索引
+int i = BitConverter.ToInt32(bytes, 0);
+</code></pre>
+<h2 id="三、标准编码格式"><a href="#三、标准编码格式" class="headerlink" title="三、标准编码格式"></a>三、标准编码格式</h2><p>编码是用预先规定的方法将文字、数字或其他对象编成数码，或将信息、数据转换成规定的电脉冲信号。<br>为保证编码的正确性，编码要规范化、标准化，即需有标准的编码格式<br>常见的编码格式有ASCII、ANSI、GBK、GB2312、UTF-8、GB18030和UNICODE等</p>
+<p>简单理解<br>计算机数据的本质是2进制<br>编码格式就是用对应的2进制，代表不同的文字符号<br>不同的编码格式，对应的规则是不同的<br>读取字符时，采用了不统一的编码格式，可能会出现乱码</p>
+<p>游戏开发中常用编码格式 UTF-8<br>中文编码格式 GBK<br>英文编码格式 ASCII</p>
+<p>在C#中有一个专门的编码格式类，来帮助我们将字符串和字节数组进行转换</p>
+<p>类名：Encoding<br>需要引用命名空间：using System.Text</p>
+<h3 id="1-将字符串以指定编码格式转字节"><a href="#1-将字符串以指定编码格式转字节" class="headerlink" title="1.将字符串以指定编码格式转字节"></a>1.将字符串以指定编码格式转字节</h3><pre><code class="c#">//传入字符串，以UTF-8编码格式转换成字节数组
+byte[] bytes = Encoding.UTF8.GetBytes(&quot;聪哥&quot;);
+</code></pre>
+<h3 id="2-字节数组以指定编码格式转字符串"><a href="#2-字节数组以指定编码格式转字符串" class="headerlink" title="2.字节数组以指定编码格式转字符串"></a>2.字节数组以指定编码格式转字符串</h3><pre><code class="c#">//参数一：字节数组  参数二；开始索引    参数三：读取的长度
+//以UTF-8编码格式读取字节数组
+string str = Encoding.UTF8.GetString(bytes);
+</code></pre>
+<h1 id="知识点二-文件操作相关——文件"><a href="#知识点二-文件操作相关——文件" class="headerlink" title="知识点二 文件操作相关——文件"></a>知识点二 文件操作相关——文件</h1><h2 id="一、代码中的文件操作是什么"><a href="#一、代码中的文件操作是什么" class="headerlink" title="一、代码中的文件操作是什么"></a>一、代码中的文件操作是什么</h2><p>在电脑上，我们可以在操作系统重创建、删除和修改文件<br>可以增删查改各种各样的文件类型<br>代码中的文件操作就是通过代码来实现这些事情</p>
+<h2 id="二、文件相关操作公共类"><a href="#二、文件相关操作公共类" class="headerlink" title="二、文件相关操作公共类"></a>二、文件相关操作公共类</h2><p>c#提供了一个名为File（文件）的公共类<br>类名：File<br>命名空间：System.IO</p>
+<h2 id="三、文件操作File类的常用内容"><a href="#三、文件操作File类的常用内容" class="headerlink" title="三、文件操作File类的常用内容"></a>三、文件操作File类的常用内容</h2><h3 id="1-判断文件是否存在"><a href="#1-判断文件是否存在" class="headerlink" title="1.判断文件是否存在"></a>1.判断文件是否存在</h3><pre><code class="c#">//传入一个文件路径(string)，返回bool，判断是否存在
+File.Exists(Application.dataPath + &quot;/Main.cs&quot;);
+</code></pre>
+<h3 id="2-创建文件"><a href="#2-创建文件" class="headerlink" title="2.创建文件"></a>2.创建文件</h3><pre><code class="c#">//传入一个文件路径(string)，返回一个文件流类
+FileStream fs = File.Create(Application.dataPath + &quot;/Main.cs&quot;);
+</code></pre>
+<h3 id="3-写入文件"><a href="#3-写入文件" class="headerlink" title="3.写入文件"></a>3.写入文件</h3><pre><code class="c#">byte[] bytes = BitConverter.GetBytes(999);
+//将指定字节数组写入到指定路径的文件中
+//参数一：文件路径(string)  参数二：byte数组
+File.WriteAllBytes(Application.dataPath + &quot;/Main.cs&quot;, bytes);
+
+//将指定的string数组内容，一行行写入到指定路径中
+string[] strs = new string[]&#123; &quot;第一行&quot;,&quot;第二行&quot;,&quot;第三行&quot; &#125;;
+//参数一：文件路径(string)  参数二：字符串string数组，数组中每个字符串为一行
+File.WriteAllLines(Application.dataPath + &quot;/Main.cs&quot;, strs);
+
+//将指定字符串写入指定路径
+//参数一：文件路径(string)  参数二：字符串string，支持转义字符
+File.WriteAllText(Application.dataPath + &quot;/Main.cs&quot;,&quot;字符串内容&quot;);
+</code></pre>
+<h3 id="4-读取文件"><a href="#4-读取文件" class="headerlink" title="4.读取文件"></a>4.读取文件</h3><pre><code class="c#">//读取字节数据
+//传入一个文件路径(string)
+Byte[] bytes = File.ReadAllBytes(Application.dataPath + &quot;/Main.cs&quot;);
+
+//读取所有行信息
+string[] strs = File.ReadAllLines(Application.dataPath + &quot;/Main.cs&quot;);
+
+//读取所有文本信息
+string str = File.ReadAllText(Application.dataPath + &quot;/Main.cs&quot;);
+</code></pre>
+<h3 id="5-删除文件"><a href="#5-删除文件" class="headerlink" title="5.删除文件"></a>5.删除文件</h3><p>注意：如果删除打开的文件会报错</p>
+<pre><code class="c#">File.Delete(Application.dataPath + &quot;/Main.cs&quot;);
+</code></pre>
+<h3 id="6-复制文件"><a href="#6-复制文件" class="headerlink" title="6.复制文件"></a>6.复制文件</h3><pre><code class="c#">//参数一：现有文件 需要是流关闭状态
+//参数二：目标文件
+//参数三：若目标文件存在，需要传入一个bool类型，表示是否要覆盖
+File.Copy(Application.dataPath + &quot;/Main.cs&quot;, Application.dataPath + &quot;/Main1.cs&quot;);
+</code></pre>
+<h3 id="7-文件替换"><a href="#7-文件替换" class="headerlink" title="7.文件替换"></a>7.文件替换</h3><pre><code class="c#">//参数一：用来替换的路径
+//参数二：被替换的路径
+//参数三：备份路径，将被替换的内容放入此处
+File.Replace();
+</code></pre>
+<h3 id="8-以流的形式，打开文件并写入或读取"><a href="#8-以流的形式，打开文件并写入或读取" class="headerlink" title="8.以流的形式，打开文件并写入或读取"></a>8.以流的形式，打开文件并写入或读取</h3><pre><code class="c#">//参数一：路径
+//参数二：打开模式
+//参数三：访问模式
+FileStream fs = File.Open(Application.dataPath + &quot;/Main.cs&quot;, FileMode.Create, FileAccess.Read);
+</code></pre>
+<h1 id="知识点三-文件操作相关——文件流"><a href="#知识点三-文件操作相关——文件流" class="headerlink" title="知识点三 文件操作相关——文件流"></a>知识点三 文件操作相关——文件流</h1><h2 id="一、什么是文件流"><a href="#一、什么是文件流" class="headerlink" title="一、什么是文件流"></a>一、什么是文件流</h2><p>C#中 文件流类 FileStream类<br>它主要作用是用于读写文件的细节<br>而File只能整体读写文件<br>FileStream可以以读写字节的形式处理文件</p>
+<p>简单理解：<br>文件里面存储的数据就是一条数据流（数组或者列表）<br>我们可以通过FileStream一部分一部分的读写数据流<br>比如我们可以先存一个int（4个字节）在存一个bool（1个字节）再存一个string（n个字节）<br>利用FileStream可以以流式逐个读写</p>
+<h2 id="二、FileStream文件流类常用方法"><a href="#二、FileStream文件流类常用方法" class="headerlink" title="二、FileStream文件流类常用方法"></a>二、FileStream文件流类常用方法</h2><p>类名：FileStream<br>命名空间：using System.IO</p>
+<h3 id="1-打开或者创建指定文件"><a href="#1-打开或者创建指定文件" class="headerlink" title="1.打开或者创建指定文件"></a>1.打开或者创建指定文件</h3><h4 id="方法一：new-FileStream"><a href="#方法一：new-FileStream" class="headerlink" title="方法一：new FileStream"></a>方法一：new FileStream</h4><p>参数一：路径<br>参数二：打开模式</p>
+<ul>
+<li>CreateNew：创建新文件，如果文件存在，则报错</li>
+<li>Create：创建文件，如果文件存在，则覆盖</li>
+<li>Open：打开文件，如果文件不存在，则报错</li>
+<li>OpenOrCreate：打开或者创建文件，根据实际情况操作</li>
+<li>Append：若存在文件，则打开并查找文件尾，或者创建一个新文件</li>
+<li>Truncate：打开并清空文件内容</li>
+</ul>
+<p>参数三：访问模式<br>参数四：共享权限</p>
+<ul>
+<li>None：谢绝共享</li>
+<li>Read：允许别的程序读取当前文件</li>
+<li>Write：允许别的程序写入该文件</li>
+<li>ReadWrite：允许别的程序读写该文件</li>
+</ul>
+<pre><code class="c#">FileStream fs = new FileStream(Appllication.dataPath + &quot;/Main.cs&quot;, FileMode.Create, FileAccess.ReadWrite, FileShare.None);
+</code></pre>
+<h4 id="方法二：File-Create"><a href="#方法二：File-Create" class="headerlink" title="方法二：File.Create"></a>方法二：File.Create</h4><p>参数一：路径<br>参数二：缓存大小<br>参数三：描述如何创建或覆盖该文件（不常用）</p>
+<ul>
+<li>Asynchronous：可用于异步读写</li>
+<li>DeleteOnClose：不在使用时，自动删除</li>
+<li>Encrypted：加密</li>
+<li>None：不应用其他选项</li>
+<li>RandomAccess：随机访问文件</li>
+<li>SequentialScan：从头到尾顺序访问文件</li>
+<li>WriteThrough：通过中间缓存直接写入磁盘</li>
+</ul>
+<pre><code class="c#">FileStream fs = File.Create(Appllication.dataPath + &quot;/Main.cs&quot;, 2048, FileOptions.None);
+</code></pre>
+<h4 id="方法三：File-Open"><a href="#方法三：File-Open" class="headerlink" title="方法三：File.Open"></a>方法三：File.Open</h4><p>参数一：路径<br>参数二：打开模式</p>
+<pre><code class="c#">FileStream fs = File.Open(Appllication.dataPath + &quot;/Main.cs&quot;,FileMode.Open);
+</code></pre>
+<h3 id="2-重要属性和方法"><a href="#2-重要属性和方法" class="headerlink" title="2.重要属性和方法"></a>2.重要属性和方法</h3><pre><code class="c#">FileStream fs = File.Open(Appllication.dataPath + &quot;/Main.cs&quot;, FileMode.OpenOrCreate);
+
+//文本字节长度
+fs.Length;
+
+//是否可写
+if(fs.CanRead)
+&#123;
+
+&#125;
+
+//是否可读
+if(fs.CanWrite)
+&#123;
+
+&#125;
+
+//将字节写入文件，当写入后，一定要执行一次（通过文件流写入文件时，会先写入到缓存中，执行这个方法可以保证数据不丢失）
+fs.Flush();
+
+//关闭流 当文件读写完毕后 一定执行
+fs.Close();
+
+//缓存资源销毁回收
+fs.Dispose();
+</code></pre>
+<h3 id="3-写入字节"><a href="#3-写入字节" class="headerlink" title="3.写入字节"></a>3.写入字节</h3><p>方法：Write<br>参数一：写入的字节数组<br>参数二：数组中的开始索引<br>参数三：写入多少个字节</p>
+<pre><code class="c#">byte[] bytes = BitConverter.GetBytes(999);
+fs.Write(bytes,0,4);
+
+//由于字符串不知道具体长度，所以建议用以下方法写入字符串
+//写入字符串时
+bytes = Encoding.UTF8.GetBytes(&quot;哈哈哈&quot;);
+//先写入长度
+int length = bytes.Length;
+fs.Write(BitConverter.GetBytes(length),0,4);
+//再写入字符串具体内容
+fs.Write(bytes,0,length);
+
+//避免数据丢失
+fs.Flush();
+//释放缓存
+fs.Dispose();
+</code></pre>
+<h3 id="4-读取字节"><a href="#4-读取字节" class="headerlink" title="4.读取字节"></a>4.读取字节</h3><h4 id="方法一：挨个读取字节数组"><a href="#方法一：挨个读取字节数组" class="headerlink" title="方法一：挨个读取字节数组"></a>方法一：挨个读取字节数组</h4><pre><code class="c#">//这里每次读取完，索引都会往前移动，下次读取时，索引就从上次结束的地方开始
+//读取第一个整形
+byte[] bytes = new byte[4];
+
+//参数一：用于存储读取的字节数组的容器
+//参数二：容器中开始的位置
+//参数三：读取多少个字节装入容器
+//返回值：当前流索引前进了几个位置
+int index = fs.Read(bytes, 0, 4);   //将fs文件流的byte数组读取到本地
+int i = BitConverter.ToInt32(bytes, 0); //将本地byte数组转成int类型
+
+//读取第二个字符串
+//读取字符串字节数组长度
+index = fs.Read(bytes,0, 4);
+int length = BitConverter.ToInt32(bytes,0);
+//读取第二个字符串
+bytes = new byte[length];
+index = fs.Read(bytes,0,length);
+string str = Encoding.UTF8.GetString(bytes);
+</code></pre>
+<h4 id="方法二：一次性读取再挨个读取"><a href="#方法二：一次性读取再挨个读取" class="headerlink" title="方法二：一次性读取再挨个读取"></a>方法二：一次性读取再挨个读取</h4><pre><code class="c#">//一开始就声明一个和文件字节数组长度一样的容器
+byte[] bytes = new byte[fs.Length];
+fs.Read(bytes,0,(int)fs.Length);
+fs.Dispose();
+//读取整数
+BitConverter.ToInt32(bytes,0);
+//字符串字节数组的长度
+int length = BitConverter.ToInt32(bytes,4);
+//字符串字节长度
+Encoding.UTF8.GetString(bytes,8,length);
+fs.Dispose();
+</code></pre>
+<h2 id="三、更加安全的使用文件流对象"><a href="#三、更加安全的使用文件流对象" class="headerlink" title="三、更加安全的使用文件流对象"></a>三、更加安全的使用文件流对象</h2><p>using关键字重要用法<br>using(申明一个引用对象)<br>{<br>    使用对象<br>}<br>无论发生什么情况，当using语句块结束后<br>会自动调用该对象的销毁方法，避免忘记销毁或关闭流<br>using是一种更安全的使用方法</p>
+<p>注意：<br>目前我们对文件流进行操作，为了文件操作安全，都用using</p>
+<pre><code class="c#">using(FileStream fs = File.Open(Application.persistentDataPath + &quot;/Main.cs&quot;, FileMode.Open, FileAccess.Read))
+&#123;
+    byte[] bytes = new byte[4];
+    int index = fs.Read(bytes,0,4);
+    int i = BitConverter.ToInt32(bytes,0);
+&#125;
+</code></pre>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>通过FileStream读写时一定注意<br>读的规则和写的规则一定要一致<br>存储数据的先后顺序是我们制定的规则<br>只要按照规则读写就能保证数据的正确性<br>存储字符串一定要先存储字符传的字节长度</p>
+<p>存储的代码顺序<br>1.读取文件流FileStream类型<br>2.将变量转换为byte数组<br>3.将byte数组写入到文件流中<br>4.销毁缓存，结束文件流等操作</p>
+<p>读取的代码顺序<br>1.读取文件流FileStream类型<br>2.读取文件流中的byte数组<br>3.将byte数组转换成变量类型<br>4.销毁缓存，结束文件流等操作</p>
+<h1 id="知识点四-文件操作相关——文件夹"><a href="#知识点四-文件操作相关——文件夹" class="headerlink" title="知识点四 文件操作相关——文件夹"></a>知识点四 文件操作相关——文件夹</h1><h2 id="一、文件夹操作是指什么？"><a href="#一、文件夹操作是指什么？" class="headerlink" title="一、文件夹操作是指什么？"></a>一、文件夹操作是指什么？</h2><p>平时我们可以在操作系统的文件管理系统中<br>通过一些操作增删查改文件夹</p>
+<p>我们目前学习通过代码的形式<br>对文件夹进行增删查改的操作</p>
+<h2 id="二、C-提供给我们的文件夹操作公共类"><a href="#二、C-提供给我们的文件夹操作公共类" class="headerlink" title="二、C#提供给我们的文件夹操作公共类"></a>二、C#提供给我们的文件夹操作公共类</h2><p>类名：Directory<br>命名空间：using System.IO</p>
+<h3 id="1-判断文件夹是否存在"><a href="#1-判断文件夹是否存在" class="headerlink" title="1.判断文件夹是否存在"></a>1.判断文件夹是否存在</h3><pre><code class="c#">if(Directory.Exists(Application.dataPath + &quot;/Script&quot;))
+&#123;
+
+&#125;
+</code></pre>
+<h3 id="2-创建文件夹"><a href="#2-创建文件夹" class="headerlink" title="2.创建文件夹"></a>2.创建文件夹</h3><pre><code class="c#">//如果已经有该文件了，就会返回一个信息DirectorInfo类
+Directory.CreateDirectory(Application.dataPath + &quot;/Script&quot;);
+</code></pre>
+<h3 id="3-删除文件夹"><a href="#3-删除文件夹" class="headerlink" title="3.删除文件夹"></a>3.删除文件夹</h3><p>参数一：路径<br>参数二：是否删除非空目录，如果为true，将删除整个目录，如果是false，仅当该目录为空时才可删除，不填默认为false</p>
+<pre><code class="c#">Directory.Delete(Application.dataPath + &quot;/Script&quot;);
+</code></pre>
+<h3 id="4-查找文件夹和文件"><a href="#4-查找文件夹和文件" class="headerlink" title="4.查找文件夹和文件"></a>4.查找文件夹和文件</h3><pre><code class="c#">//得到指定路径下所有文件夹名
+string[] strs = Directory.GetDirectories(Application.dataPath);
+//得到指定路径下所有文件名
+string[] strs = Directory.GetFiles(Application.dataPath);
+</code></pre>
+<h3 id="5-移动文件夹"><a href="#5-移动文件夹" class="headerlink" title="5.移动文件夹"></a>5.移动文件夹</h3><p>参数一：旧文件夹路径<br>参数二：新文件夹路径，若已经存在，则报错<br>注意：会将文件夹中的所有内容都移动到目标文件夹</p>
+<pre><code class="c#">Director.Move(Application.dataPath + &quot;/Script&quot;, Application.dataPath + &quot;/NewScript&quot;);
+</code></pre>
+<h2 id="三、DirectoryInfo和FileInfo"><a href="#三、DirectoryInfo和FileInfo" class="headerlink" title="三、DirectoryInfo和FileInfo"></a>三、DirectoryInfo和FileInfo</h2><h3 id="DirectoryInfo目录信息类"><a href="#DirectoryInfo目录信息类" class="headerlink" title="DirectoryInfo目录信息类"></a>DirectoryInfo目录信息类</h3><p>我们可以通过它获取文件夹的更多信息<br>它主要出现在两个地方<br>1.创建文件夹方法的返回值</p>
+<pre><code class="c#">DirectoryInfo dInfo = Directory.CreateDirectory(Application.dataPath + &quot;/Script&quot;);
+//全路径
+print(dInfo.FullName);
+//文件名
+print(dInfo.Name);
+</code></pre>
+<p>2.查找上级文件夹信息</p>
+<pre><code class="c#">DirectoryInfo dInfo = Directory.GetParent(Application.dataPath + &quot;/Script&quot;);
+//全路径
+print(dInfo.FullName);
+//文件名
+print(dInfo.Name);
+</code></pre>
+<p>3.重要方法<br>得到所有子文件夹的目录信息</p>
+<pre><code class="c#">DirectoryInfo[] dInfos = dInfo.GetDirectories();
+</code></pre>
+<h3 id="FileInfo文件信息类"><a href="#FileInfo文件信息类" class="headerlink" title="FileInfo文件信息类"></a>FileInfo文件信息类</h3><p>我们可以通过DirectoryInfo得到该文件下的所有文件信息</p>
+<pre><code class="c#">FileInfo[] fInfos = dInfo.GetFiles();
+fInfos[1].Name  //文件名
+fInfos[1].FullName  //文件路径名
+fInfos[1].Length    //字节长度
+fInfos[1].Extension //后缀名
+</code></pre>
+<h2 id="四、总结-1"><a href="#四、总结-1" class="headerlink" title="四、总结"></a>四、总结</h2><ul>
+<li><p>Directory提供给我们常用的文件夹相关操作的API<br>只需要熟练使用它即可</p>
+</li>
+<li><p>DirectoryInfo和FileInfo 一般在多文件夹和多文件操作时会用到<br>了解即可</p>
+</li>
+<li><p>他们的用法与Directory和File类的用法大同小异</p>
+</li>
+</ul>
+<h1 id="知识点五-C-类对象的序列化"><a href="#知识点五-C-类对象的序列化" class="headerlink" title="知识点五 C#类对象的序列化"></a>知识点五 C#类对象的序列化</h1><h2 id="一、序列化类对象第一步——申明类对象"><a href="#一、序列化类对象第一步——申明类对象" class="headerlink" title="一、序列化类对象第一步——申明类对象"></a>一、序列化类对象第一步——申明类对象</h2><p>注意：如果要使用C#自带的序列化2进制方法<br>申明类时需要添加[System.Serializable]特性</p>
+<pre><code class="c#">[System.Serializable]
+public class Person
+&#123;
+    public int age = 11;
+    public string name = &quot;聪哥&quot;;
+    public int[] ints = new int[]&#123;1,2,3&#125;;
+    public List&lt;int&gt; list = new List&lt;int&gt;()&#123;4,5,6&#125;;
+    public Dictionary&lt;int, string&gt; dic = new Dictionary&lt;int, string&gt;()&#123; &#123;10, &quot;德罗赞&quot;&#125;,&#123;11, &quot;欧文&quot;&#125;,&#123;77, &quot;东契奇&quot;&#125; &#125;;
+&#125;
+</code></pre>
+<h2 id="二、序列化类对象第二部——将对象进行2进制序列化"><a href="#二、序列化类对象第二部——将对象进行2进制序列化" class="headerlink" title="二、序列化类对象第二部——将对象进行2进制序列化"></a>二、序列化类对象第二部——将对象进行2进制序列化</h2><h3 id="方法一：使用内存流得到2进制字节数组"><a href="#方法一：使用内存流得到2进制字节数组" class="headerlink" title="方法一：使用内存流得到2进制字节数组"></a>方法一：使用内存流得到2进制字节数组</h3><p>主要用于得到字节数组，可以用于网络传输</p>
+<ol>
+<li>内存流对象<br>类名：MemoryStream<br>命名空间：System.IO</li>
+<li>2进制格式化对象<br>类名：BinaryFormatter<br>命名空间：System.Runtime.Serialization.Formatters<br>Binary</li>
+</ol>
+<p>方法：序列化方法 Serialize</p>
+<pre><code class="c#">Person p = new Person();
+
+using(MemoryStream ms = new MemoryStream())
+&#123;
+    //2进制格式化程序
+    BinaryFormatter bf = new BinaryFormatter();
+
+    //参数一：MemoryStream类对象
+    //参数二：任何类对象
+    //序列化方法，将一个object类对象序列化到了MemoryStream内存流中
+    bf.Serialize(ms, p);
+
+    //得到内存流的byte数组
+    byte[] bytes = ms.GetBuffer();
+
+    //存储字节
+    File.WriteAllBytes(Application.dataPath + &quot;/Main.cs&quot;, bytes);
+
+    ms.Dispose();
+&#125;
+</code></pre>
+<h3 id="方法二：使用文件流进行存储"><a href="#方法二：使用文件流进行存储" class="headerlink" title="方法二：使用文件流进行存储"></a>方法二：使用文件流进行存储</h3><p>主要用于存储到文件中</p>
+<pre><code class="c#">using(FileStream fs = new FileStream(Application.dataPath + &quot;/Main.cs&quot;, FileMode.OpenOrCreate, FileAccess.Write))
+&#123;
+    //2进制格式化程序
+    BinaryFormatter bf = new BinaryFormatter();
+
+    //参数一：FileStream类对象
+    //参数二：任何类对象
+    //序列化方法，将一个object类对象序列化成2进制字节数组，存储到了FileStream文件流中
+    bf.Serialize(fs, p);
+
+    fs.Flush();
+    fs.Dispose();
+&#125;
+</code></pre>
+<h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2><ul>
+<li>C#提供的类对象2进制序列化主要类是 BinaryFormatter</li>
+<li>通过其中的序列化方法Serialize()即可进行序列化生成字节数组</li>
+<li>可以使用MemoryStream内存流类，进行序列化，使用GetBuffer()方法得到Byte数组</li>
+<li>也可以使用FileStream文件流类，进行序列化，直接可以存储到本地文件，更加快速</li>
+</ul>
+<h1 id="知识点六-C-类对象的反序列化"><a href="#知识点六-C-类对象的反序列化" class="headerlink" title="知识点六 C#类对象的反序列化"></a>知识点六 C#类对象的反序列化</h1><h2 id="一、反序列化文件中的数据"><a href="#一、反序列化文件中的数据" class="headerlink" title="一、反序列化文件中的数据"></a>一、反序列化文件中的数据</h2><p>主要类<br>FileStream文件流类<br>BinaryFormatter 2进制格式化类<br>主要方法：Deserialize</p>
+<pre><code class="c#">//通过文件流打开2进制数据文件
+using( FileStream fs = File.Open(Application.dataPath + &quot;/Main.cs&quot;, FileMode.Open, FileAccess.Read) )
+&#123;
+    BinaryFormatter bf = new BinaryFormatter();
+    //反序列化，返回一个类
+    Person p = bf.Deserialize(fs) as Person;
+    fs.Close();
+&#125;
+</code></pre>
+<h2 id="二、反序列化网格传输过来的2进制数据"><a href="#二、反序列化网格传输过来的2进制数据" class="headerlink" title="二、反序列化网格传输过来的2进制数据"></a>二、反序列化网格传输过来的2进制数据</h2><p>主要类<br>MemoryStream内存流类<br>BinaryFormatter 2进制格式化类<br>主要方法：Deserialize</p>
+<pre><code class="c#">//模拟网路传输来的字节数组
+byte[] bytes = File.ReadAllBytes(Application.dataPath + &quot;/Main.cs&quot;);
+//申明内存流对象，将字节数组传入进去
+using( MemoryStream ms = new MemoryStream(bytes) )
+&#123;
+    BinaryFormatter bf = new BinaryFormatter();
+    Person p = bf.Deserialize(ms) as Person;
+    ms.Close();
+&#125;
+</code></pre>
+<h1 id="知识点七-C-类对象的2进制数据加密"><a href="#知识点七-C-类对象的2进制数据加密" class="headerlink" title="知识点七 C#类对象的2进制数据加密"></a>知识点七 C#类对象的2进制数据加密</h1><p>当将类对象转换为2进制数据时加密<br>当将2进制数据转换为类对象时解密<br>加密只是提高破解门槛，不能做到完全安全</p>
+<h2 id="一、常用加密算法"><a href="#一、常用加密算法" class="headerlink" title="一、常用加密算法"></a>一、常用加密算法</h2><p>MDS算法<br>SHA1算法<br>HMAC算法<br>AES&#x2F;DES&#x2F;3DES算法<br>等</p>
+<p>有很多别人写好的第三方加密算法库，可直接使用</p>
+<h2 id="二、用简单的异或加密"><a href="#二、用简单的异或加密" class="headerlink" title="二、用简单的异或加密"></a>二、用简单的异或加密</h2><h3 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h3><pre><code class="c#">Person p = new Person();
+byte key = 11;
+using(MemoryStream ms = new MemoryStream())
+&#123;
+    BinaryFormatter bf = new BinaryFormatter();
+    bf.Serialize(ms, p);
+    byte[] bytes = ms.GetBuffer();
+    for(int i = 0; i &lt; bytes.Length; i++)
+    &#123;
+        bytes[i] ^= key;
+    &#125;
+    File.WriteAllBytes(Application.dataPath + &quot;/Main.cs&quot;, bytes);
+&#125;
+</code></pre>
+<h3 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h3><pre><code class="c#">byte[] bytes = File.ReadAllBytes(Application.dataPath + &quot;/Main.cs&quot;);
+for(int i = 0; i &lt; bytes.Length; i++)
+&#123;
+    bytes[i] ^= key;
+&#125;
+</code></pre>
+<h1 id="知识点八-总结"><a href="#知识点八-总结" class="headerlink" title="知识点八 总结"></a>知识点八 总结</h1><h2 id="一、常用公共类"><a href="#一、常用公共类" class="headerlink" title="一、常用公共类"></a>一、常用公共类</h2><ul>
+<li>BitConverter</li>
+<li>Encoding  字符转直接数组</li>
+<li>File</li>
+<li>Directory</li>
+</ul>
+<h2 id="二、声明的类"><a href="#二、声明的类" class="headerlink" title="二、声明的类"></a>二、声明的类</h2><ul>
+<li>FileStream</li>
+<li>MemoryStream</li>
+<li>BinaryFormatter</li>
+</ul>
+<h2 id="三、常用方法"><a href="#三、常用方法" class="headerlink" title="三、常用方法"></a>三、常用方法</h2><ul>
+<li>using()   {  }</li>
+<li>Serialize</li>
+<li>Deserialize</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2024 Paul
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 562px;
+    }
+    .nav.fullscreen {
+        margin-left: -562px;
+    }
+    .nav-left {
+        width: 140px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 512px;
+        }
+        .nav.fullscreen {
+            margin-left: -512px;
+        }
+        .nav-left {
+            width: 120px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 512px;
+            margin-left: -512px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

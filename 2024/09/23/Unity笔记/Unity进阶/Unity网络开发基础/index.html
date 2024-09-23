@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Excel数据读取 | Paul的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Excel数据读取 | Paul的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="知识点一：InputSystem导入InputSystem包导入PackageManager 中导入 Input System 选择开启哪一种输入模式选择 InputSystem 和 老InputManager 的启用情况File &gt; Build Setting &gt; Player Setting &gt; Other &gt; Active Input Handing可以同时启用也可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="InputSystem">
+<meta property="og:url" content="https://paulmmc.github.io/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/InputSystem/index.html">
+<meta property="og:site_name" content="Paul的博客">
+<meta property="og:description" content="知识点一：InputSystem导入InputSystem包导入PackageManager 中导入 Input System 选择开启哪一种输入模式选择 InputSystem 和 老InputManager 的启用情况File &gt; Build Setting &gt; Player Setting &gt; Other &gt; Active Input Handing可以同时启用也可以">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-09-23T10:11:34.000Z">
+<meta property="article:modified_time" content="2024-09-23T10:13:55.392Z">
+<meta property="article:author" content="Paul">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>Paul</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/Paulmmc"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:3095627551@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=3095627551&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(8)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="Unity笔记">
+            <i class="fold iconfont icon-right"></i>
+            Unity笔记
+            <small>(7)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="Unity笔记&lt;---&gt;Unity进阶">
+            
+            Unity进阶
+            <small>(7)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="8">
+<input type="hidden" id="yelog_site_word_count" value="21.6k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/InputSystem/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="InputSystem">InputSystem</span>
+            <span class="post-date" title="2024-09-23 18:11:34">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Excel%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/GameFramework/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E4%B8%AD%E7%9A%84MVC%E6%80%9D%E6%83%B3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96%E4%B9%8B2%E8%BF%9B%E5%88%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E7%BD%91%E7%BB%9C%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/09/21/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2024-09-21 00:02:38">2024/09/21</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Unity笔记/Unity进阶/Unity网络开发基础" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Excel数据读取</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Unity笔记">Unity笔记</a> > 
+            
+            <a  data-rel="Unity笔记&lt;---&gt;Unity进阶">Unity进阶</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-09-23 18:16:16'>2024-09-23 18:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:10.5k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-%E7%BD%91%E7%BB%9C%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">知识点一 网络基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%BD%91%E7%BB%9C"><span class="toc-text">一、网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">网络的作用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%B1%80%E5%9F%9F%E7%BD%91"><span class="toc-text">二、局域网</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A5%E5%A4%AA%E7%BD%91"><span class="toc-text">三、以太网</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91-%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84"><span class="toc-text">以太网 网络拓扑结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%9F%8E%E5%9F%9F%E7%BD%91"><span class="toc-text">四、城域网</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%B9%BF%E5%9F%9F%E7%BD%91"><span class="toc-text">五、广域网</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E4%BA%92%E8%81%94%E7%BD%91%EF%BC%88%E5%9B%A0%E7%89%B9%E7%BD%91%EF%BC%89"><span class="toc-text">六、互联网（因特网）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E4%B8%87%E7%BB%B4%E7%BD%91"><span class="toc-text">七、万维网</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%8C-IP%E3%80%81%E7%AB%AF%E5%8F%A3%E3%80%81Mac%E5%9C%B0%E5%9D%80"><span class="toc-text">知识点二 IP、端口、Mac地址</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81IP%E5%9C%B0%E5%9D%80"><span class="toc-text">一、IP地址</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IP%E5%9C%B0%E5%9D%80%E5%88%86%E7%B1%BB"><span class="toc-text">IP地址分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="toc-text">二、端口号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E5%8F%B7%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99"><span class="toc-text">端口号使用规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81Mac%E5%9C%B0%E5%9D%80"><span class="toc-text">三、Mac地址</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%89-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-text">知识点三 客户端和服务端</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">一、客户端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-text">二、服务端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-text">三、网络游戏开发中的客户端和服务端</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%9B%9B-%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%9E%8B"><span class="toc-text">知识点四 数据通信模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%9E%8B"><span class="toc-text">一、数据通信模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%86%E6%95%A3%E5%BC%8F"><span class="toc-text">1.分散式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%9B%86%E4%B8%AD%E5%BC%8F"><span class="toc-text">2.集中式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%88%86%E5%B8%83%E5%BC%8F"><span class="toc-text">3.分布式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81C-S%E6%A8%A1%E5%9E%8B"><span class="toc-text">二、C&#x2F;S模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81B-S%E6%A8%A1%E5%9E%8B"><span class="toc-text">三、B&#x2F;S模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81P2P%E6%A8%A1%E5%9E%8B"><span class="toc-text">四、P2P模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%80%BB%E7%BB%93"><span class="toc-text">五、总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%94-%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE"><span class="toc-text">知识点五 网络协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="toc-text">一、网络协议概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81OSI%E6%A8%A1%E5%9E%8B"><span class="toc-text">二、OSI模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-OSI%E6%A8%A1%E5%9E%8B%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">1.OSI模型是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-OSI%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%A7%84%E5%88%99"><span class="toc-text">2.OSI模型的规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-OSI%E6%A8%A1%E5%9E%8B%E6%AF%8F%E5%B1%82%E7%9A%84%E8%81%8C%E8%83%BD"><span class="toc-text">3.OSI模型每层的职能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-text">物理层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-text">数据链路层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-text">应用层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E7%A4%BA%E5%B1%82"><span class="toc-text">表示层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%9A%E8%AF%9D%E5%B1%82"><span class="toc-text">会话层</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-OSI%E6%A8%A1%E5%9E%8B%E5%AF%B9%E4%BA%8E%E6%88%91%E4%BB%AC%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-text">4.OSI模型对于我们的意义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81TCP-IP%E5%8D%8F%E8%AE%AE"><span class="toc-text">三、TCP&#x2F;IP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-TCP-IP%E5%8D%8F%E8%AE%AE%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">1.TCP&#x2F;IP协议是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-TCP-IP%E5%8D%8F%E8%AE%AE%E7%9A%84%E8%A7%84%E5%88%99"><span class="toc-text">2.TCP&#x2F;IP协议的规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-TCP-IP%E5%8D%8F%E8%AE%AE%E6%AF%8F%E5%B1%82%E7%9A%84%E8%81%8C%E8%83%BD"><span class="toc-text">3.TCP&#x2F;IP协议每层的职能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82-1"><span class="toc-text">应用层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82-1"><span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82-1"><span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E5%B1%82"><span class="toc-text">网络接口层</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-TCP-IP%E5%8D%8F%E8%AE%AE%E5%AF%B9%E4%BA%8E%E6%88%91%E4%BB%AC%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-text">4.TCP&#x2F;IP协议对于我们的意义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81TCP%E5%92%8CUDP"><span class="toc-text">四、TCP和UDP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-TCP-IP%E4%B8%AD%E7%9A%84%E9%87%8D%E8%A6%81%E5%8D%8F%E8%AE%AE"><span class="toc-text">1.TCP&#x2F;IP中的重要协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82-2"><span class="toc-text">应用层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82-2"><span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82-2"><span class="toc-text">网络层</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-TCP%E5%8D%8F%E8%AE%AE"><span class="toc-text">2.TCP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-text">特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%EF%BC%88%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%E5%BF%85%E9%A1%BB%E7%BB%8F%E5%8E%86%E7%9A%84%E8%BF%87%E7%A8%8B%EF%BC%89"><span class="toc-text">三次握手建立连接（建立连接必须经历的过程）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%88%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5%E5%BF%85%E9%A1%BB%E7%BB%8F%E5%8E%86%E7%9A%84%E8%BF%87%E7%A8%8B%EF%BC%89"><span class="toc-text">四次挥手（断开连接必须经历的过程）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-UDP%E5%8D%8F%E8%AE%AE"><span class="toc-text">3.UDP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9-1"><span class="toc-text">特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E9%9C%80%E8%A6%81%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5"><span class="toc-text">不需要建立连接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-TCP%E5%92%8CUDP%E5%AF%B9%E6%AF%94"><span class="toc-text">4.TCP和UDP对比</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP"><span class="toc-text">TCP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UDP"><span class="toc-text">UDP</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%85%AD-%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F%E9%80%9A%E4%BF%A1%E6%96%B9%E6%A1%88%E6%A6%82%E8%BF%B0"><span class="toc-text">知识点六 网络游戏通信方案概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%BC%B1%E8%81%94%E7%BD%91%E5%92%8C%E5%BC%BA%E8%81%94%E7%BD%91%E6%B8%B8%E6%88%8F"><span class="toc-text">一、弱联网和强联网游戏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%95%BF%E8%BF%9E%E6%8E%A5%E5%92%8C%E7%9F%AD%E8%BF%9E%E6%8E%A5%E6%B8%B8%E6%88%8F"><span class="toc-text">二、长连接和短连接游戏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81Socket%E3%80%81HTTP%E3%80%81FTP"><span class="toc-text">三、Socket、HTTP、FTP</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%83-%E9%80%9A%E4%BF%A1%E5%89%8D%E7%9A%84%E5%BF%85%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="toc-text">知识点七 通信前的必备知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81IP%E5%9C%B0%E5%9D%80%E5%92%8C%E7%AB%AF%E5%8F%A3%E7%B1%BB"><span class="toc-text">一、IP地址和端口类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-IP%E7%B1%BB%E5%92%8C%E7%AB%AF%E5%8F%A3%E7%B1%BB%E7%94%A8%E6%9D%A5%E5%B9%B2%E4%BB%80%E4%B9%88"><span class="toc-text">1.IP类和端口类用来干什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-IPAddress%E7%B1%BB"><span class="toc-text">2.IPAddress类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-IPEndPoint%E7%B1%BB"><span class="toc-text">3.IPEndPoint类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E5%BC%8F"><span class="toc-text">初始化方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="toc-text">二、域名解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%EF%BC%9F"><span class="toc-text">1.什么是域名解析？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F%EF%BC%88DNS%EF%BC%89"><span class="toc-text">域名系统（DNS）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-IPHostEntry%E7%B1%BB"><span class="toc-text">2.IPHostEntry类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Dns%E7%B1%BB"><span class="toc-text">3.Dns类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">常用方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%962%E8%BF%9B%E5%88%B6%E6%95%B0%E6%8D%AE"><span class="toc-text">三、序列化和反序列化2进制数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%A6%82%E8%BF%B0"><span class="toc-text">1.概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81"><span class="toc-text">2.字符编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">3.序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E8%BD%AC%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84"><span class="toc-text">非字符串类型转字节数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E8%BD%AC%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84"><span class="toc-text">字符串类型转字节数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%B0%86%E4%B8%80%E4%B8%AA%E7%B1%BB%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="toc-text">如何将一个类对象转换为二进制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">4.反序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84%E8%BD%AC%E9%9D%9E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-text">字节数组转非字符串类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-text">字节数组转字符串类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%B0%86%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E6%8D%AE%E8%BD%AC%E4%B8%BA%E4%B8%80%E4%B8%AA%E7%B1%BB%E5%AF%B9%E8%B1%A1"><span class="toc-text">如何将二进制数据转为一个类对象</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%85%AB-%E5%A5%97%E6%8E%A5%E5%AD%97Socket"><span class="toc-text">知识点八 套接字Socket</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81Socket%E7%9A%84%E9%87%8D%E8%A6%81API"><span class="toc-text">一、Socket的重要API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Socket%E5%A5%97%E6%8E%A5%E5%AD%97%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">1.Socket套接字的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Socket%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.Socket的类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Socket%E5%A5%97%E6%8E%A5%E5%AD%97%E6%9C%893%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">Socket套接字有3种不同的类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87Socket%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%EF%BC%8C%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E7%94%B3%E6%98%8E%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%A5%97%E6%8E%A5%E5%AD%97"><span class="toc-text">通过Socket的构造函数，我们可以申明不同类型的套接字</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Socket%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7"><span class="toc-text">3.Socket的常用属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Socket%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">4.Socket的常用方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Socket%E2%80%94%E2%80%94TCP%E9%80%9A%E4%BF%A1"><span class="toc-text">二、Socket——TCP通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%A6%82%E8%BF%B0-1"><span class="toc-text">1.概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E6%80%8E%E4%B9%88%E5%86%99"><span class="toc-text">客户端代码怎么写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%80%8E%E4%B9%88%E5%86%99"><span class="toc-text">服务端怎么写</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%90%8C%E6%AD%A5%E6%96%B9%E6%A1%88"><span class="toc-text">2.同步方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-text">服务端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">客户端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94%E4%BD%BF%E7%94%A8%E7%BA%BF%E7%A8%8B%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%9C%8D%E5%8A%A1%E5%A4%9A%E4%B8%AA%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">服务端——使用线程实现服务端服务多个客户端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94%E7%94%A8%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%80%9D%E6%83%B3%E5%AF%B9%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AFSocket%E8%BF%9B%E8%A1%8C%E5%B0%81%E8%A3%85"><span class="toc-text">服务端——用面向对象的思想对服务端的客户端Socket进行封装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E2%80%94%E2%80%94%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%BC%9A%E5%BD%B1%E5%93%8D%E4%B8%BB%E7%BA%BF%E7%A8%8B%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%9A%8F%E6%97%B6%E5%92%8C%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%BF%9B%E8%A1%8C%E9%80%9A%E4%BF%A1"><span class="toc-text">客户端——客户端的网络连接不会影响主线程，可以随时和服务端进行通信</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="知识点一-网络基本概念"><a href="#知识点一-网络基本概念" class="headerlink" title="知识点一 网络基本概念"></a>知识点一 网络基本概念</h1><h2 id="一、网络"><a href="#一、网络" class="headerlink" title="一、网络"></a>一、网络</h2><p>网络可以让设备之间互相通信</p>
+<h3 id="网络的作用"><a href="#网络的作用" class="headerlink" title="网络的作用"></a>网络的作用</h3><p>网络由若干设备和连接这些设备的链路构成<br>各种设备 间接或直接通过介质相连<br>设备之间想要进行信息传递时<br>将想要的数据编码为2机制数值便可以被有效的传输<br>这些数据是以电脉冲的形式进行传输的<br>线缆中的电压是在高低状态之间进行变化<br>二进制中的1是通过产生一个正电压来传输<br>0是通过产生一个负电压来传输</p>
+<h2 id="二、局域网"><a href="#二、局域网" class="headerlink" title="二、局域网"></a>二、局域网</h2><p>是按照范围划分而来的名称<br>指在某一个小区域内由多台设备互联组成的计算机组<br>可以使家里的两台设备组成<br>特点是分布地区范围有限<br>覆盖范围一般是方圆几千米</p>
+<h2 id="三、以太网"><a href="#三、以太网" class="headerlink" title="三、以太网"></a>三、以太网</h2><p>一种计算机局域网技术，目前应用最普遍的局域网技术IEEE组织（电气与电子工程协会）的IEEE 802.3标准制定了以太网的技术标准<br>它规定了包括物理层的连线、电子信号和介质访问层协议的内容</p>
+<p>简单理解：<br>局域网中设备的连接规范，数据的传输规范等规则都是基于以太网的技术标准来完成的<br>所以，以太网就是网络连接的一种规则（协议）</p>
+<h3 id="以太网-网络拓扑结构"><a href="#以太网-网络拓扑结构" class="headerlink" title="以太网 网络拓扑结构"></a>以太网 网络拓扑结构</h3><p>概念：<br>用传输媒体把计算机等各种设备互相连接起来的物理布局，指设备互连过程中构成的几何形状<br>总线型拓扑结构、环形拓扑结构、星形拓扑结构、树形拓扑结构、网状拓扑结构</p>
+<h2 id="四、城域网"><a href="#四、城域网" class="headerlink" title="四、城域网"></a>四、城域网</h2><p>是在一个城市范围内所建立的网络，通常覆盖一个城市，从几十公里到一百公里不等，可能会有多种介质，用户的数量也比局域网多</p>
+<h2 id="五、广域网"><a href="#五、广域网" class="headerlink" title="五、广域网"></a>五、广域网</h2><p>又称外网、公网<br>是连接不同地区局域网或城域网设备通信的远程网，通常跨接很大的物理范围，所覆盖的范围从几十公里到几千公里，它能连接多个地区、城市和国家，形成国际性的远程网络<br>注意：广域网不等同于互联网</p>
+<h2 id="六、互联网（因特网）"><a href="#六、互联网（因特网）" class="headerlink" title="六、互联网（因特网）"></a>六、互联网（因特网）</h2><p>互联网，如果作为名词理解<br>互相联网，让各种设备处于同一网络环境下<br>只要设备互相连接网络了，那么设备之间就可以进行通信<br>它一般泛指彼此能够进行通信的设备组成的网络<br>但是目前我们提到的互联网，大部分时候都是指代因特网<br>可以把互联网理解为因特网的代称</p>
+<p>因特网：<br>又称国际网络，指的是网络与网络之间所串连成的庞大网络，这些网络以一组通用的协议（规则）相连，形成逻辑上的单一巨大国际网络。<br>互联网目前已经把200多个国家和地区的大部分设备连接起来，形成了一个遍布全世界的网络。所以在一定程度上，也可以说，互联网等同于广域网，广域网包含了互联网。<br>互联网使用的技术，在广域网上一定有，但是某些广域网的技术，互联网上不一定有，比如军用的广域网</p>
+<p>因特网本质：<br>人为定义的一系列协议（规则）<br>总称“互联网协议”</p>
+<p>主要功能：<br>定义计算机如何接入互联网，以及接入互联网的计算机的通信标准<br>也就是为我们的设备定义连入标准，并且为传输的2进制数据定义一些传输规则<br>只要遵守这些规则来进行网络连接和数据传输<br>我们的各种设备就可以通过网络进行通讯，进行信息的交换</p>
+<p>简单理解：<br>是国际上最大的互联网，当我们提到互联网时一般代指因特网<br>它是当前全球最大的、开放的、有众多网络互相连接而成的特定的计算机网络<br>它采用TCP&#x2F;IP协议簇作为通信的规则<br>提供了包括万维网（WWW）、文件传输（FTP）、电子邮件（E-mail）、远程登录（Telnet）等等服务<br>只要我们的设备和应用程序遵守这套因特网的互联网规则，那么我们就可以在这个庞大的网络体系中畅游</p>
+<h2 id="七、万维网"><a href="#七、万维网" class="headerlink" title="七、万维网"></a>七、万维网</h2><p>万维网（WWW、Web、3W）<br>它是存储在因特网的计算机中，数量巨大的文档（页面）的集合<br>它是无数个网络站点和网页的集合，是构成因特网的主要部分<br>我们平时用浏览器看到的内容就属于万维网，它们本质上就是一个个的文档（网页）<br>如果把因特网看做是网络的基础，那么万维网就可以被看做是对因特网的应用，是利用因特网规则的一种信息传递和呈现的手段，可以认为万维网就是网站和页面的统称。</p>
+<h1 id="知识点二-IP、端口、Mac地址"><a href="#知识点二-IP、端口、Mac地址" class="headerlink" title="知识点二 IP、端口、Mac地址"></a>知识点二 IP、端口、Mac地址</h1><p>当我们传递信息时，如何准确的将信息传递到目标设备？</p>
+<h2 id="一、IP地址"><a href="#一、IP地址" class="headerlink" title="一、IP地址"></a>一、IP地址</h2><p>指互联网协议地址，又译为国际协议地址<br>IP地址是IP协议提供的一种统一的地址格式，IP地址是设备在网络中的具体地址<br>IP地址就像是设备的家庭住址一样，被用来给互联网上的电脑一个编号，用于定位</p>
+<h3 id="IP地址分类"><a href="#IP地址分类" class="headerlink" title="IP地址分类"></a>IP地址分类</h3><p>按协议分类：</p>
+<ul>
+<li>IPV4（常用）</li>
+<li>IPV6 （解决IPV4有限性而设计）<br>按使用范围分类：</li>
+<li>公网IP（用于连接外网，想要远程进行通信）</li>
+<li>私网IP（局域网IP，不能上网，只用于局域网内通信）</li>
+</ul>
+<h2 id="二、端口号"><a href="#二、端口号" class="headerlink" title="二、端口号"></a>二、端口号</h2><p>通过IP地址可以在网络上找到一台设备<br>但我们想要和设备通信，本质上是和运行在设备上的某一个应用程序进行通信<br>而一个设备上可能运行n个应用程序，而端口号就是用来区分这些应用程序的<br>让我们可以明确到底是和哪一个应用程序进行通信<br>一台设备上不同的应用程序想要进行通信就必须对应一个唯一的端口号</p>
+<h3 id="端口号使用规则"><a href="#端口号使用规则" class="headerlink" title="端口号使用规则"></a>端口号使用规则</h3><p>端口号的取值范围是0~65535<br>我们在进行网络程序开发时，需要自己为应用程序设置端口号<br>端口号不能和其他应用程序相同，避免产生冲突<br>一般选择1024以上的端口进行使用<br>1024以下的一般由IANA互联网数字分配机构管理</p>
+<h2 id="三、Mac地址"><a href="#三、Mac地址" class="headerlink" title="三、Mac地址"></a>三、Mac地址</h2><p>媒体存取控制地址，也称局域网地址、Mac地址、以太网地址、物理地址</p>
+<p>它是用来确认网络设备位置的地址，在OSI模型中，第三层网络层负责IP地址，第二层数据链路层则负责Mac地址，Mac地址是用于在网络中唯一标识一个网卡的，一台设备可以有多个网卡，每个网卡都会有一个唯一的Mac地址</p>
+<p>在早期的网络中，只用Mac地址便可以实现两台设备间的通信，但随着设备的增多，Mac地址虽然具备唯一性但是并不携带位置信息，如果通过广播方式查找设备，会给网络造成巨大负担。所以才有了IP地址来定位网络中的设备</p>
+<p>Mac地址就像是身份证号，IP地址像住址<br>Mac地址是物理层面上通信的基础，IP地址是逻辑层面上通信的基础<br>设备进行网络通信的唯一标识，设备真正进行物理信息传输用来定位的标识</p>
+<h1 id="知识点三-客户端和服务端"><a href="#知识点三-客户端和服务端" class="headerlink" title="知识点三 客户端和服务端"></a>知识点三 客户端和服务端</h1><h2 id="一、客户端"><a href="#一、客户端" class="headerlink" title="一、客户端"></a>一、客户端</h2><p>用户直接操作的内容，比如游戏<br>、聊天软件<br>我们在设备上使用的所有软件和应用几乎都是客户端程序</p>
+<h2 id="二、服务端"><a href="#二、服务端" class="headerlink" title="二、服务端"></a>二、服务端</h2><p>为客户端提供服务设备，一般是一台性能较好的计算机<br>比如，某游戏服务端只为该游戏的客户端提供服务（消息转发、信息保存）<br>服务端应用程序在远端一台计算机上，客户端通过网络和服务端进行通讯服务，服务端为客户端提供各种服务</p>
+<h2 id="三、网络游戏开发中的客户端和服务端"><a href="#三、网络游戏开发中的客户端和服务端" class="headerlink" title="三、网络游戏开发中的客户端和服务端"></a>三、网络游戏开发中的客户端和服务端</h2><p>单机游戏，只有客户端，没有服务端，不存在玩家之间的交互，数据存储在本地</p>
+<p>网络游戏：有客户端和服务端，玩家之间可以进行交互（信息同步、信息交换），静态数据存储在客户端，动态数据存储在服务端</p>
+<p>网络游戏的客户端：Unity、UE等游戏引擎开发的游戏，都属于客户端应用程序。主要功能是游戏玩法、UI交互、美术表现、本地数据保存等</p>
+<p>网络游戏的服务端：C++、Java等，在远端计算机上为游戏客户端提供服务的软件都属于服务端应用程序，它主要功能是消息转发、数据保存、逻辑处理等</p>
+<h1 id="知识点四-数据通信模型"><a href="#知识点四-数据通信模型" class="headerlink" title="知识点四 数据通信模型"></a>知识点四 数据通信模型</h1><h2 id="一、数据通信模型"><a href="#一、数据通信模型" class="headerlink" title="一、数据通信模型"></a>一、数据通信模型</h2><p>在早期的计算机网络中，为了有效利用计算机，一般将数据通信模型分为<br>分散式<br>集中式<br>分布式<br>这三种模式决定了数据在网络环境中的管理模式</p>
+<h3 id="1-分散式"><a href="#1-分散式" class="headerlink" title="1.分散式"></a>1.分散式</h3><p>用户只负责管理自己的计算机系统，各自独立的系统之间没有资源或信息的交换和共享。就类似一台没有联网的设备<br>这种模式早就被淘汰了</p>
+<h3 id="2-集中式"><a href="#2-集中式" class="headerlink" title="2.集中式"></a>2.集中式</h3><p>用一台主计算机保存一个组织的全部数据，而用户则通过设备连接到这台计算机系统并和它通信，从而达到访问数据的目的<br>方便数据共享、消除了数据的溶于和不一致性<br>但若主机出现故障所有系统全部瘫痪</p>
+<h3 id="3-分布式"><a href="#3-分布式" class="headerlink" title="3.分布式"></a>3.分布式</h3><p>分布式和集中式的混合，是分散式水平交互和集中式的垂直控制相结合的一种模式<br>比如，企业管理系统，所有数据用专用的数据库集中存储，属于集中式<br>而对数据的处理则由各部门的软件分别控制，属于分布式</p>
+<h2 id="二、C-S模型"><a href="#二、C-S模型" class="headerlink" title="二、C&#x2F;S模型"></a>二、C&#x2F;S模型</h2><p>Client&#x2F;Server模型<br>客户端和服务端模式<br>它是目前大多数网络通信采用的模型</p>
+<h2 id="三、B-S模型"><a href="#三、B-S模型" class="headerlink" title="三、B&#x2F;S模型"></a>三、B&#x2F;S模型</h2><p>Browse&#x2F;Server模型<br>一种基于Web的通信模型，使用HTTP超文本传送协议通信<br>B&#x2F;S是一种特殊的C&#x2F;S模型，特殊之处就是客户端不需要我们自己开发<br>一般是浏览器</p>
+<p>B&#x2F;S模型的优点是单台计算机可以访问任何一个Web服务器<br>简单说就是Web服务端可以随意变化，但客户端是通用的<br>我们不需要针对不同的服务端专门提供客户端应用程序</p>
+<h2 id="四、P2P模型"><a href="#四、P2P模型" class="headerlink" title="四、P2P模型"></a>四、P2P模型</h2><p>Peer-to-Peer模型<br>每个联网的设备同时运行一个应用程序的客户端和服务端部分<br>也就是说一个应用程序同时作为客户端和服务端<br>优点是通讯方便，成本低<br>可靠性不如C&#x2F;S模型<br>比如，BT下载（下载别人下载好的部分）</p>
+<h2 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h2><p>对于网络游戏<br>我们采用C&#x2F;S模型进行前后端开发<br>在服务器布局上，采用分布式的形式管理<br>比如服务端的用户数据集中式管理<br>玩家的数据都存储在数据库应用中<br>服务端应用程序使用分布式进行管理</p>
+<h1 id="知识点五-网络协议"><a href="#知识点五-网络协议" class="headerlink" title="知识点五 网络协议"></a>知识点五 网络协议</h1><h2 id="一、网络协议概述"><a href="#一、网络协议概述" class="headerlink" title="一、网络协议概述"></a>一、网络协议概述</h2><p>网络协议是计算机网络中进行数据交换而建立的规则、标准或约定的集合<br>指的是计算机网路中互相通信的对等实体之间交换信息时所必须遵守的规则的集合<br>想要在网络环境中进行通信，网络协议是必须遵守的规则</p>
+<p>OSI模型是网络通信的基本规则<br>TCP&#x2F;IP协议是基于OSI模型的工业实现</p>
+<p>简单来讲<br>OSI模型是国际组织定义的一套理论基础，主要用于定义网络通信的规则<br>TCP&#x2F;IP协议是基于这套理论基础真正实现的通信规则</p>
+<h2 id="二、OSI模型"><a href="#二、OSI模型" class="headerlink" title="二、OSI模型"></a>二、OSI模型</h2><h3 id="1-OSI模型是什么"><a href="#1-OSI模型是什么" class="headerlink" title="1.OSI模型是什么"></a>1.OSI模型是什么</h3><p>开发式系统互联通信参考模型<br>国际标准化组织提出，是一个试图使各种设备在世界范围内互联为网络的标准框架<br>不同公司按照统一标准来控制网络互联通信<br>这样各设备间就能达到真正的互联通信了<br>简单来讲，OSI模型是人为定义的一个标准，它制定了设备之间相互连接相互通信的标准，各公司按照这个标准设计的规则，就可以让不同设备利用互联网进行互联通信</p>
+<h3 id="2-OSI模型的规则"><a href="#2-OSI模型的规则" class="headerlink" title="2.OSI模型的规则"></a>2.OSI模型的规则</h3><p>由于互联网协议很庞大复杂，所以OSI模型采用了分而治之的设计方法，把网络功能划分为不同的多个模块，以分层的形式有机地组合在一起<br>OSI模型将复杂的互联网实现，分成了好几层<br>每一个层都有自己的功能<br>每一层都要靠下一层的支持<br>用户接触到的都只是最上面的一层，感受不到下面层级的复杂性</p>
+<h3 id="3-OSI模型每层的职能"><a href="#3-OSI模型每层的职能" class="headerlink" title="3.OSI模型每层的职能"></a>3.OSI模型每层的职能</h3><p>OSI模型把互联通信的过程抽象成了七个层级：应用层、表示层、会话层、传输层、网络层、数据链路层、物理层<br>两台计算机在互联通信时，必经的七个步骤</p>
+<h4 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h4><p>把电脑连接起来的物理手段，比如光缆，规定了网络的电器特性</p>
+<h4 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h4><p>在物理层上方确定0和1的分组方式，并且明确信息是发送给哪台计算机的网卡的。<br>想要发送的信息构成一个数据包，每个数据包分为两个部分：表头Head+数据Data</p>
+<h4 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h4><p>IP选址、路由选择，它会在上一层的数据基础上添加表头，包含：IP地址、版本、长度等信息</p>
+<h4 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h4><p>建立、管理和维护端口到端口的通信。会在上一层的数据基础上添加表头，包含：发送方接受方的端口信息、协议信息等</p>
+<h4 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h4><p>最上层。为应用程序提供服务。我们程序员主要开发也是这一层，它会在原始数据的基础上添加标头，包含：协议信息等</p>
+<h4 id="表示层"><a href="#表示层" class="headerlink" title="表示层"></a>表示层</h4><p>不同操作系统的应用层代码和数据可能规范不一样，为了让信息可以在各操作系统和设备中通用，表示层做的事情就很重要了<br>表示层会把数据转换为能与各系统格式兼容并且适合传输的格式，会把数据相关信息翻译成国际通用规则</p>
+<h4 id="会话层"><a href="#会话层" class="headerlink" title="会话层"></a>会话层</h4><p>建立、管理和维护会话<br>比如是否发送完毕、对方是否收到、是否断开连接</p>
+<h3 id="4-OSI模型对于我们的意义"><a href="#4-OSI模型对于我们的意义" class="headerlink" title="4.OSI模型对于我们的意义"></a>4.OSI模型对于我们的意义</h3><p>大概了解每一层定义的规则是什么即可，实际开发中是接触不到大部分层级内容的</p>
+<h2 id="三、TCP-IP协议"><a href="#三、TCP-IP协议" class="headerlink" title="三、TCP&#x2F;IP协议"></a>三、TCP&#x2F;IP协议</h2><h3 id="1-TCP-IP协议是什么"><a href="#1-TCP-IP协议是什么" class="headerlink" title="1.TCP&#x2F;IP协议是什么"></a>1.TCP&#x2F;IP协议是什么</h3><p>TCP&#x2F;IP协议指的是FTP、SMIP、TCP、UDP、IP等协议构成的协议簇<br>他们定义了消息在网络间进行传输的规则，是供已连接互联网的设备进行通信的通信规则<br>比如 传输文件时使用FTP协议、传输电子邮件时使用SMTP协议、定位远端计算机位置时使用IP互联网协议</p>
+<h3 id="2-TCP-IP协议的规则"><a href="#2-TCP-IP协议的规则" class="headerlink" title="2.TCP&#x2F;IP协议的规则"></a>2.TCP&#x2F;IP协议的规则</h3><p>是OSI模型概念的具体实现</p>
+<h3 id="3-TCP-IP协议每层的职能"><a href="#3-TCP-IP协议每层的职能" class="headerlink" title="3.TCP&#x2F;IP协议每层的职能"></a>3.TCP&#x2F;IP协议每层的职能</h3><h4 id="应用层-1"><a href="#应用层-1" class="headerlink" title="应用层"></a>应用层</h4><p>根据需求选择传输协议<br>格式化数据、加密解密<br>建立、管理和维护会话<br>加应用层头，决定传输信息的类型</p>
+<h4 id="传输层-1"><a href="#传输层-1" class="headerlink" title="传输层"></a>传输层</h4><p>建立、管理和维护端到端的连接<br>加传输层头，决定传输信息的规则以及端口</p>
+<h4 id="网络层-1"><a href="#网络层-1" class="headerlink" title="网络层"></a>网络层</h4><p>IP选址及路由选择<br>加网络层头，决定传输线路IP</p>
+<h4 id="网络接口层"><a href="#网络接口层" class="headerlink" title="网络接口层"></a>网络接口层</h4><p>提供一条准确无误的传输线路<br>传输数据的物理媒介<br>加一个头和一个尾，产生帧（消息分段），决定最终路线</p>
+<h3 id="4-TCP-IP协议对于我们的意义"><a href="#4-TCP-IP协议对于我们的意义" class="headerlink" title="4.TCP&#x2F;IP协议对于我们的意义"></a>4.TCP&#x2F;IP协议对于我们的意义</h3><p>TCP&#x2F;IP协议是基于OSI模型的具体实现，是互联网中设备间通信的基本规则<br>各种语言（C#、C++、Java等）都有对应的网络通信类对TCP&#x2F;IPx协议进行封装，我们只需要使用对应的类和方法进行网络连接、网络通信就可以完成对应的功能</p>
+<h2 id="四、TCP和UDP"><a href="#四、TCP和UDP" class="headerlink" title="四、TCP和UDP"></a>四、TCP和UDP</h2><h3 id="1-TCP-IP中的重要协议"><a href="#1-TCP-IP中的重要协议" class="headerlink" title="1.TCP&#x2F;IP中的重要协议"></a>1.TCP&#x2F;IP中的重要协议</h3><h4 id="应用层-2"><a href="#应用层-2" class="headerlink" title="应用层"></a>应用层</h4><p>HTTP：超文本传输协议<br>HTTPS：加密的超文本传输协议<br>FTP：文件传输协议<br>DNS：域名系统</p>
+<h4 id="传输层-2"><a href="#传输层-2" class="headerlink" title="传输层"></a>传输层</h4><p>TCP：传输控制协议<br>UDP：用户数据报协议</p>
+<h4 id="网络层-2"><a href="#网络层-2" class="headerlink" title="网络层"></a>网络层</h4><p>IP协议</p>
+<h3 id="2-TCP协议"><a href="#2-TCP协议" class="headerlink" title="2.TCP协议"></a>2.TCP协议</h3><p>传输控制协议<br>面向连接的协议，在收发数据前，必须和对方建立可靠的连接，并且在消息传送过程中是有顺序的，不会丢包的，如果某一条消息在传送过程中失败了，就会重新发送消息，直到成功</p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>面向连接————两者之间必须建立可靠的连接</li>
+<li>一对一————只能是一对一的建立连接</li>
+<li>可靠性高————消息传送失败会重新发送，不允许丢包</li>
+<li>有序的————是按照顺序进行消息发送的</li>
+</ol>
+<h4 id="三次握手建立连接（建立连接必须经历的过程）"><a href="#三次握手建立连接（建立连接必须经历的过程）" class="headerlink" title="三次握手建立连接（建立连接必须经历的过程）"></a>三次握手建立连接（建立连接必须经历的过程）</h4><ol>
+<li>第一次握手（C &gt; S）<br>TCP链接请求，告诉服务器我要和你建立连接</li>
+<li>第二次握手（S &gt; C）<br>TCP授予连接，告诉客户端可以了，来连接把吧</li>
+<li>第三次握手（C &gt; S）<br>TCP确认连接，告诉服务器，来连接</li>
+</ol>
+<h4 id="四次挥手（断开连接必须经历的过程）"><a href="#四次挥手（断开连接必须经历的过程）" class="headerlink" title="四次挥手（断开连接必须经历的过程）"></a>四次挥手（断开连接必须经历的过程）</h4><ol>
+<li>第一次挥手（C &gt; S）<br>告诉服务器我数据发完了，你如果还有消息就赶紧发完</li>
+<li>第二次挥手（S &gt; C）<br>告诉客户端我知道了，请继续等待我的消息</li>
+<li>第三次挥手（S &gt; C）<br>告诉客户端我发完了，你可以正式断开连接了</li>
+<li>第四次挥手（C &gt; S）<br>告诉服务器我等一会如果没有收到你回复我就断开</li>
+</ol>
+<h3 id="3-UDP协议"><a href="#3-UDP协议" class="headerlink" title="3.UDP协议"></a>3.UDP协议</h3><p>用户数据报协议<br>是一种无需建立连接就可以发送封装的IP数据包的方法<br>提供面向事务的简单不可靠信息传送服务</p>
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>无连接————两者之间无需建立连接</li>
+<li>可靠性低————消息可能在传送过程中丢失，丢失后不会重发</li>
+<li>传输效率高————由于它的可靠性低并且也无需建立连接，所以传输效率上更高一些</li>
+<li>n对n————TCP只能一对一连接进行消息传递，而UDP由于无连接所以可以n对n</li>
+</ol>
+<h4 id="不需要建立连接"><a href="#不需要建立连接" class="headerlink" title="不需要建立连接"></a>不需要建立连接</h4><p>UDP协议发送信息时，会直接把数据扔到网络上，造成了UDP的不可靠性<br>信息在这个传递过程中是有可能丢失的<br>虽然UDP是一个不靠谱的协议，但是由于它不需要建立连接<br>也不会像TCP协议那样携带更多信息，所以它具有更好的传输效率<br>它具有资源消耗小、处理速度快的特点</p>
+<h3 id="4-TCP和UDP对比"><a href="#4-TCP和UDP对比" class="headerlink" title="4.TCP和UDP对比"></a>4.TCP和UDP对比</h3><h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><ol>
+<li>连接方面：面向连接（比如打电话要先拨号）</li>
+<li>安全方面：无差错、不丢失、不重复、按序到达</li>
+<li>传输效率：相对底</li>
+<li>连接对象：一对一</li>
+</ol>
+<h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4><ol>
+<li>连接方面：无连接，发送数据前不需要建立连接</li>
+<li>安全方面：只会尽力交付，不保证可靠性</li>
+<li>传输效率：相对较高</li>
+<li>连接对象：一对一、一对多、多对多、多对一</li>
+</ol>
+<h1 id="知识点六-网络游戏通信方案概述"><a href="#知识点六-网络游戏通信方案概述" class="headerlink" title="知识点六 网络游戏通信方案概述"></a>知识点六 网络游戏通信方案概述</h1><h2 id="一、弱联网和强联网游戏"><a href="#一、弱联网和强联网游戏" class="headerlink" title="一、弱联网和强联网游戏"></a>一、弱联网和强联网游戏</h2><ol>
+<li>弱联网游戏<br>这种游戏不会频繁的进行数据通信，客户端和服务端之间每次连接只处理一次请求，服务端处理完客户端的请求后返回数据后就断开连接了</li>
+<li>强联网游戏<br>这种游戏会频繁的和服务端进行通信，会一直和服务端保持连接状态，不停的和服务器之间交换数据</li>
+</ol>
+<h2 id="二、长连接和短连接游戏"><a href="#二、长连接和短连接游戏" class="headerlink" title="二、长连接和短连接游戏"></a>二、长连接和短连接游戏</h2><ol>
+<li>短连接游戏<br>需要传输数据时，建立连接，传输数据，获得响应，断开连接<br>通信特点：需要通信时再连接，通信完毕断开连接<br>通信方式：HTTP超文本传输协议、HTTPS安全的超文本传输协议（本质是TCP协议）</li>
+<li>长连接游戏<br>不管是否需要传输数据，客户端与服务器一直处于连接状态，除非一端主动断开，或出现意外情况<br>通信特点：连接一直建立，可以实时的传输数据<br>通信方式：TCP传输控制协议 或 UDP用户数据报协议</li>
+</ol>
+<h2 id="三、Socket、HTTP、FTP"><a href="#三、Socket、HTTP、FTP" class="headerlink" title="三、Socket、HTTP、FTP"></a>三、Socket、HTTP、FTP</h2><ol>
+<li>Socket<br>网络套接字，是对网络中不同主机上的应用进程之间进行双向通信的端点的抽象，一个套接字就是网络上进程通信的一段，提供了应用层进程利用网络协议交换数据的机制，主要用于制作长连接游戏</li>
+<li>Http&#x2F;Https<br>（安全的）超文本传输协议，是一个简单的请求-响应协议，它通常运行在TCP协议之上，它指定了客户端可能发生给服务端什么样的信息以及得到什么样的回应<br>主要用于制作短连接游戏（弱联网游戏），也可以用来进行资源下载</li>
+<li>FTP<br>文本传输协议，是用于网络上进行文本传输的一套标准协议，可以利用它来进行网络上资源的下载和上传。它也是基于TCP传输的，面向连接，为文本传输提供可靠保证</li>
+</ol>
+<h1 id="知识点七-通信前的必备知识"><a href="#知识点七-通信前的必备知识" class="headerlink" title="知识点七 通信前的必备知识"></a>知识点七 通信前的必备知识</h1><h2 id="一、IP地址和端口类"><a href="#一、IP地址和端口类" class="headerlink" title="一、IP地址和端口类"></a>一、IP地址和端口类</h2><h3 id="1-IP类和端口类用来干什么"><a href="#1-IP类和端口类用来干什么" class="headerlink" title="1.IP类和端口类用来干什么"></a>1.IP类和端口类用来干什么</h3><p>IP和端口号是定位网络中设备的<br>C#提供了对应的IP和端口号相关的类，来声明对应的信息</p>
+<h3 id="2-IPAddress类"><a href="#2-IPAddress类" class="headerlink" title="2.IPAddress类"></a>2.IPAddress类</h3><p>命名空间：System.Net;<br>类名：IPAddress<br>初始化IP信息的方式：</p>
+<ol>
+<li>用byte数组进行初始化</li>
+</ol>
+<pre><code class="c#">byte[] ipAddress = new byte[]&#123;118, 102, 111,11&#125;;
+IPAddress ip1 = new IpAddress(ipAddress);
+</code></pre>
+<ol start="2">
+<li>用long长整型进行初始化</li>
+</ol>
+<pre><code class="c#">//4字节对应的长整型，一般不建议使用，以下使用16进制的方式来转换
+IPAddress ip2 = new IPAddress(0x76666F0B);
+</code></pre>
+<ol start="3">
+<li>推荐使用的方式 使用字符转换</li>
+</ol>
+<pre><code class="c#">IPAddress ip3 = IPAddress.Parse(&quot;118.102.111.11&quot;);
+</code></pre>
+<p>特殊的IP地址：127.0.0.1 （代表本机的地址）<br>一些静态成员：IPAddress.IPv6Any （返回本机可用的IPv6地址）</p>
+<h3 id="3-IPEndPoint类"><a href="#3-IPEndPoint类" class="headerlink" title="3.IPEndPoint类"></a>3.IPEndPoint类</h3><p>命名空间：System.Net<br>类名：IPEndPoint<br>IPEndPoint类将网络端点表示为IP地址和端口号，表现为IP地址和端口号的组合</p>
+<h4 id="初始化方式"><a href="#初始化方式" class="headerlink" title="初始化方式"></a>初始化方式</h4><pre><code class="c#">//参数一：Long ip地址
+//参数二：int 端口号
+IPEndPoint ipPoint = new IPEndPoint(0x76666F0B, 8080);
+//参数一：IPAddress类
+//参数二：int 端口号
+IPEndPoint ipPoint2 = new IPEndPoint(IPAddress.Parse(&quot;118.102.111.11&quot;), 8080);
+</code></pre>
+<h2 id="二、域名解析"><a href="#二、域名解析" class="headerlink" title="二、域名解析"></a>二、域名解析</h2><h3 id="1-什么是域名解析？"><a href="#1-什么是域名解析？" class="headerlink" title="1.什么是域名解析？"></a>1.什么是域名解析？</h3><p>IP地址是网络上表示站点的数字地址，但IP地址比较难记忆<br>为了方便记忆，使用域名来代替IP地址标识站点<br>域名解析就是将域名解析为IP地址的过程，域名的解析工作由DNS服务器完成<br>我们在进行通信时，有时会有需求通过域名获取IP</p>
+<h4 id="域名系统（DNS）"><a href="#域名系统（DNS）" class="headerlink" title="域名系统（DNS）"></a>域名系统（DNS）</h4><p>它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网<br>是因特网上解决网上机器命名的一种系统，因为IP地址记忆不方便，就采用了域名系统来管理名字和IP的对应关系</p>
+<h3 id="2-IPHostEntry类"><a href="#2-IPHostEntry类" class="headerlink" title="2.IPHostEntry类"></a>2.IPHostEntry类</h3><p>命名空间：System.Net<br>类名：IPHostEntry<br>主要作用：域名解析后的返回值，可以通过该对象获取IP地址、主机名等信息<br>该类不会自己声明，都是作为某些方法的返回值返回信息，我们主要通过该类对象获取返回的信息</p>
+<ol>
+<li>获取关联IP        成员变量：AddressList</li>
+<li>获取主机别名列表      成员变量：Aliases</li>
+<li>获取DNS名称       成员变量：HostName</li>
+</ol>
+<h3 id="3-Dns类"><a href="#3-Dns类" class="headerlink" title="3.Dns类"></a>3.Dns类</h3><p>命名空间：System.Net<br>类名：Dns<br>主要作用：Dns是一个静态类，提供了很多静态方法，可以使用它来根据域名获取IP地址</p>
+<h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><pre><code class="c#">//获取本地系统的主机名
+Dns.GetHostName();
+//获取指定域名的IP地址
+//根据域名获取
+//同步获取，注意：由于获取远程主机信息是需要进行网络通信，所以可能会阻塞主线程
+IPHostEntry entry = Dns.GetHostEntry(&quot;www.baidu.com&quot;);
+for(int i = 0; i &lt; entry.AddressList.Length; i++)
+&#123;
+    //获得IP地址
+    print(entry.AddressList[i]);
+&#125;
+for(int i = 0; i &lt; entry.Aliases.Length; i++)
+&#123;
+    //获得主机别名
+    print(entry.Aliases[i]);
+&#125;
+//获得DNS服务器名
+print(entry.HostName[i]);
+
+//异步获取
+private async void GetHostEntry()
+&#123;
+    Task&lt;IPHostEntry&gt; task = Dns.GetHostEntryAsync(&quot;www.baidu.com&quot;);
+    await task;
+    for(int i = 0; i &lt; task.Result.AddressList.Length; i++)
+    &#123;
+        //获得IP地址
+        print(task.Result.AddressList[i]);
+    &#125;
+    for(int i = 0; i &lt; task.Result.Aliases.Length; i++)
+    &#123;
+        //获得主机别名
+        print(task.Result.Aliases[i]);
+    &#125;
+    //获得DNS服务器名
+    print(task.Result.HostName[i]);
+&#125;
+</code></pre>
+<h2 id="三、序列化和反序列化2进制数据"><a href="#三、序列化和反序列化2进制数据" class="headerlink" title="三、序列化和反序列化2进制数据"></a>三、序列化和反序列化2进制数据</h2><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h3><ol>
+<li>网络通信中传输的数据<br>我们将想要传递的类对象信息序列化为2进制数据（一般为byte字节数组）<br>再将该2进制数据通过网络传输给远端设备<br>远端设备获取到该2进制数据后再将其反序列化为对应的类对象</li>
+<li>数据持久化2进制知识点<br>BitConverter类：主要用于处理各类型和字节数组间的相互转换<br>Encoding类：主要用于处理字符串类型和字节数组间的相互转换<br>加密相关：了解2进制数据加密的常用手段和思路<br>File类：文件操作类，用于操作文件<br>FileStream类：文件流类，以流的形式进行文件存储读取操作<br>MemoryStrem类：内存流对象<br>BinaryFormatter：2进制格式化对象</li>
+</ol>
+<h3 id="2-字符编码"><a href="#2-字符编码" class="headerlink" title="2.字符编码"></a>2.字符编码</h3><p>计算机里只能存数字（2进制），如果文字字符想要进行存储的话，就需要把对应的文字字符转换为数字才能进行处理，而字符编码就是文字字符在计算机中和数值的对应关系，是人为定义的一种映射规则</p>
+<h3 id="3-序列化"><a href="#3-序列化" class="headerlink" title="3.序列化"></a>3.序列化</h3><h4 id="非字符串类型转字节数组"><a href="#非字符串类型转字节数组" class="headerlink" title="非字符串类型转字节数组"></a>非字符串类型转字节数组</h4><p>关键类：BitConverter<br>所在命名空间：System<br>主要作用：除字符串的其他常用类型和字节数组相互转换</p>
+<pre><code class="c#">BitConverter.GetBytes();
+</code></pre>
+<h4 id="字符串类型转字节数组"><a href="#字符串类型转字节数组" class="headerlink" title="字符串类型转字节数组"></a>字符串类型转字节数组</h4><p>关键类：Encoding<br>命名空间：System.Text<br>主要作用：将字符串类型和字节数组相互转换，并且决定转换时使用的字符编码类型，网络通信时建议使用 UTF-8 类型</p>
+<pre><code class="c#">//可传入字符串和char数组
+Encoding.UTF8.GetBytes();
+</code></pre>
+<h4 id="如何将一个类对象转换为二进制"><a href="#如何将一个类对象转换为二进制" class="headerlink" title="如何将一个类对象转换为二进制"></a>如何将一个类对象转换为二进制</h4><p>网络通信中，不能直接使用 BinaryFormatter 2进制格式化类<br>使用它，其他语言开发的服务器无法对其进行反序列化<br>我们需要自己来处理将类对象数据序列化为字节数组</p>
+<pre><code class="c#">//1.明确字节数组的容量（注意：确定字符串字节长度时要考虑解析时如何处理）
+class PlayerInfo
+&#123;
+    public int lev;
+    public string name;
+    public short atk;
+    public bool sex;
+&#125;
+
+PlayerInfo info = new PlayerInfo();
+//indexNum 一个info数据结构转换为2进制数组，该二进制数组的长度
+int indexNum = 
+sizeof(int) +   //lev int类型
+sizeof(int) +   //name 用于string类型转为二进制数组的长度
+Encoding.UTF8.GetBytes(info.name).Length +  //name string类型，得到长度
+sizeof(short) +
+sizeof(bool);   //sex bool类型
+//2.申明一个装载信息的字节数组容器
+byte[] playerInfoBytes = new byte[indexNum];
+//3.将对象中的所有信息转为字节数组并放入该容器中（可利用数组中的 CopeTo 方法转存字节数组）
+int index = 0;
+//等级lev
+BitConverter.GetBytes(info.lev).CopyTo(playerInfoBytes, index);
+index += sizeof(int);
+//名字二进制长度
+byte[] strBytes = Encoding.UTF8.GetBytes(info.name);
+BitConverter.GetBytes(strBytes.Length).CopyTo(playerInfoBytes, index);
+index += sizeof(int);
+//名字本身
+strBytes.CopyTo(playerInfoBytes, index);
+index += strBytes.Length;
+//atk
+BitConverter.GetBytes(info.atk).CopyTo(playerInfoBytes, index);
+index += sizeof(short);
+//sex
+BitConverter.GetBytes(info.sex).CopyTo(playerInfoBytes, index);
+index += sizeof(bool);
+</code></pre>
+<h3 id="4-反序列化"><a href="#4-反序列化" class="headerlink" title="4.反序列化"></a>4.反序列化</h3><h4 id="字节数组转非字符串类型"><a href="#字节数组转非字符串类型" class="headerlink" title="字节数组转非字符串类型"></a>字节数组转非字符串类型</h4><p>关键类：BitConverter<br>命名空间：System<br>主要作用：除字符串的其他常用类型和字节数组相互转换</p>
+<pre><code class="c#">byte[] bytes = BitConverter.GetBytes(99);
+BitConverter.ToInt32(bytes, 0);
+</code></pre>
+<h4 id="字节数组转字符串类型"><a href="#字节数组转字符串类型" class="headerlink" title="字节数组转字符串类型"></a>字节数组转字符串类型</h4><p>关键类：Encoding<br>命名空间：System.Text<br>主要作用：将字符串类型和字节数组相互转换，并且决定转换时使用的字符编码类型，网络通信时建议使用 UTF-8 类型</p>
+<pre><code class="c#">byte[] bytes = Encoding.UTF8.GetBytes(&quot;哈哈&quot;);
+Encoding.UTF8.GetString(bytes);
+</code></pre>
+<h4 id="如何将二进制数据转为一个类对象"><a href="#如何将二进制数据转为一个类对象" class="headerlink" title="如何将二进制数据转为一个类对象"></a>如何将二进制数据转为一个类对象</h4><pre><code class="c#">//1.获取到对应的字节数组
+PlayerInfo info = new PlayerInfo();
+//2.按序列化时的顺序进行反序列化
+//等级
+int index = 0;
+info.lev = BitConverter.ToInt32(playerBytes, index);
+index += sizeof(int);
+//姓名长度
+int length = BitConverter.ToInt32(playerBytes, index);
+index += sizeof(int);
+//姓名本身
+info.name = Encoding.UTF8.GetString(playerBytes, index, length);
+index += length;
+//atk
+info.atk = BitConverter.ToInt16(playerBytes, index);
+index += sizeof(short);
+//sex
+info.sex = BitConverter.ToBoolean(playerBytes, index);
+index += sizeof(bool);
+</code></pre>
+<h1 id="知识点八-套接字Socket"><a href="#知识点八-套接字Socket" class="headerlink" title="知识点八 套接字Socket"></a>知识点八 套接字Socket</h1><h2 id="一、Socket的重要API"><a href="#一、Socket的重要API" class="headerlink" title="一、Socket的重要API"></a>一、Socket的重要API</h2><h3 id="1-Socket套接字的作用"><a href="#1-Socket套接字的作用" class="headerlink" title="1.Socket套接字的作用"></a>1.Socket套接字的作用</h3><p>它是C#提供的用于网络通信的类（其他语音中也有对应的Socket类）<br>类名：Socket<br>命名空间：System.Net.Sockets</p>
+<p>Socket套接字是支持 TCP&#x2F;IP 网络通信的基本操作单位<br>一个套接字对象包含以下关键信息：</p>
+<ol>
+<li>本机IP地址和端口</li>
+<li>对方主机的IP地址和端口</li>
+<li>双方通信的协议信息</li>
+</ol>
+<p>一个Socket对象表示一个本地或者远程套接字信息<br>它可以被视为一个数据通道<br>这个通道连接与客户端和服务端之间<br>数据的发生和接受均通过这个通道进行</p>
+<p>一般在制作长连接游戏时，我们会使用Socket套接字作为我们的通信方案<br>我们通过它连接客户端和服务端，通过它来收发消息</p>
+<h3 id="2-Socket的类型"><a href="#2-Socket的类型" class="headerlink" title="2.Socket的类型"></a>2.Socket的类型</h3><h4 id="Socket套接字有3种不同的类型"><a href="#Socket套接字有3种不同的类型" class="headerlink" title="Socket套接字有3种不同的类型"></a>Socket套接字有3种不同的类型</h4><ol>
+<li>流套接字<br>主要用于实现TCP通信，提供了面向连接、可靠的、有序的、数据无差错且无重复的数据传输服务</li>
+<li>数据报套接字<br>主要用于实现UDP通信，提供了无连接的通信服务，数据包的长度不能大于32KB，不提供正确性检查，不保证顺序，可能出现重发、丢失等情况</li>
+<li>原始套接字<br>主要用于实现IP数据包通信，用于直接访问协议的较低层，常用于倾听和分析数据包</li>
+</ol>
+<h4 id="通过Socket的构造函数，我们可以申明不同类型的套接字"><a href="#通过Socket的构造函数，我们可以申明不同类型的套接字" class="headerlink" title="通过Socket的构造函数，我们可以申明不同类型的套接字"></a>通过Socket的构造函数，我们可以申明不同类型的套接字</h4><p>参数一：AddressFamily 网络寻址的枚举类型，决定寻址方案<br>常用：</p>
+<ol>
+<li>IPv4寻址</li>
+<li>IPv6寻址</li>
+</ol>
+<p>参数二：SocketType 套接字枚举类型，决定使用的套接字类型<br>常用：</p>
+<ol>
+<li>Dgram（支持数据报，最大长度固定的无连接、不可靠消息，主要用于UDP通信）   </li>
+<li>Stream（支持可靠的、双向、基于连接的字节流，主要用于TCP通信）</li>
+</ol>
+<p>参数三：ProtocolType 协议类型枚举类型，决定套接字使用的通信协议<br>常用：</p>
+<ol>
+<li>TCP（TCP传输控制协议）</li>
+<li>UDP（UDP用户数据报协议）</li>
+</ol>
+<p>参数二、三的常用搭配：</p>
+<ol>
+<li><p>SocketType.Dgram + ProtocolType.Udp （UDP协议通信）</p>
+</li>
+<li><p>SocketType.Stream + ProtocolType.Tcp （TCP协议通信）</p>
+</li>
+<li><p>UDP数据报套接字</p>
+</li>
+</ol>
+<pre><code class="c#">Socket udp = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+</code></pre>
+<ol start="2">
+<li>TCP流套接字</li>
+</ol>
+<pre><code class="c#">Socket tcp = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+</code></pre>
+<h3 id="3-Socket的常用属性"><a href="#3-Socket的常用属性" class="headerlink" title="3.Socket的常用属性"></a>3.Socket的常用属性</h3><pre><code class="c#">Socket socketTcp = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+//套接字的连接状态
+if(socketTcp.Connected)
+&#123;
+
+&#125;
+
+//套接字的类型
+socketTcp.SocketType
+
+//套接字的协议类型
+socketTcp.ProtocolType
+
+//套接字的寻址方案
+socketTcp.AddressFamily
+
+//从网络中获取准备读取的数据数据量
+socketTcp.Available
+
+//获取本机EndPoint对象（注意：IPEndPoint 继承 EndPoint）
+socketTcp.LocalEndPoint as IPEndPoint
+
+//获取远程EndPoint对象
+socketTcp.RemoteEndPoint as IPEndPoint
+</code></pre>
+<h3 id="4-Socket的常用方法"><a href="#4-Socket的常用方法" class="headerlink" title="4.Socket的常用方法"></a>4.Socket的常用方法</h3><pre><code class="c#">//主要用于服务器
+//绑定IP和端口
+IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(&quot;127.0.0.1&quot;, 8080));
+socketTcp.Bind(ipPoint);
+//设置客户端连接的最大数量
+socketTcp.Listen(99);
+//等待客户端连入，返回值就是客户端与服务端的管子
+socketTcp.Accept();
+
+//主要用于客户端
+//连接远端服务器，传入IP和端口
+socketTcp.Connect();
+
+//客户端服务端都会用
+//同步发送和接收数据，传入Byte数组
+socketTcp.Send();       //TCP
+socketUdp.SendTo();     //UDP
+socketTcp.Recive();
+//异步发送和接收数据
+//释放连接并关闭Socket，先于Close调用
+socketTcp.Shutdown(SocketShutdown.Both);
+//关闭连接，释放所有Socket关联资源
+socketTcp.Close();
+</code></pre>
+<h2 id="二、Socket——TCP通信"><a href="#二、Socket——TCP通信" class="headerlink" title="二、Socket——TCP通信"></a>二、Socket——TCP通信</h2><h3 id="1-概述-1"><a href="#1-概述-1" class="headerlink" title="1.概述"></a>1.概述</h3><h4 id="客户端代码怎么写"><a href="#客户端代码怎么写" class="headerlink" title="客户端代码怎么写"></a>客户端代码怎么写</h4><ol>
+<li>创建套接字Socket</li>
+<li>用Connet方法与服务端相连</li>
+<li>用Send和Receive相关方法收发数据</li>
+<li>用Shutdown方法释放连接</li>
+<li>关闭套接字</li>
+</ol>
+<h4 id="服务端怎么写"><a href="#服务端怎么写" class="headerlink" title="服务端怎么写"></a>服务端怎么写</h4><ol>
+<li>创建套接字Socket</li>
+<li>用Bind方法将套接字与本地地址绑定</li>
+<li>用Listen方法监听</li>
+<li>用Accept方法等待客户端连接</li>
+<li>建立连接，Accept返回新套接字</li>
+<li>用Send和Receive相关方法收发数据</li>
+<li>用Shutdown方法释放连接</li>
+<li>关闭套接字</li>
+</ol>
+<h3 id="2-同步方案"><a href="#2-同步方案" class="headerlink" title="2.同步方案"></a>2.同步方案</h3><h4 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h4><pre><code class="c#">//1.创建套接字Socket
+Socket socketTcp = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+//2.用Bind方法将套接字与本地地址绑定
+try
+&#123;
+    IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(&quot;127.0.0.1&quot;), 8080);
+    socketTcp.Bind(ipPoint);
+&#125;
+catch(Exception e)
+&#123;
+    Console.WriteLine(&quot;绑定错误&quot;, e.Message);
+    return;
+&#125;
+//3.用Listen方法监听，设置监听设备的数量
+socketTcp.Listen(1024);
+Console.Write(&quot;服务端绑定监听结束，等待客户端连入&quot;);
+//4.用Accept方法等待客户端连接
+//阻塞式，执行到此就会卡在这，等待客户端连入，连入后就会返回一个新的Socket，代表客户端与服务端联系的Socket
+//5.建立连接，Accept返回新套接字
+Socket socketClient = socketTcp.Accept();
+//6.用Send和Receive相关方法收发数据
+socketClient.Send( Encoding.UTF8.GetBytes(&quot;欢迎连入客户端&quot;) );
+bytep[] result = new byte[1024];
+//Receive返回接收多少字节
+int receiveNum = socketClient.Receive(result);
+Console.WriteLine(&quot;接收到了&#123;0&#125;发来的消息：&#123;1&#125;&quot;, soketClient.RemoteEndPoint.ToString(), Encoding.UTF8.GetString(result, 0, receiveNum));
+//7.用Shutdown方法释放连接
+socketClient.Shutdown(SocketShutdown.Both); //收发都Shutdown
+//8.关闭套接字
+socketClient.Close();
+</code></pre>
+<h4 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h4><pre><code class="c#">//1.创建套接字Socket
+Socket socketTcp = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+//2.用Connet方法与服务端相连
+IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(&quot;127.0.0.1&quot;, 8080));
+try
+&#123;
+    socketTcp.Connect(ipPoint);
+&#125;
+catch(SocketException e)
+&#123;
+    if(e.ErrorCode == 10061)
+        print(&quot;服务器拒绝连接&quot;);
+    else
+        print(&quot;连接服务器失败&quot; + e.ErrorCode);
+    return;
+&#125;
+//3.用Send和Receive相关方法收发数据
+//接收数据
+byte[] receiveBytes = new byte[1024];
+int receiveNum = socketTcp.Receive(receiveBytes);
+print(&quot;收到服务端发来的消息：&quot; + Encoding.UTF8.GetString(receiveBytes, 0, receiveNum));
+//发生数据
+socketTcp.Send(Encoding.UTF8.GetBytes(&quot;你好，我平时客户端&quot;));
+//4.用Shutdown方法释放连接
+socketTcp.Shutdown(SocketShutdown.Both);
+//5.关闭套接字
+socketTcp.Close();
+</code></pre>
+<h4 id="服务端——使用线程实现服务端服务多个客户端"><a href="#服务端——使用线程实现服务端服务多个客户端" class="headerlink" title="服务端——使用线程实现服务端服务多个客户端"></a>服务端——使用线程实现服务端服务多个客户端</h4><pre><code class="c#">namespace Server
+&#123;
+    class Program
+    &#123;
+        static Sokcet socketTcp;
+        //存储客户端连入的Socket的容器
+        static List&lt;Socket&gt; clientSockets = new List&lt;Socket&gt;();
+        static bool isClose = false;
+
+        public static Main(string[] args)
+        &#123;
+            //1.建立Socket 绑定 监听
+            socketTcp = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(&quot;127.0.0.1&quot;, 8080));
+            socket.Bind(ipPoint);
+            socket.Listen(1024);
+
+            //2.开一个线程接受客户端连入的线程
+            Thread acceptThread = new Thread(AcceptClientConnect);
+            acceptThread.Start();
+
+            //3.收发消息
+            //收消息
+            Thread receiveThread = new Thread(ReceiveMsg);
+            receiveThread.Start();
+            
+            //4.关闭
+            while(true)
+            &#123;
+                string input == Console.ReadLine();
+                if(input == &quot;Quit&quot;)
+                &#123;
+                    isClose = true;
+                    for(int i = 0; i &lt; clientSockets.Count; i++)
+                    &#123;
+                        clientSockets[i].Shutdown(SocketShutdown.Both);
+                        clientSockets[i].Close();
+                    &#125;
+                    break;
+                &#125;
+            &#125;
+        
+        &#125;
+
+        static void AcceptClientConnect()
+        &#123;
+        
+            while(!isClose)
+            &#123;
+                Socket clientSocket = socketTcp.Accept();
+                clientSockets.Add(clientSocket);
+                clientSocket.Send(Encoding.UTF8.GetBytes(&quot;连入服务端成功，欢迎&quot;));
+            &#125;
+        &#125;
+
+        static void ReceiveMsg()
+        &#123;
+            Socket clientSocket;
+            byte[] result = new byte[1024 * 1024];
+            int receiveNum;
+            int i;
+            while(!isClose)
+            &#123;
+                for(i = 0; i &lt; clientSockets.Count; i++)
+                &#123;
+                    clientSocket = clientSockets[i];
+                    //判断，Socket是否有可以接受的消息，返回值是字节数
+                    if(clientSocket.Available &gt; 0)
+                    &#123;
+                        receiveNum = clientSocket.Receive(result);
+                        //线程池，通过新开一个线程来处理客户端传来的信息的逻辑，一般进行一些耗时操作，防止堵塞
+                        ThreadPool.QueueUserWorkItem(HandleMsg, (clientSocket, Encoding.UTF8.GetString(result, 0, receiveNum)))
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+
+        static void HandleMsg(object obj)
+        &#123;
+            (Socket s, string str) info = ((Socket s, string str))obj;
+            Console.WriteLine(&quot;收到客户端&#123;0&#125;发来的信息&#123;1&#125;&quot;, info.s.RemoteEndPoint, info.str);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h4 id="服务端——用面向对象的思想对服务端的客户端Socket进行封装"><a href="#服务端——用面向对象的思想对服务端的客户端Socket进行封装" class="headerlink" title="服务端——用面向对象的思想对服务端的客户端Socket进行封装"></a>服务端——用面向对象的思想对服务端的客户端Socket进行封装</h4><pre><code class="c#">namespace SocketSever
+&#123;
+    class ClientSocket
+    &#123;
+        private static int CLENT_BEGIN_ID = 1;
+        public int clientID;
+        public Socket socket;
+        public bool Connected =&gt; this.socket.Connected;
+
+        public ClientSocket(Socket socket)
+        &#123;
+            this.clientID = CLENT_BEGIN_ID;
+            CLENT_BEGIN_ID++;
+            this.socket = socket;
+        &#125;
+
+        //关闭
+        public void Close()
+        &#123;
+            if(socket != null)
+            &#123;
+                socket.Shutdown(SocketShutdown.Both);
+                socket.Close();
+            &#125;
+        &#125;
+
+        //发送
+        public void Send(string info)
+        &#123;
+            if(socket != null)
+            &#123;
+                try
+                &#123;
+                    socket.Send(Encoding.UTF8.GetBytes(info));
+                &#125;
+                catch(Exception e)
+                &#123;
+                    Console.WriteLine(e.Message);
+                &#125;
+            &#125;
+        &#125;
+
+        //接收
+        public void Receive()
+        &#123;
+            if(socket == null)
+                return;
+
+            byte[] result = new byte[1024 * 5];
+            try
+            &#123;
+                if(socket.Available &gt; 0)
+                &#123;
+                    int receiveNum = socket.Receive(result);
+                    ThreadPool.QueueUserWorkItem(MsgHandle, Encoding.UTF8.GetString(result, 0, receiveNum));
+                &#125;
+            &#125;  
+            catch(Exception e)
+            &#123;
+                Console.WriteLine(e.Message);
+                Close();
+            &#125;
+        &#125;
+
+        private static void MsgHandle(object obj)
+        &#123;
+            string str = obj as string;
+            Console.WriteLine(&quot;收到客户端&#123;0&#125;发来的消息：&#123;1&#125;&quot;, this.socket.RemoteEndPoint, str);
+        &#125;
+    &#125;
+
+    class ServerSocket
+    &#123;
+        //服务端Socket
+        public Socket socket;
+        //客户端连接的所有Socket
+        public Dictionary&lt;int, ClientSocket&gt; clientDic = new Dictionary&lt;int, ClientSocket&gt;();
+        //是否关闭
+        private is isClose;
+
+        //开启服务器端
+        public void Start(string ip, int port, int num)
+        &#123;
+            isClose = false;
+
+            socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(ip), port);
+            socket.Bind(ipPoint);
+            socket.Listen(num);
+            ThreadPool.QueueUserWorkItem(Accept);
+            ThreadPool.QueueUserWorkItem(Receive);
+        &#125;
+
+        //关闭服务器端
+        public void Close()
+        &#123;
+            isClose = true;
+
+            foreach( ClientSocket client in clientDic.Values )
+            &#123;
+                client.Close();
+            &#125;
+            clientDic.Clear();
+
+            socket.Shutdown(SocketShutdown.both);
+            socket.Close();
+            Socket = null;
+        &#125;
+
+        public void Broadcast(string message)
+        &#123;
+            foreach(ClientSocket client in clientDic)
+            &#123;
+                if(client != null)
+                    client.Send(message);
+            &#125;
+        &#125;
+
+        //开启连接，保存客户端连接的Socket
+        private static void Accept(object obj)
+        &#123;
+            while(!isClose)
+            &#123;
+                try
+                &#123;
+                    //连入一个客户端
+                    Socket clientSocket = socket.Accept();
+                    ClientSocket client = new ClientSocket(clientSocket);
+                    clientDic.Add(client.clientID, client);
+                &#125;
+                catch(Exception e)
+                &#123;
+                    Console.WriteLine(&quot;客户端连入报错：&quot; + e.Message);
+                &#125;
+            &#125;
+        &#125;
+
+        //接收消息
+        private void Receive(object obj)
+        &#123;
+            while(!isClose)
+            &#123;
+                if(clientDic.Count &gt; 0)
+                &#123;
+                    foreach( ClientSocket client in clientDic.Values )
+                    &#123;
+                        client.Receive();
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h4 id="客户端——客户端的网络连接不会影响主线程，可以随时和服务端进行通信"><a href="#客户端——客户端的网络连接不会影响主线程，可以随时和服务端进行通信" class="headerlink" title="客户端——客户端的网络连接不会影响主线程，可以随时和服务端进行通信"></a>客户端——客户端的网络连接不会影响主线程，可以随时和服务端进行通信</h4><pre><code class="c#">public class NetMgr : MonoBehaviour
+&#123;
+    private static NetMgr instance;
+    public static NetMgr Instance =&gt; instance;
+
+    private Socket socket;
+
+    //用于存放要发送的信息，主线程放入，有专门的线程按顺序发送
+    private Queue&lt;string&gt; sendMsgQueue = new Queue&lt;string&gt;();
+    //用于存储收到的消息的队列，因为Unity中线程无法对主线程进行处理，需要一个中间队列进行存储
+    private Queue&lt;string&gt; reveiveMsgQueue = new Queue&lt;string&gt;(); 
+    //收消息的容器
+    private byte[] receiveBytes = new byte[1024 * 1024];
+    //返回收到的字节长度
+    private int receiveNum;
+
+    private Thread sendThread;  //发送消息线程
+    private Thread ReceiveThread;   //接收消息线程
+
+    //是否正在连接
+    private bool isConnecting = false;
+
+    void Awake()
+    &#123;
+        instance = this;
+    &#125;
+
+    void Update()
+    &#123;
+        if(receiveQueue.Count &gt; 0)
+        &#123;
+            print(&quot;收到消息：&quot; + receiveQueue.Dequeue());
+        &#125;
+    &#125;
+
+    //连接服务器
+    public void Connect(string ip, int port)
+    &#123;
+        if(isConnecting)
+            return;
+
+        if(socket == null)
+            socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(ip), port);
+        try
+        &#123;
+            socket.Connect(ipPoint);
+
+            isConnecting = true;
+
+            //开启发送消息的线程
+            sendThread = new Thread(SendMsg);
+            sendThread.Start();
+
+            //开启收到消息的线程
+            ReceiveThread = new Thread(ReceiveMsg);
+            ReceiveThread.Start();
+
+        &#125;
+        catch(SocketException e)
+        &#123;
+            if(e.ErrorCode == 10061)
+                print(&quot;服务器拒绝连接&quot;);
+            else
+                print(&quot;连接失败，错误信息：&quot; + e.ErrorCode + e.Message);
+        &#125;
+    &#125;
+
+    //发送消息
+    public void Send(string message)
+    &#123;
+        sendMsgQueue.Enqueue(info);
+    &#125;
+
+    //发送消息线程
+    private static void SendMsg()
+    &#123;
+        while(isConnecting)
+        &#123;
+            if(sendMsgQueue.Count &gt; 0)
+            &#123;
+                socket.Send(Encoding.UTF8.GetBytes(sendMsgQueue.Dequeue()));
+            &#125;
+        &#125;
+    &#125;
+
+    //收到消息
+    private static void ReceiveMsg()
+    &#123;
+        while(isConnecting)
+        &#123;
+            if(socket.Available &gt; 0)
+            &#123;
+                receiveNum = socket.Receive(receiveBytes);
+                receiveQueue.Enqueue(Encoding.UTF8.GetString(receiveBytes, 0, receiveNum));
+            &#125;
+        &#125;
+    &#125;
+
+    //断开连接
+    public void Close()
+    &#123;
+        if(socket == null)
+            return;
+        
+        socket.Shutdown(SocketShutdown.Both);
+        socket.close();
+
+        isConnecting = false;
+
+        SendThread = null;
+        ReceiveThread = null;
+    &#125;
+
+    void OnDestroy()
+    &#123;
+        Close();
+    &#125;   
+&#125;
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2024 Paul
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 562px;
+    }
+    .nav.fullscreen {
+        margin-left: -562px;
+    }
+    .nav-left {
+        width: 140px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 512px;
+        }
+        .nav.fullscreen {
+            margin-left: -512px;
+        }
+        .nav-left {
+            width: 120px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 512px;
+            margin-left: -512px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
