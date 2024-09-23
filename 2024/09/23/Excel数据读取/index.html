@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Paul的博客</title>
+  <title>Excel数据读取 | Paul的博客</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Paul的博客">
+  <meta name="description" content="Excel数据读取 | Paul的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="知识点一 导入Excel相关DLL包一、了解Excel表的本质Excel表本质就是数据，有自己的存储读取规则如果我们想要通过代码读取它那么必须知道它的存储规则 官网提供了对应的DLL文件用来解析Excel文件 DLL文件：库文件，可以理解为许多代码的集合将相关代码集合在库文件中，可以方便迁移和使用有了某个DLL文件，我们就可以使用其中已经写好的代码 而Excel的DLL包就是官方已经把解析Exce">
 <meta property="og:type" content="article">
@@ -56,7 +56,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -282,12 +282,55 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-Excel数据读取" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%8B%E5%8F%8B%EF%BC%8C%E4%BD%A0%E5%A5%BD"><span class="toc-text">朋友，你好</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E8%AE%B0%E5%BD%95%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%8D%9A%E5%AE%A2"><span class="toc-text">这是一个记录学习的博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%88%91"><span class="toc-text">关于我</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E7%A2%8E%E7%A2%8E%E5%BF%B5%EF%BC%8C%E8%AE%A9%E4%BD%A0%E4%BA%86%E8%A7%A3%E6%88%91"><span class="toc-text">一些碎碎念，让你了解我</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%B9%B3%E5%8F%B0"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">Excel数据读取</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Unity笔记">Unity笔记</a> > 
+            
+            <a  data-rel="Unity笔记&lt;---&gt;Unity进阶">Unity进阶</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-09-23 18:01:37'>2024-09-23 18:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:684</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-%E5%AF%BC%E5%85%A5Excel%E7%9B%B8%E5%85%B3DLL%E5%8C%85"><span class="toc-text">知识点一 导入Excel相关DLL包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BA%86%E8%A7%A3Excel%E8%A1%A8%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-text">一、了解Excel表的本质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AF%BC%E5%85%A5%E5%AE%98%E6%96%B9%E6%8F%90%E4%BE%9B%E7%9A%84Excel%E7%9B%B8%E5%85%B3DLL%E6%96%87%E4%BB%B6"><span class="toc-text">二、导入官方提供的Excel相关DLL文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%8C-Excel%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96"><span class="toc-text">知识点二 Excel数据读取</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%89%93%E5%BC%80Excel%E8%A1%A8"><span class="toc-text">一、打开Excel表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%8E%B7%E5%8F%96Excel%E8%A1%A8%E4%B8%AD%E5%8D%95%E5%85%83%E6%A0%BC%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="toc-text">二、获取Excel表中单元格的信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%8E%B7%E5%8F%96Excel%E8%A1%A8%E4%B8%AD%E4%BF%A1%E6%81%AF%E5%AF%B9%E4%BA%8E%E6%88%91%E4%BB%AC%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-text">三、获取Excel表中信息对于我们的意义</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -300,28 +343,93 @@
     }
 </style>
 </div>
-            <h1 id="朋友，你好"><a href="#朋友，你好" class="headerlink" title="朋友，你好"></a>朋友，你好</h1><h2 id="这是一个记录学习的博客"><a href="#这是一个记录学习的博客" class="headerlink" title="这是一个记录学习的博客"></a>这是一个记录学习的博客</h2><p>博客主要记录了本人对Unity游戏前端（客户端）开发相关的学习笔记，欢迎大家来查看，共同学习</p>
-<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>我是<strong>Paul</strong><br>一个尝试转行到游戏开发的生物专业生</p>
-<h2 id="一些碎碎念，让你了解我"><a href="#一些碎碎念，让你了解我" class="headerlink" title="一些碎碎念，让你了解我"></a>一些碎碎念，让你了解我</h2><p>在我幼儿园的时候，我玩了第一款游戏————任天堂的星之卡比超究豪华版。那是我表哥当的士司机时捡到的nds上的游戏。我对nds非常着迷，玩遍了里面的游戏，那是一段充满了快乐的回忆。但那时候我只是无忧无虑地生活，从来没有想过以后要做什么，也没有想过做游戏，只是单纯地觉得游戏好玩。</p>
-<p>由于家里对于电子游戏的评价比较负面，我玩电脑的时间非常少，也没有一台游戏主机。后来直到大一，我才有了我的第二台任天堂游戏机——Switch，大学期间我玩的不亦乐乎，也变成了一个JRPG和任天堂游戏的忠实爱好者。</p>
-<p>大三的时候，我很迷茫，不知道以后要做什么，还总是听说现在本科找工作很难。我找了我的导师聊天，他告诉我：你感到迷茫，是因为你不去真正做一些事情，只是想太多，做太少。于是我就想先随便努力做点什么好了，然后就想到了程序员的工资很高，我又爱打游戏，就找了游戏程序员开发相关的教程学习。</p>
-<p>从前我都是得过且过，没有什么追求，过得开心就行。但是学习了程序之后，我的想法改变了，我想尝试努力去做一些事情，想试试努力之后成功的滋味。也喜欢了学习新知识的感觉。</p>
-<p>由于一些信息差、行业也不景气和学校的安排等问题，我错过了秋招和春招。也不知道面经。毕业了，拿着我的作品和简历出去面试屡屡受挫，真的有被打击到。勉强也是找到了一个实习。</p>
-<p>就算这样，我还是想趁着年轻再多尝试一下，放低期待，把握好现在。</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 生成<br>部署在 <a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a><br>主题 <a target="_blank" rel="noopener" href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p><code>3-hexo</code> 主题使用交流可以加 Q群: <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=e8cf083cc097141eaf323396f1766809b8e90ff00c67bb441898f672892f6904"><img data-ignore border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="3-hexo使用交流" title="3-hexo使用交流"></a></p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad&#x2F;手机等移动端适配</li>
-<li>页面全局快捷键 <a target="_blank" rel="noopener" href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
-</ul>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="知识点一-导入Excel相关DLL包"><a href="#知识点一-导入Excel相关DLL包" class="headerlink" title="知识点一 导入Excel相关DLL包"></a>知识点一 导入Excel相关DLL包</h1><h2 id="一、了解Excel表的本质"><a href="#一、了解Excel表的本质" class="headerlink" title="一、了解Excel表的本质"></a>一、了解Excel表的本质</h2><p>Excel表本质就是数据，有自己的存储读取规则<br>如果我们想要通过代码读取它<br>那么必须知道它的存储规则</p>
+<p>官网提供了对应的DLL文件用来解析Excel文件</p>
+<p>DLL文件：库文件，可以理解为许多代码的集合<br>将相关代码集合在库文件中，可以方便迁移和使用<br>有了某个DLL文件，我们就可以使用其中已经写好的代码</p>
+<p>而Excel的DLL包就是官方已经把解析Excel表的相关类和方法写好了<br>方便用户使用</p>
+<h2 id="二、导入官方提供的Excel相关DLL文件"><a href="#二、导入官方提供的Excel相关DLL文件" class="headerlink" title="二、导入官方提供的Excel相关DLL文件"></a>二、导入官方提供的Excel相关DLL文件</h2><p>直接将 .dll 后缀的文件导入到工程文件夹下</p>
+<h1 id="知识点二-Excel数据读取"><a href="#知识点二-Excel数据读取" class="headerlink" title="知识点二 Excel数据读取"></a>知识点二 Excel数据读取</h1><h2 id="一、打开Excel表"><a href="#一、打开Excel表" class="headerlink" title="一、打开Excel表"></a>一、打开Excel表</h2><p>知识点</p>
+<ol>
+<li>FileStream读取文件流</li>
+<li>IExcelDataReader类，从流中读取Excel数据</li>
+<li>DataSet 数据集合类 将Excel数据转存进其中方便读取</li>
+</ol>
+<p>代码</p>
+<pre><code class="C#">using Excel;
 
-        </article>
-        
-        
+using(FileStream fs = File.Open(application.dataPath + &quot;PlayerInfo.xlsx&quot;, FileMode.Open, FileAccess.Read))
+&#123;
+    //通过我们的文件流获取Excel数据
+    IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(fs);
+    //将Excel表中的数据转换为DataSet素具类型，方便我们获取其中的内容
+    DataSet dataSet = excelReader.AsDataSet();
+    //得到Excel文件中的所有表信息，遍历所有表
+    for(int i = 0; i &lt; dataSet.Tables.Count; i++)
+    &#123;
+        //打印表的名字
+        print( dataSet.Tables[i].TableName );
+        //打印表的行数
+        print( dataSet.Tables[i].Rows.Count );
+        //打印表的列数
+        print( dataSet.Tables[i].Columns.Count );
+    &#125;
+    fs.Dispose();
+&#125;
+</code></pre>
+<h2 id="二、获取Excel表中单元格的信息"><a href="#二、获取Excel表中单元格的信息" class="headerlink" title="二、获取Excel表中单元格的信息"></a>二、获取Excel表中单元格的信息</h2><p>知识点</p>
+<ol>
+<li>FileStream读取文件流</li>
+<li>IExcelDataReader类，从流中读取Excel数据</li>
+<li>DataSet 数据集合类 将Excel数据转存进其中方便读取</li>
+<li>DataTable 数据表类 表示Excel文件中的一个表</li>
+<li>DataRow 数据行类 表示某张表中的一行数据</li>
+</ol>
+<p>代码</p>
+<pre><code class="c#">using( FileStream fs = File.Open(application.dataPath + &quot;PlayerInfo.xlsx&quot;, FileMode.Open, FileAccess.Read))
+&#123;
+    //通过我们的文件流获取Excel数据
+    IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(fs);
+    //将Excel表中的数据转换为DataSet素具类型，方便我们获取其中的内容
+    DataSet dataSet = excelReader.AsDataSet(); 
+    //得到其中第一张表的数据
+    DataTable table = dataSet.Tables[0];
+    //得到表中第一行的数据
+    DataRow dataRow = table.Row[0];
+    //得到该行的第一列的数据，返回值是一个object类型
+    object obj = dataRow[0];
+&#125;
+</code></pre>
+<h2 id="三、获取Excel表中信息对于我们的意义"><a href="#三、获取Excel表中信息对于我们的意义" class="headerlink" title="三、获取Excel表中信息对于我们的意义"></a>三、获取Excel表中信息对于我们的意义</h2><p>既然能获取Excel表中的所有数据<br>那么我们就可以根据表中数据来动态的生成相关数据</p>
+<ol>
+<li>数据结构类</li>
+<li>容器类</li>
+<li>2进制数据</li>
+</ol>
+<p>为什么不直接读取Excel表而要将他转成2进制数据？</p>
+<ol>
+<li>提升读取效率</li>
+<li>提升数据安全性</li>
+</ol>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -330,11 +438,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>
