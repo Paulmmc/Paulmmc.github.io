@@ -6,15 +6,15 @@
   <meta name="keywords" content="">
   <meta name="description" content="Unity中的MVC思想 | Paul的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="知识点一 位运算符将数值转换为2进制，在进行位运算 一、位与 &amp;对位运算，有0则0int a &#x3D; 1;      &#x2F;&#x2F;001int b &#x3D; 5;      &#x2F;&#x2F;101int c &#x3D; a &amp; b;  &#x2F;&#x2F;001   所以 c &#x3D; 1 二、位或 |对位运算，有1则1int a &amp;#x3D">
+<meta name="description" content="知识点一：InputSystem导入InputSystem包导入PackageManager 中导入 Input System 选择开启哪一种输入模式选择 InputSystem 和 老InputManager 的启用情况File &gt; Build Setting &gt; Player Setting &gt; Other &gt; Active Input Handing可以同时启用也可以">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Paul的博客">
-<meta property="og:url" content="https://paulmmc.github.io/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C#%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:title" content="InputSystem">
+<meta property="og:url" content="https://paulmmc.github.io/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/InputSystem/index.html">
 <meta property="og:site_name" content="Paul的博客">
-<meta property="og:description" content="知识点一 位运算符将数值转换为2进制，在进行位运算 一、位与 &amp;对位运算，有0则0int a &#x3D; 1;      &#x2F;&#x2F;001int b &#x3D; 5;      &#x2F;&#x2F;101int c &#x3D; a &amp; b;  &#x2F;&#x2F;001   所以 c &#x3D; 1 二、位或 |对位运算，有1则1int a &amp;#x3D">
+<meta property="og:description" content="知识点一：InputSystem导入InputSystem包导入PackageManager 中导入 Input System 选择开启哪一种输入模式选择 InputSystem 和 老InputManager 的启用情况File &gt; Build Setting &gt; Player Setting &gt; Other &gt; Active Input Handing可以同时启用也可以">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-09-23T10:24:39.611Z">
-<meta property="article:modified_time" content="2024-08-19T13:29:19.356Z">
+<meta property="article:published_time" content="2024-09-23T10:11:34.000Z">
+<meta property="article:modified_time" content="2024-09-23T10:13:55.392Z">
 <meta property="article:author" content="Paul">
 <meta name="twitter:card" content="summary">
 
@@ -185,7 +185,7 @@
         <div data-rel="理论基础">
             <i class="fold iconfont icon-right"></i>
             理论基础
-            <small>(2)</small>
+            <small>(3)</small>
         </div>
         
             <ul class="sub hide">
@@ -193,9 +193,19 @@
                     
     <li>
         <div data-rel="理论基础&lt;---&gt;编程语言">
-            
+            <i class="fold iconfont icon-right"></i>
             编程语言
-            <small>(2)</small>
+            <small>(3)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="理论基础&lt;---&gt;编程语言&lt;---&gt;C#">
+            
+            C#
+            <small>(1)</small>
         </div>
         
     </li>
@@ -205,6 +215,15 @@
         
     </li>
 
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
             
         
     
@@ -298,15 +317,6 @@
     <nav id="title-list-nav">
         
         
-        <a  class="全部文章 "
-           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C#%E5%85%A5%E9%97%A8/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title=""></span>
-            <span class="post-date" title="2024-09-23 18:24:39">2024/09/23</span>
-        </a>
-        
-        
         <a  class="全部文章 Unity笔记 Unity进阶 "
            href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/InputSystem/"
            data-tag=""
@@ -316,29 +326,20 @@
         </a>
         
         
-        <a  class="全部文章 理论基础 编程语言 "
-           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="C++">C++</span>
-            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
-        </a>
-        
-        
-        <a  class="全部文章 理论基础 编程语言 "
-           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript%E8%AF%AD%E8%A8%80/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="TypeScript">TypeScript</span>
-            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
-        </a>
-        
-        
         <a  class="全部文章 CoscosCretor笔记 "
            href="/2024/09/23/CocosCreator%E7%AC%94%E8%AE%B0/TS/TypeScript%E8%AF%AD%E8%A8%80/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="TypeScript语言">TypeScript语言</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 理论基础 编程语言 C# "
+           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C#/C#%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C#入门">C#入门</span>
             <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
         </a>
         
@@ -352,11 +353,11 @@
         </a>
         
         
-        <a  class="全部文章 Unity笔记 Unity进阶 "
-           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E4%B8%AD%E7%9A%84MVC%E6%80%9D%E6%83%B3/"
+        <a  class="全部文章 理论基础 编程语言 "
+           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/C++/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="Unity中的MVC思想">Unity中的MVC思想</span>
+            <span class="post-title" title="C++">C++</span>
             <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
         </a>
         
@@ -366,6 +367,15 @@
            data-tag=""
            data-author="" >
             <span class="post-title" title="GameFramework">GameFramework</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E4%B8%AD%E7%9A%84MVC%E6%80%9D%E6%83%B3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Unity中的MVC思想">Unity中的MVC思想</span>
             <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
         </a>
         
@@ -384,6 +394,15 @@
            data-tag=""
            data-author="" >
             <span class="post-title" title="Unity编辑器">Unity编辑器</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 理论基础 编程语言 "
+           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/TypeScript%E8%AF%AD%E8%A8%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TypeScript">TypeScript</span>
             <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
         </a>
         
