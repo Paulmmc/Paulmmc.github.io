@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hello World | Paul的博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Hello World | Paul的博客">
+  <title>CSharp进阶 | Paul的博客</title>
+  <meta name="keywords" content=" CSharp ">
+  <meta name="description" content="CSharp进阶 | Paul的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="知识点一 简单数据结构类1.ArrayList的本质ArrayList是一个c#为我们封装好的类它本质是一个object类型的数组ArrayList帮助我们实现了很多方法比如数组的增删查改 2.申明申明前必须引用 using System.Collections; ArrayList array &#x3D; new ArrayList();  3.增删查改 增array.add(1);array.add(">
 <meta property="og:type" content="article">
@@ -474,24 +474,43 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-CSharp进阶" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hello World</h1>
+        <h1 class="article-title">CSharp进阶</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="理论基础">理论基础</a> > 
+            
+            <a  data-rel="理论基础&lt;---&gt;编程语言">编程语言</a> > 
+            
+            <a  data-rel="理论基础&lt;---&gt;编程语言&lt;---&gt;CSharp">CSharp</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">CSharp</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-09-22 15:48:27'>2024-09-21 00:02</time>
+            发布时间 : <time class="date" title='最后更新: 2024-09-24 23:05:23'>2024-09-24 23:02</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:96</span>
+        <span>字数:490</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -510,7 +529,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">一级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">二级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">三级标题</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B1%BB"><span class="toc-text">知识点一 简单数据结构类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-ArrayList%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-text">1.ArrayList的本质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%94%B3%E6%98%8E"><span class="toc-text">2.申明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A2%9E%E5%88%A0%E6%9F%A5%E6%94%B9"><span class="toc-text">3.增删查改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1"><span class="toc-text">4.装箱拆箱</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -526,22 +545,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+        <h1 id="知识点一-简单数据结构类"><a href="#知识点一-简单数据结构类" class="headerlink" title="知识点一 简单数据结构类"></a>知识点一 简单数据结构类</h1><h3 id="1-ArrayList的本质"><a href="#1-ArrayList的本质" class="headerlink" title="1.ArrayList的本质"></a>1.ArrayList的本质</h3><p>ArrayList是一个c#为我们封装好的类<br>它本质是一个object类型的数组<br>ArrayList帮助我们实现了很多方法<br>比如数组的增删查改</p>
+<h3 id="2-申明"><a href="#2-申明" class="headerlink" title="2.申明"></a>2.申明</h3><p>申明前必须引用</p>
+<pre><code class="c#">using System.Collections;
+ArrayList array = new ArrayList();
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+<h3 id="3-增删查改"><a href="#3-增删查改" class="headerlink" title="3.增删查改"></a>3.增删查改</h3><ol>
+<li><p>增<br>array.add(1);<br>array.add(“123”);<br>array.Insert(1, “123456”);        &#x2F;&#x2F;在1位置插入元素123456<br>由于ArrayList是object类型，所以可以存储所有类型</p>
+</li>
+<li><p>范围增加<br>ArrayList array2 &#x3D; new ArrayList();       <br>array2.add(567);<br>array.AddRange(array2);        &#x2F;&#x2F;将array2里面的所有东西都加入到array后面</p>
+</li>
+<li><p>删<br>array.Remove(1);        &#x2F;&#x2F;删除array数组里面的 “ 1 “ 元素，如果重名，则优先删除靠前的<br>array.RemoveAt(2);        &#x2F;&#x2F;移除第三个位置的元素，也就是数组[2]的元素<br>array.Clear();                &#x2F;&#x2F;清除所有元素</p>
+</li>
+</ol>
+<p>查<br>Console.Write(array[0]);                &#x2F;&#x2F;查找0位置的元素<br>if(array.Contains(“123”))                &#x2F;&#x2F;查看”123”元素是否存在，返回一个bool值<br>{</p>
+<p>}<br>int index &#x3D; array.IndexOf(1);        &#x2F;&#x2F;正向查找元素，返回一个整形代表位置，若查不到则返回-1，若有重名则值返回靠前的元素<br>int index &#x3D; array.LastIndexOf();        &#x2F;&#x2F;反向查找元素，返回的整形是正向的索引，</p>
+<p>改<br>array[0] &#x3D; “999”;</p>
+<p>遍历<br>array.Count                &#x2F;&#x2F;长度<br>array.Capacity                &#x2F;&#x2F;容量<br>for(int i &#x3D; 0; i &lt; array.Count; i++)<br>{<br>        Console.WriteLine(array[i] );<br>}<br>迭代器遍历<br>foreach( object item in array)        变量类型  名字 in 数组<br>{<br>        Console.WriteLine(item);<br>}</p>
+<h3 id="4-装箱拆箱"><a href="#4-装箱拆箱" class="headerlink" title="4.装箱拆箱"></a>4.装箱拆箱</h3><p>ArrayList本质上是一个可以自动扩容的object数组<br>由于用万物之父来存储数据类型，自然存在装箱拆箱<br>当往其中进行值类型存储时，就是在装箱，当将值类型对象取出来转换使用时，就是拆箱<br>所以为提高性能，ArrayList尽量少用，之后我们会学习更好的数据容器</p>
+<pre><code class="c#">int i = 1;
+array[2] = 1;                        //装箱
+i = (int)array[2];                        //拆箱
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><p>我是Paul</p>
-<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><p>我是Paul</p>
-<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p>我是Paul</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
