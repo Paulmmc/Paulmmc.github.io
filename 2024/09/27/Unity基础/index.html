@@ -6,16 +6,16 @@
   <meta name="keywords" content=" -Unity ">
   <meta name="description" content="Unity基础 | Paul的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="知识点一 Unity脚本基础一、生命周期函数1.了解帧的概念游戏本质就是一个死循环，每一次循环处理游戏逻辑，就会更新一次画面，之所以能看到画面在动，是因为切换画面的速度到达一定时，人眼就认为画面是流畅的。 一帧就是执行一次循环。  FPS（Frames Per Second）：即每秒帧数。一般我们说的60帧30帧，就是一秒更新60次、30次画面。1s &#x3D; 1000ms60帧：1帧为16.">
+<meta name="description" content="知识点一 Unity脚本基础一、生命周期函数1.了解帧的概念游戏本质就是一个死循环，每一次循环处理游戏逻辑，就会更新一次画面，之所以能看到画面在动，是因为切换画面的速度到达一定时，人眼就认为画面是流畅的。一帧就是执行一次循环。 FPS（Frames Per Second）：即每秒帧数。一般我们说的60帧30帧，就是一秒更新60次、30次画面。1s &#x3D; 1000ms60帧：1帧为16.66">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity基础">
 <meta property="og:url" content="https://paulmmc.github.io/2024/09/27/Unity%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Paul的博客">
-<meta property="og:description" content="知识点一 Unity脚本基础一、生命周期函数1.了解帧的概念游戏本质就是一个死循环，每一次循环处理游戏逻辑，就会更新一次画面，之所以能看到画面在动，是因为切换画面的速度到达一定时，人眼就认为画面是流畅的。 一帧就是执行一次循环。  FPS（Frames Per Second）：即每秒帧数。一般我们说的60帧30帧，就是一秒更新60次、30次画面。1s &#x3D; 1000ms60帧：1帧为16.">
+<meta property="og:description" content="知识点一 Unity脚本基础一、生命周期函数1.了解帧的概念游戏本质就是一个死循环，每一次循环处理游戏逻辑，就会更新一次画面，之所以能看到画面在动，是因为切换画面的速度到达一定时，人眼就认为画面是流畅的。一帧就是执行一次循环。 FPS（Frames Per Second）：即每秒帧数。一般我们说的60帧30帧，就是一秒更新60次、30次画面。1s &#x3D; 1000ms60帧：1帧为16.66">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://paulmmc.github.io/image.png">
 <meta property="article:published_time" content="2024-09-27T15:19:29.000Z">
-<meta property="article:modified_time" content="2024-09-27T15:42:05.221Z">
+<meta property="article:modified_time" content="2024-09-27T15:51:51.043Z">
 <meta property="article:author" content="Paul">
 <meta property="article:tag" content="-Unity">
 <meta name="twitter:card" content="summary">
@@ -282,7 +282,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="16">
-<input type="hidden" id="yelog_site_word_count" value="58.8k">
+<input type="hidden" id="yelog_site_word_count" value="59.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -533,12 +533,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-09-27 23:42:05'>2024-09-27 23:19</time>
+            发布时间 : <time class="date" title='最后更新: 2024-09-27 23:51:51'>2024-09-27 23:19</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:963</span>
+        <span>字数:1.6k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -557,7 +557,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80"><span class="toc-text">知识点一 Unity脚本基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-text">一、生命周期函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BA%86%E8%A7%A3%E5%B8%A7%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">1.了解帧的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">2.生命周期函数的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-text">3.生命周期函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0-%E6%94%AF%E6%8C%81%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81"><span class="toc-text">4.生命周期函数  支持继承多态</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80"><span class="toc-text">知识点一 Unity脚本基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-text">一、生命周期函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BA%86%E8%A7%A3%E5%B8%A7%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">1.了解帧的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">2.生命周期函数的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-text">3.生命周期函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0-%E6%94%AF%E6%8C%81%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81"><span class="toc-text">4.生命周期函数  支持继承多态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Inpsector%E7%AA%97%E5%8F%A3%E7%9A%84%E5%8F%98%E9%87%8F"><span class="toc-text">二、Inpsector窗口的变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%A7%81%E6%9C%89%E5%92%8C%E4%BF%9D%E6%8A%A4%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%BC%96%E8%BE%91"><span class="toc-text">1.私有和保护无法显示编辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%A6%82%E4%BD%95%E8%AE%A9%E7%A7%81%E6%9C%89%E7%9A%84%E5%92%8C%E4%BF%9D%E6%8A%A4%E7%9A%84%E4%B9%9F%E5%8F%AF%E4%BB%A5%E8%A2%AB%E6%98%BE%E7%A4%BA"><span class="toc-text">2.如何让私有的和保护的也可以被显示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%85%AC%E5%85%B1%E7%9A%84%E5%8F%AF%E4%BB%A5%E6%98%BE%E7%A4%BA%E7%BC%96%E8%BE%91"><span class="toc-text">3.公共的可以显示编辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%85%AC%E5%85%B1%E7%9A%84%E4%B9%9F%E5%8F%AF%E4%BB%A5%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%BC%96%E8%BE%91"><span class="toc-text">4.公共的也可以不显示编辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%A4%A7%E9%83%A8%E5%88%86%E7%B1%BB%E5%9E%8B%E9%83%BD%E8%83%BD%E6%98%BE%E7%A4%BA%E7%BC%96%E8%BE%91"><span class="toc-text">5.大部分类型都能显示编辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E8%AE%A9%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B%E5%8F%AF%E4%BB%A5%E8%A2%AB%E6%98%BE%E7%A4%BA%E7%BC%96%E8%BE%91"><span class="toc-text">6.让自定义类型可以被显示编辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E4%B8%80%E4%BA%9B%E8%BE%85%E5%8A%A9%E7%89%B9%E6%80%A7"><span class="toc-text">7.一些辅助特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E6%B3%A8%E6%84%8F"><span class="toc-text">8.注意</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -573,9 +573,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="知识点一-Unity脚本基础"><a href="#知识点一-Unity脚本基础" class="headerlink" title="知识点一 Unity脚本基础"></a>知识点一 Unity脚本基础</h1><h2 id="一、生命周期函数"><a href="#一、生命周期函数" class="headerlink" title="一、生命周期函数"></a>一、生命周期函数</h2><h3 id="1-了解帧的概念"><a href="#1-了解帧的概念" class="headerlink" title="1.了解帧的概念"></a>1.了解帧的概念</h3><pre><code>游戏本质就是一个死循环，每一次循环处理游戏逻辑，就会更新一次画面，之所以能看到画面在动，是因为切换画面的速度到达一定时，人眼就认为画面是流畅的。
-一帧就是执行一次循环。
-</code></pre>
+        <h1 id="知识点一-Unity脚本基础"><a href="#知识点一-Unity脚本基础" class="headerlink" title="知识点一 Unity脚本基础"></a>知识点一 Unity脚本基础</h1><h2 id="一、生命周期函数"><a href="#一、生命周期函数" class="headerlink" title="一、生命周期函数"></a>一、生命周期函数</h2><h3 id="1-了解帧的概念"><a href="#1-了解帧的概念" class="headerlink" title="1.了解帧的概念"></a>1.了解帧的概念</h3><p>游戏本质就是一个死循环，每一次循环处理游戏逻辑，就会更新一次画面，之所以能看到画面在动，是因为切换画面的速度到达一定时，人眼就认为画面是流畅的。<br>一帧就是执行一次循环。</p>
 <p>FPS（Frames Per Second）：即每秒帧数。<br>一般我们说的60帧30帧，就是一秒更新60次、30次画面。<br>1s &#x3D; 1000ms<br>60帧：1帧为16.66ms<br>30帧：1帧为33.33ms<br>人眼舒适放松时，可视帧为每秒24帧</p>
 <p>游戏卡顿的原因：跑1帧游戏逻辑中的计算量过大，或CPU不给力，不能在1帧内处理完所有游戏逻辑。</p>
 <p>Unity底层已经帮助我们做好了死循环，我们需要学习Unity的生命周期函数，利用它做好的规则来执行我们的游戏逻辑即可</p>
@@ -609,7 +607,7 @@
 <li>每帧调用的函数：Update、LateUpdate、FixedUpdate（与前两个不同帧）</li>
 </ul>
 <p>在Unity中打印信息的两种方式：<br>a.不继承MonoBehavior类的时候</p>
-<pre><code class="c#">Debug.Log(&quot;123&quot;);                                //打印信息
+<pre><code class="c#">Debug.Log(&quot;123&quot;);       //打印信息
 Debug.LogError(&quot;出错了！！&quot;);            //打印报错
 Debug.LogWarning(&quot;警告！！！&quot;);        //打印警告
 </code></pre>
@@ -617,7 +615,32 @@ Debug.LogWarning(&quot;警告！！！&quot;);        //打印警告
 <pre><code class="c#">print(&quot;123&quot;);                                        //打印信息
 </code></pre>
 <h3 id="4-生命周期函数-支持继承多态"><a href="#4-生命周期函数-支持继承多态" class="headerlink" title="4.生命周期函数  支持继承多态"></a>4.生命周期函数  支持继承多态</h3><p>注意：如果不使用该生命周期函数，则不要写上，若写上，会浪费性能</p>
-<p>​</p>
+<h2 id="二、Inpsector窗口的变量"><a href="#二、Inpsector窗口的变量" class="headerlink" title="二、Inpsector窗口的变量"></a>二、Inpsector窗口的变量</h2><h3 id="1-私有和保护无法显示编辑"><a href="#1-私有和保护无法显示编辑" class="headerlink" title="1.私有和保护无法显示编辑"></a>1.私有和保护无法显示编辑</h3><pre><code class="c#">private int a;        //无法显示
+protected int b;        //无法显示
+</code></pre>
+<h3 id="2-如何让私有的和保护的也可以被显示"><a href="#2-如何让私有的和保护的也可以被显示" class="headerlink" title="2.如何让私有的和保护的也可以被显示"></a>2.如何让私有的和保护的也可以被显示</h3><p>加上强制序列化字段特性<br>[SerializeField]<br>所谓序列化就是把一个对象保存到一个文件或数据库字段中去</p>
+<pre><code class="c#">[SerializeField]
+private int c;                        //可以显示
+[SerializeField]
+protected int d;                //可以显示
+</code></pre>
+<h3 id="3-公共的可以显示编辑"><a href="#3-公共的可以显示编辑" class="headerlink" title="3.公共的可以显示编辑"></a>3.公共的可以显示编辑</h3><pre><code class="c#">public int e;        //可以显示编辑
+</code></pre>
+<h3 id="4-公共的也可以不显示编辑"><a href="#4-公共的也可以不显示编辑" class="headerlink" title="4.公共的也可以不显示编辑"></a>4.公共的也可以不显示编辑</h3><p>在变量前加上特性<br>[HideInInspector]</p>
+<pre><code class="c#">[HideInInspector]
+public int f;                        //不显示
+</code></pre>
+<h3 id="5-大部分类型都能显示编辑"><a href="#5-大部分类型都能显示编辑" class="headerlink" title="5.大部分类型都能显示编辑"></a>5.大部分类型都能显示编辑</h3><p>字典、自定义类型不能显示编辑</p>
+<h3 id="6-让自定义类型可以被显示编辑"><a href="#6-让自定义类型可以被显示编辑" class="headerlink" title="6.让自定义类型可以被显示编辑"></a>6.让自定义类型可以被显示编辑</h3><p>在结构体名或自定义类的定义前面  加上序列化特性<br>[System.Serializable]<br>字典怎样都不行</p>
+<h3 id="7-一些辅助特性"><a href="#7-一些辅助特性" class="headerlink" title="7.一些辅助特性"></a>7.一些辅助特性</h3><p>a.分组说明特性  Header<br>为成员分组<br>[Header(“分组说明”)]<br>添加后，这个特性以下的部分就会在Inspector窗口上进行分为一组</p>
+<p>b.悬停注释  Tooltip<br>为变量添加说明<br>[Tooltip(“说明内容”)]</p>
+<p>c.间隔特性  Space()<br>让两个字段间出现间隔<br>[Space()]</p>
+<p>d.修饰数值的滑条范围 Range<br>[Range(最小值, 最大值)]</p>
+<p>e.多行显示字符串  默认不写参数显示3行<br>写参数就是对应行<br>[Multiline(4)]</p>
+<p>f.滚动条显示字符串<br>默认不写参数就是超过3行显示的滚动条<br>[TextArea(3, 4)]<br>最少显示3行，最多显示4行，超过4行就是滚动条</p>
+<p>g.为变量添加快捷方法<br>该特性添加在一个变量上方<br>参数1  显示按钮名<br>参数2  方法名  不能有参数<br>[ContextMenuItem(“显示按钮名”, “方法名”)]<br>注意：按钮，右键才会显示。 而方法必须是无参无返回</p>
+<p>h.为方法添加特性能够在Inspector中执行<br>该特性添加在一个函数上方<br>[ContextMenu(“测试函数”)]<br>设置好函数后， Inspector ——&gt; 该脚本 ——&gt; 三个点 ——&gt; 执行</p>
+<h3 id="8-注意"><a href="#8-注意" class="headerlink" title="8.注意"></a>8.注意</h3><p>a.Inspector窗口中的变量关联的就是对象的成员变量，运行时改变他们，就是在改变成员变量<br>b.拖拽到GameObject对象后，再改变脚本中变量的默认值，界面上不会改变<br>c.运行中修改的信息不会保存</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
