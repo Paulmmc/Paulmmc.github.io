@@ -6,18 +6,20 @@
   <meta name="keywords" content="">
   <meta name="description" content="Paul的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="知识点一 简单数据结构类一、ArrayList1.ArrayList的本质ArrayList是一个c#为我们封装好的类它本质是一个object类型的数组ArrayList帮助我们实现了很多方法比如数组的增删查改 2.申明申明前必须引用 using System.Collections; ArrayList array &#x3D; new ArrayList();  3.增删查改 增  array.add(">
+<meta name="description" content="知识点一 Unity脚本基础一、生命周期函数1.了解帧的概念游戏本质就是一个死循环，每一次循环处理游戏逻辑，就会更新一次画面，之所以能看到画面在动，是因为切换画面的速度到达一定时，人眼就认为画面是流畅的。 一帧就是执行一次循环。  FPS（Frames Per Second）：即每秒帧数。一般我们说的60帧30帧，就是一秒更新60次、30次画面。1s &#x3D; 1000ms60帧：1帧为16.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSharp进阶">
-<meta property="og:url" content="https://paulmmc.github.io/2024/09/24/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/CSharp/CSharp%E8%BF%9B%E9%98%B6/index.html">
+<meta property="og:title" content="Unity基础">
+<meta property="og:url" content="https://paulmmc.github.io/2024/09/27/Unity%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Paul的博客">
-<meta property="og:description" content="知识点一 简单数据结构类一、ArrayList1.ArrayList的本质ArrayList是一个c#为我们封装好的类它本质是一个object类型的数组ArrayList帮助我们实现了很多方法比如数组的增删查改 2.申明申明前必须引用 using System.Collections; ArrayList array &#x3D; new ArrayList();  3.增删查改 增  array.add(">
+<meta property="og:description" content="知识点一 Unity脚本基础一、生命周期函数1.了解帧的概念游戏本质就是一个死循环，每一次循环处理游戏逻辑，就会更新一次画面，之所以能看到画面在动，是因为切换画面的速度到达一定时，人眼就认为画面是流畅的。 一帧就是执行一次循环。  FPS（Frames Per Second）：即每秒帧数。一般我们说的60帧30帧，就是一秒更新60次、30次画面。1s &#x3D; 1000ms60帧：1帧为16.">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-09-24T15:02:43.000Z">
-<meta property="article:modified_time" content="2024-09-27T15:15:19.329Z">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/bf2eac853853de44aee7fb329b45ad2a.png">
+<meta property="article:published_time" content="2024-09-27T15:19:29.000Z">
+<meta property="article:modified_time" content="2024-09-27T15:32:56.210Z">
 <meta property="article:author" content="Paul">
-<meta property="article:tag" content="CSharp">
+<meta property="article:tag" content="-Unity">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i-blog.csdnimg.cn/blog_migrate/bf2eac853853de44aee7fb329b45ad2a.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -144,7 +146,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(15)</small>
+                <small>(16)</small>
             
         </div>
     </li>
@@ -156,10 +158,21 @@
         <div data-rel="Unity笔记">
             <i class="fold iconfont icon-right"></i>
             Unity笔记
-            <small>(7)</small>
+            <small>(8)</small>
         </div>
         
             <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="Unity笔记&lt;---&gt;Unity基础">
+            
+            Unity基础
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
                 
                     
     <li>
@@ -251,6 +264,10 @@
             
         
     
+        
+            
+        
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -264,8 +281,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="15">
-<input type="hidden" id="yelog_site_word_count" value="57.9k">
+<input type="hidden" id="yelog_site_posts_number" value="16">
+<input type="hidden" id="yelog_site_word_count" value="58.8k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -311,6 +328,10 @@
     <div class="tag-wrapper">
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>-Unity</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>CSharp</a>
             </li>
         
@@ -320,6 +341,15 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 Unity笔记 Unity基础 "
+           href="/2024/09/27/Unity%E5%9F%BA%E7%A1%80/"
+           data-tag="-Unity"
+           data-author="" >
+            <span class="post-title" title="Unity基础">Unity基础</span>
+            <span class="post-date" title="2024-09-27 23:19:29">2024/09/27</span>
+        </a>
         
         
         <a  class="全部文章 理论基础 编程语言 CSharp "
@@ -367,20 +397,20 @@
         </a>
         
         
-        <a  class="全部文章 Unity笔记 Unity进阶 "
-           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Excel%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
-            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
-        </a>
-        
-        
         <a  class="全部文章 CoscosCretor笔记 "
            href="/2024/09/23/CocosCreator%E7%AC%94%E8%AE%B0/TS/TypeScript%E8%AF%AD%E8%A8%80/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="TypeScript语言">TypeScript语言</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Excel%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
             <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
         </a>
         
