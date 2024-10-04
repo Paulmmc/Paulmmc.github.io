@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Unity基础 | Paul的博客</title>
+  <meta name="keywords" content=" Unity ">
+  <meta name="description" content="Unity基础 | Paul的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="知识点一 3D数学————基础一、数学计算公共类Mathf1.Mathf和MathMath是c#中封装好的用于数学计算的工具类 —— 位于System命名空间中Mathf是Unity中封装好的用于数学计算的工具结构体 —— 位于UnityEngine命名空间中他们都是用来提供数学相关计算的 2.Math和Mathf的区别Math 和 Mathf中的相关方法几乎一样Math 是c#自带的工具类，主要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity基础">
+<meta property="og:url" content="https://paulmmc.github.io/2024/10/04/Unity%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Paul的博客">
+<meta property="og:description" content="知识点一 3D数学————基础一、数学计算公共类Mathf1.Mathf和MathMath是c#中封装好的用于数学计算的工具类 —— 位于System命名空间中Mathf是Unity中封装好的用于数学计算的工具结构体 —— 位于UnityEngine命名空间中他们都是用来提供数学相关计算的 2.Math和Mathf的区别Math 和 Mathf中的相关方法几乎一样Math 是c#自带的工具类，主要">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-10-04T14:30:55.000Z">
+<meta property="article:modified_time" content="2024-10-04T15:12:09.339Z">
+<meta property="article:author" content="Paul">
+<meta property="article:tag" content="Unity">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>Paul</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/Paulmmc"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:3095627551@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=3095627551&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(17)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="Unity笔记">
+            <i class="fold iconfont icon-right"></i>
+            Unity笔记
+            <small>(9)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="Unity笔记&lt;---&gt;Unity基础">
+            
+            Unity基础
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="Unity笔记&lt;---&gt;Unity进阶">
+            
+            Unity进阶
+            <small>(7)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="Unity笔记&lt;---&gt;Unity入门">
+            
+            Unity入门
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="理论基础">
+            <i class="fold iconfont icon-right"></i>
+            理论基础
+            <small>(6)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="理论基础&lt;---&gt;编程语言">
+            <i class="fold iconfont icon-right"></i>
+            编程语言
+            <small>(6)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="理论基础&lt;---&gt;编程语言&lt;---&gt;CSharp">
+            
+            CSharp
+            <small>(4)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="CoscosCretor笔记">
+            
+            CoscosCretor笔记
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="17">
+<input type="hidden" id="yelog_site_word_count" value="74.6k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSharp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Unity</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 Unity笔记 Unity基础 "
+           href="/2024/10/04/Unity%E5%9F%BA%E7%A1%80/"
+           data-tag="Unity"
+           data-author="" >
+            <span class="post-title" title="Unity基础">Unity基础</span>
+            <span class="post-date" title="2024-10-04 22:30:55">2024/10/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity入门 "
+           href="/2024/09/27/Unity%E5%85%A5%E9%97%A8/"
+           data-tag="Unity"
+           data-author="" >
+            <span class="post-title" title="Unity入门">Unity入门</span>
+            <span class="post-date" title="2024-09-27 23:19:29">2024/09/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 理论基础 编程语言 CSharp "
+           href="/2024/09/24/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/CSharp/CSharp%E8%BF%9B%E9%98%B6/"
+           data-tag="CSharp"
+           data-author="" >
+            <span class="post-title" title="CSharp进阶">CSharp进阶</span>
+            <span class="post-date" title="2024-09-24 23:02:43">2024/09/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 理论基础 编程语言 CSharp "
+           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/CSharp/CSharp%E6%A0%B8%E5%BF%83/"
+           data-tag="CSharp"
+           data-author="" >
+            <span class="post-title" title="CSharp核心">CSharp核心</span>
+            <span class="post-date" title="2024-09-23 23:16:21">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 理论基础 编程语言 CSharp "
+           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/CSharp/CSharp%E5%9F%BA%E7%A1%80/"
+           data-tag="CSharp"
+           data-author="" >
+            <span class="post-title" title="CSharp基础">CSharp基础</span>
+            <span class="post-date" title="2024-09-23 22:07:32">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 理论基础 编程语言 CSharp "
+           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/CSharp/CSharp%E5%85%A5%E9%97%A8/"
+           data-tag="CSharp"
+           data-author="" >
+            <span class="post-title" title="CSharp入门">CSharp入门</span>
+            <span class="post-date" title="2024-09-23 20:18:42">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/InputSystem/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="InputSystem">InputSystem</span>
+            <span class="post-date" title="2024-09-23 18:11:34">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 CoscosCretor笔记 "
+           href="/2024/09/23/CocosCreator%E7%AC%94%E8%AE%B0/TS/TypeScript%E8%AF%AD%E8%A8%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TypeScript语言">TypeScript语言</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Excel%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Excel数据读取">Excel数据读取</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/GameFramework/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="GameFramework">GameFramework</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E4%B8%AD%E7%9A%84MVC%E6%80%9D%E6%83%B3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Unity中的MVC思想">Unity中的MVC思想</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96%E4%B9%8B2%E8%BF%9B%E5%88%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Unity数据持久化之2进制">Unity数据持久化之2进制</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Unity编辑器">Unity编辑器</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E7%BD%91%E7%BB%9C%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Unity网络开发基础">Unity网络开发基础</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 理论基础 编程语言 "
+           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/C++/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++">C++</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 理论基础 编程语言 "
+           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/TypeScript%E8%AF%AD%E8%A8%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TypeScript">TypeScript</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/09/21/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2024-09-21 00:02:38">2024/09/21</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Unity基础" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Unity基础</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Unity笔记">Unity笔记</a> > 
+            
+            <a  data-rel="Unity笔记&lt;---&gt;Unity基础">Unity基础</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">Unity</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-10-04 23:12:09'>2024-10-04 22:30</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:5.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-3D%E6%95%B0%E5%AD%A6%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80"><span class="toc-text">知识点一 3D数学————基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%85%AC%E5%85%B1%E7%B1%BBMathf"><span class="toc-text">一、数学计算公共类Mathf</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Mathf%E5%92%8CMath"><span class="toc-text">1.Mathf和Math</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Math%E5%92%8CMathf%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">2.Math和Mathf的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Mathf%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-%E2%80%94%E2%80%94-%E4%B8%80%E8%88%AC%E8%AE%A1%E7%AE%97%E4%B8%80%E6%AC%A1"><span class="toc-text">3.Mathf中的常用方法 —— 一般计算一次</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%CF%80-PI"><span class="toc-text">3.1 π - PI</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E5%8F%96%E7%BB%9D%E5%AF%B9%E5%80%BC-Abs"><span class="toc-text">3.2 取绝对值 - Abs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E5%90%91%E4%B8%8A%E5%8F%96%E6%95%B4-CeilToInt"><span class="toc-text">3.3 向上取整 - CeilToInt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E5%90%91%E4%B8%8B%E5%8F%96%E6%95%B4-FloorToInt"><span class="toc-text">3.4 向下取整 - FloorToInt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-%E9%92%B3%E5%88%B6%E5%87%BD%E6%95%B0-Clamp"><span class="toc-text">3.5 钳制函数 - Clamp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-%E8%8E%B7%E5%8F%96%E6%9C%80%E5%A4%A7%E5%80%BC-Max"><span class="toc-text">3.6 获取最大值 - Max</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7-%E8%8E%B7%E5%8F%96%E6%9C%80%E5%B0%8F%E5%80%BC-Min"><span class="toc-text">3.7 获取最小值 - Min</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-8-%E4%B8%80%E4%B8%AA%E6%95%B0%E7%9A%84n%E6%AC%A1%E5%B9%82-Pow"><span class="toc-text">3.8 一个数的n次幂 - Pow</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-9-%E5%9B%9B%E8%88%8D%E4%BA%94%E5%85%A5-RoundToInt"><span class="toc-text">3.9 四舍五入 - RoundToInt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-10-%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E6%95%B0%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9-Sqrt"><span class="toc-text">3.10 返回一个数的平方根 - Sqrt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-11-%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%95%B0%E6%98%AF%E5%90%A6%E6%98%AF2%E7%9A%84n%E6%AC%A1%E6%96%B9-IsPowerOfTwo"><span class="toc-text">3.11 判断一个数是否是2的n次方 - IsPowerOfTwo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-12%E5%88%A4%E6%96%AD%E6%AD%A3%E8%B4%9F%E6%95%B0-Sign"><span class="toc-text">3.12判断正负数 - Sign</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Mathf%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-%E4%B8%80%E8%88%AC%E4%B8%8D%E5%81%9C%E8%AE%A1%E7%AE%97"><span class="toc-text">4.Mathf中的常用方法 - 一般不停计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text">二、三角函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BC%A7%E5%BA%A6%E5%92%8C%E8%A7%92%E5%BA%A6%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-text">1.弧度和角度相互转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text">2.三角函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8F%8D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text">3.反三角函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">三、坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">1.世界坐标系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%89%A9%E4%BD%93%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">2.物体坐标系</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%8C-3D%E6%95%B0%E5%AD%A6%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E5%90%91%E9%87%8F"><span class="toc-text">知识点二 3D数学————向量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%90%91%E9%87%8F%E6%A8%A1%E9%95%BF%E5%92%8C%E5%8D%95%E4%BD%8D%E5%90%91%E9%87%8F"><span class="toc-text">一、向量模长和单位向量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%90%91%E9%87%8F"><span class="toc-text">1.向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%A4%E7%82%B9%E5%86%B3%E5%AE%9A%E4%B8%80%E5%90%91%E9%87%8F"><span class="toc-text">2.两点决定一向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%9B%B6%E5%90%91%E9%87%8F%E5%92%8C%E8%B4%9F%E5%90%91%E9%87%8F"><span class="toc-text">3.零向量和负向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%90%91%E9%87%8F%E7%9A%84%E6%A8%A1%E9%95%BF"><span class="toc-text">4.向量的模长</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%8D%95%E4%BD%8D%E5%90%91%E9%87%8F"><span class="toc-text">5.单位向量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%90%91%E9%87%8F%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4"><span class="toc-text">二、向量加减乘除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%90%91%E9%87%8F%E5%8A%A0%E6%B3%95"><span class="toc-text">1.向量加法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%90%91%E9%87%8F%E5%87%8F%E6%B3%95"><span class="toc-text">2.向量减法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%91%E9%87%8F%E4%B9%98%E9%99%A4"><span class="toc-text">3.向量乘除</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%90%91%E9%87%8F%E7%82%B9%E4%B9%98"><span class="toc-text">三、向量点乘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="toc-text">1.计算公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89"><span class="toc-text">2.几何意义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%B0%83%E8%AF%95%E7%94%BB%E7%BA%BF"><span class="toc-text">3.调试画线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%80%9A%E8%BF%87%E7%82%B9%E4%B9%98%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%96%B9%E4%BD%8D"><span class="toc-text">4.通过点乘判断对象方位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E9%80%9A%E8%BF%87%E7%82%B9%E4%B9%98%E6%8E%A8%E5%AF%BC%E5%85%AC%E5%BC%8F"><span class="toc-text">5.通过点乘推导公式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%90%91%E9%87%8F%E5%8F%89%E4%B9%98"><span class="toc-text">四、向量叉乘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8F%89%E4%B9%98%E7%9A%84%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="toc-text">1.叉乘的计算公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Unity%E4%B8%AD%E7%9A%84%E8%AE%A1%E7%AE%97%E5%8F%89%E4%B9%98%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">2.Unity中的计算叉乘的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89"><span class="toc-text">3.几何意义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%90%91%E9%87%8F%E6%8F%92%E5%80%BC%E8%BF%90%E7%AE%97"><span class="toc-text">四、向量插值运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%BA%BF%E6%80%A7%E6%8F%92%E5%80%BC"><span class="toc-text">1.线性插值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BA%BF%E6%80%A7%E5%B7%AE%E5%80%BC%E7%9A%84%E8%BF%90%E7%94%A8"><span class="toc-text">2.线性差值的运用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%90%83%E5%BD%A2%E6%8F%92%E5%80%BC"><span class="toc-text">3.球形插值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%89-3D%E6%95%B0%E5%AD%A6%E2%80%94%E2%80%94%E2%80%94%E2%80%94Quaternion%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-text">知识点三 3D数学————Quaternion四元数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-text">一、为什么使用四元数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%AC%A7%E6%8B%89%E8%A7%92"><span class="toc-text">1.欧拉角</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%AC%A7%E6%8B%89%E8%A7%92%E6%97%8B%E8%BD%AC%E7%9A%84%E7%BA%A6%E5%AE%9A"><span class="toc-text">2.欧拉角旋转的约定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Unity%E4%B8%AD%E7%9A%84%E6%AC%A7%E6%8B%89%E8%A7%92"><span class="toc-text">3.Unity中的欧拉角</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%AC%A7%E6%8B%89%E8%A7%92%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-text">4.欧拉角的优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E4%B8%87%E5%90%91%E8%8A%82%E6%AD%BB%E9%94%81"><span class="toc-text">5.万向节死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%80%BB%E7%BB%93"><span class="toc-text">6.总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9B%9B%E5%85%83%E6%95%B0%E7%AE%80%E4%BB%8B"><span class="toc-text">二、四元数简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9B%9B%E5%85%83%E6%95%B0%E7%9A%84%E6%9E%84%E6%88%90"><span class="toc-text">1.四元数的构成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Unity%E4%B8%AD%E7%9A%84%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-text">2.Unity中的四元数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%9B%9B%E5%85%83%E6%95%B0%E5%BC%A5%E8%A1%A5%E6%AC%A7%E6%8B%89%E8%A7%92%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-text">3.四元数弥补欧拉角的缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9B%9B%E5%85%83%E6%95%B0%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">三、四元数常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8D%95%E4%BD%8D%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-text">1.单位四元数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%8F%92%E5%80%BC%E8%BF%90%E7%AE%97"><span class="toc-text">2.插值运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%91%E9%87%8F%E6%8C%87%E5%90%91%E8%BD%AC%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-text">3.向量指向转四元数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%9B%9B%E5%85%83%E6%95%B0%E8%AE%A1%E7%AE%97"><span class="toc-text">四、四元数计算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9B%9B%E5%85%83%E6%95%B0%E7%9B%B8%E4%B9%98"><span class="toc-text">1.四元数相乘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9B%9B%E5%85%83%E6%95%B0%E4%B9%98%E5%90%91%E9%87%8F"><span class="toc-text">2.四元数乘向量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%94-MonoBehavior%E4%B8%AD%E7%9A%84%E9%87%8D%E8%A6%81%E5%86%85%E5%AE%B9"><span class="toc-text">知识点五 MonoBehavior中的重要内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%BB%B6%E8%BF%9F%E5%87%BD%E6%95%B0"><span class="toc-text">一、延迟函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%BB%B6%E8%BF%9F%E5%87%BD%E6%95%B0"><span class="toc-text">1.什么是延迟函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%BB%B6%E8%BF%9F%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">2.延迟函数的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%BB%B6%E8%BF%9F%E5%87%BD%E6%95%B0%E5%8F%97%E5%AF%B9%E8%B1%A1%E5%A4%B1%E6%B4%BB%E9%94%80%E6%AF%81%E5%BD%B1%E5%93%8D"><span class="toc-text">3.延迟函数受对象失活销毁影响</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%8D%8F%E5%90%8C%E7%A8%8B%E5%BA%8F%EF%BC%88%E5%8D%8F%E7%A8%8B%EF%BC%89"><span class="toc-text">二、协同程序（协程）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Unity%E6%98%AF%E5%90%A6%E6%94%AF%E6%8C%81%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-text">1.Unity是否支持多线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8D%8F%E5%90%8C%E7%A8%8B%E5%BA%8F%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">2.协同程序是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8D%8F%E5%90%8C%E7%A8%8B%E5%BA%8F%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">3.协同程序和线程的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%8D%8F%E7%A8%8B%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">4.协程的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-yield-return-%E4%B8%8D%E5%90%8C%E5%86%85%E5%AE%B9%E7%9A%84%E5%90%AB%E4%B9%89"><span class="toc-text">5.yield return 不同内容的含义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%8D%8F%E7%A8%8B%E5%8F%97%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BB%84%E4%BB%B6%E5%A4%B1%E6%B4%BB%E9%94%80%E6%AF%81%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-text">6.协程受对象和组件失活销毁的影响</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%8D%8F%E5%90%8C%E7%A8%8B%E5%BA%8F%E5%8E%9F%E7%90%86"><span class="toc-text">三、协同程序原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8D%8F%E7%A8%8B%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-text">1.协程的本质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8D%8F%E7%A8%8B%E6%9C%AC%E4%BD%93%E6%98%AF%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%93%E7%8E%B0"><span class="toc-text">2.协程本体是迭代器方法的体现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E5%8D%8F%E7%A8%8B%E5%87%BD%E6%95%B0%E6%9C%AC%E4%BD%93"><span class="toc-text">2.1协程函数本体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E5%8D%8F%E7%A8%8B%E8%B0%83%E5%BA%A6%E5%99%A8"><span class="toc-text">2.2协程调度器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3%E6%80%BB%E7%BB%93"><span class="toc-text">2.3总结</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="知识点一-3D数学————基础"><a href="#知识点一-3D数学————基础" class="headerlink" title="知识点一 3D数学————基础"></a>知识点一 3D数学————基础</h1><h2 id="一、数学计算公共类Mathf"><a href="#一、数学计算公共类Mathf" class="headerlink" title="一、数学计算公共类Mathf"></a>一、数学计算公共类Mathf</h2><h3 id="1-Mathf和Math"><a href="#1-Mathf和Math" class="headerlink" title="1.Mathf和Math"></a>1.Mathf和Math</h3><p>Math是c#中封装好的用于数学计算的工具类 —— 位于System命名空间中<br>Mathf是Unity中封装好的用于数学计算的工具结构体 —— 位于UnityEngine命名空间中<br>他们都是用来提供数学相关计算的</p>
+<h3 id="2-Math和Mathf的区别"><a href="#2-Math和Mathf的区别" class="headerlink" title="2.Math和Mathf的区别"></a>2.Math和Mathf的区别</h3><p>Math 和 Mathf中的相关方法几乎一样<br>Math 是c#自带的工具类，主要提供数学相关的计算方法<br>Mathf 是Unity专门封装的，不仅包含Math中的方法，还多了一些适用于游戏开发的方法<br>所以我们进行 Unity 游戏开发时，使用Mathf中的方法进行数学计算即可</p>
+<h3 id="3-Mathf中的常用方法-——-一般计算一次"><a href="#3-Mathf中的常用方法-——-一般计算一次" class="headerlink" title="3.Mathf中的常用方法 —— 一般计算一次"></a>3.Mathf中的常用方法 —— 一般计算一次</h3><h4 id="3-1-π-PI"><a href="#3-1-π-PI" class="headerlink" title="3.1 π - PI"></a>3.1 π - PI</h4><pre><code class="c#">Mathf.PI
+</code></pre>
+<h4 id="3-2-取绝对值-Abs"><a href="#3-2-取绝对值-Abs" class="headerlink" title="3.2 取绝对值 - Abs"></a>3.2 取绝对值 - Abs</h4><pre><code class="c#">Mathf.Abs(-10);
+</code></pre>
+<h4 id="3-3-向上取整-CeilToInt"><a href="#3-3-向上取整-CeilToInt" class="headerlink" title="3.3 向上取整 - CeilToInt"></a>3.3 向上取整 - CeilToInt</h4><pre><code class="c#">Mathf.CeilToInt(1.3f);
+</code></pre>
+<h4 id="3-4-向下取整-FloorToInt"><a href="#3-4-向下取整-FloorToInt" class="headerlink" title="3.4 向下取整 - FloorToInt"></a>3.4 向下取整 - FloorToInt</h4><pre><code class="c#">Mathf.FloorToInt(1.3f);
+</code></pre>
+<h4 id="3-5-钳制函数-Clamp"><a href="#3-5-钳制函数-Clamp" class="headerlink" title="3.5 钳制函数 - Clamp"></a>3.5 钳制函数 - Clamp</h4><p>参数一：一个值<br>参数二：最小值<br>参数三：最大值</p>
+<pre><code class="c#">Mathf.Clamp(10, 11, 20);        //10小于11，返回11
+Mathf.Clamp(21, 11, 20);        //21大于20，返回20
+Mathf.Clamp(15, 11, 20);        //15位于11和20之间，返回15
+</code></pre>
+<h4 id="3-6-获取最大值-Max"><a href="#3-6-获取最大值-Max" class="headerlink" title="3.6 获取最大值 - Max"></a>3.6 获取最大值 - Max</h4><pre><code class="c#">Mathf.Max(1, 10);        //返回10
+Mathf.Max(1, 2, 3, 5, 10);        //返回10
+</code></pre>
+<h4 id="3-7-获取最小值-Min"><a href="#3-7-获取最小值-Min" class="headerlink" title="3.7 获取最小值 - Min"></a>3.7 获取最小值 - Min</h4><pre><code class="c#">Mathf.Min(1, 10);        //返回1
+Mathf.Min(1, 2, 3, 5, 10);        //返回1
+</code></pre>
+<h4 id="3-8-一个数的n次幂-Pow"><a href="#3-8-一个数的n次幂-Pow" class="headerlink" title="3.8 一个数的n次幂 - Pow"></a>3.8 一个数的n次幂 - Pow</h4><p>参数一：一个数<br>参数二：几次幂</p>
+<pre><code class="c#">Mathf.Pow(4, 2);        //返回16
+</code></pre>
+<h4 id="3-9-四舍五入-RoundToInt"><a href="#3-9-四舍五入-RoundToInt" class="headerlink" title="3.9 四舍五入 - RoundToInt"></a>3.9 四舍五入 - RoundToInt</h4><pre><code class="c#">Mathf.RoundToInt(1.3f);        //返回1
+</code></pre>
+<h4 id="3-10-返回一个数的平方根-Sqrt"><a href="#3-10-返回一个数的平方根-Sqrt" class="headerlink" title="3.10 返回一个数的平方根 - Sqrt"></a>3.10 返回一个数的平方根 - Sqrt</h4><pre><code class="c#">Mathf.Sqrt(16);        //返回4
+</code></pre>
+<h4 id="3-11-判断一个数是否是2的n次方-IsPowerOfTwo"><a href="#3-11-判断一个数是否是2的n次方-IsPowerOfTwo" class="headerlink" title="3.11 判断一个数是否是2的n次方 - IsPowerOfTwo"></a>3.11 判断一个数是否是2的n次方 - IsPowerOfTwo</h4><pre><code class="c#">Mathf.IsPowerOfTwo(4);        //返回true
+</code></pre>
+<h4 id="3-12判断正负数-Sign"><a href="#3-12判断正负数-Sign" class="headerlink" title="3.12判断正负数 - Sign"></a>3.12判断正负数 - Sign</h4><p>正数和0返回1，负数返回-1</p>
+<pre><code class="c#">Mathf.Sign(10);        //返回1
+</code></pre>
+<h3 id="4-Mathf中的常用方法-一般不停计算"><a href="#4-Mathf中的常用方法-一般不停计算" class="headerlink" title="4.Mathf中的常用方法 - 一般不停计算"></a>4.Mathf中的常用方法 - 一般不停计算</h3><p>插值运算 - Lerp</p>
+<pre><code class="c#">//Lerp函数公式
+result = Mathf.Lerp(start, end, t);
+
+//t为插值系数，取值范围为 0~1
+result = start + (end - start)*t;
+</code></pre>
+<p>插值运算用法一<br>每帧改变 start 的值 —— 变化速度先快后慢，位置无限接近，但不会得到end的位置</p>
+<pre><code class="c#">float start = 0;                //开始值
+start = Mathf.Lerp(start, 10, Time.deltaTime);
+</code></pre>
+<p>插值运算用法二<br>每帧改变 t 的值 —— 变化速度匀速，位置每帧接近，t &gt;&#x3D;0 时，得到结果</p>
+<pre><code class="c#">float start = 0;
+float result = 0;
+float time = 0;  
+time += Time.deltaTime;              
+result = Mathf.Lerp(start, 10, time);
+</code></pre>
+<h2 id="二、三角函数"><a href="#二、三角函数" class="headerlink" title="二、三角函数"></a>二、三角函数</h2><p>角度：1°        圆一周的角度为360°<br>弧度：1 radian        圆一周的弧度为2π radian</p>
+<h3 id="1-弧度和角度相互转换"><a href="#1-弧度和角度相互转换" class="headerlink" title="1.弧度和角度相互转换"></a>1.弧度和角度相互转换</h3><pre><code class="c#">//弧度转角度
+float rad = 1;              //弧度
+float anger = rad * Mathf.Rad2Deg;  //角度
+
+//角度转弧度
+float anger = 1;
+float rad = anger * Mathf.Deg2Rad;
+</code></pre>
+<h3 id="2-三角函数"><a href="#2-三角函数" class="headerlink" title="2.三角函数"></a>2.三角函数</h3><p>注意：Mathf中的三角函数相关函数，传入的参数需要是弧度值</p>
+<pre><code class="c#">Mathf.Sin( 30 * Mathf.Deg2Rad );
+Mathf.Cos( 60 * Mathf.Deg2Rad );
+</code></pre>
+<h3 id="3-反三角函数"><a href="#3-反三角函数" class="headerlink" title="3.反三角函数"></a>3.反三角函数</h3><p>注意：反三角函数得到的结果是，正弦值或余弦值对应的弧度值</p>
+<pre><code class="c#">Mathf.Asin(0.5f);
+Mathf.Acos(0.5f);
+</code></pre>
+<h2 id="三、坐标系"><a href="#三、坐标系" class="headerlink" title="三、坐标系"></a>三、坐标系</h2><h3 id="1-世界坐标系"><a href="#1-世界坐标系" class="headerlink" title="1.世界坐标系"></a>1.世界坐标系</h3><p>原点：世界的中心店<br>轴线：世界坐标系的三个轴线是固定的<br>和世界坐标系相关的代码</p>
+<pre><code class="c#">this.transform.position;
+this.transform.rotation;
+this.transform.eulerAngles;
+this.transform.lossyScale;
+//修改他们，会使物体在世界坐标系改变
+</code></pre>
+<h3 id="2-物体坐标系"><a href="#2-物体坐标系" class="headerlink" title="2.物体坐标系"></a>2.物体坐标系</h3><p>原点：物体的中心（建模时决定）<br>轴向：<br>物体右方为x轴正方向<br>物体上方为y轴正方向<br>物体前方为z轴正方向</p>
+<p>相对父对象物体坐标系的位置 本地坐标 相对坐标</p>
+<pre><code class="c#">this.transform.localPosition;
+this.transform.localRotation;
+this.transform.localEulerAngles;
+this.transform.localScale;
+//修改他们，会修改相对父对象坐标系的值
+</code></pre>
+<p>3.屏幕坐标系<br>原点：屏幕左下角<br>轴向：<br>向右为x轴正方向<br>向上位y轴正方向<br>最大宽高：</p>
+<pre><code class="c#">Screen.width;
+Screen.height;
+Input.mousePosition;                        //检测鼠标在屏幕上的位置
+Screen.width;
+Screen.height;
+</code></pre>
+<p>4.视口坐标系<br>原点：屏幕左下角<br>轴向：<br>向右为x轴正方向<br>向上为y轴正方向<br>特点：<br>左下角为（0, 0）<br>右上角为（1, 1）<br>和屏幕坐标类似，将坐标单位化</p>
+<p>摄像机上的视口范围</p>
+<p>5.坐标转换相关</p>
+<pre><code class="c#">//世界转本地
+this.tansform.InverseTransformDirection
+this.tansform.InverseTransformPoint;
+this.tansform.InverseTransformVector;
+
+//本地转世界
+this.transform.TransformDirection
+this.transform.TransformPoint
+this.transform.TransformVector
+
+//世界转屏幕
+Camer.main.WorldToScreenPoint
+//屏幕转世界
+Camer.main.ScreenToWorldPoint
+
+//世界转视口
+Camer.main.WorldToViewportPoint
+//视口转世界
+Camer.main.ViewportToWorldPoint
+
+//视口转屏幕
+Camer.main.ViewportToScreenPoint
+//屏幕转视口
+Camer.main.ScreenToViewportPoint
+</code></pre>
+<h1 id="知识点二-3D数学————向量"><a href="#知识点二-3D数学————向量" class="headerlink" title="知识点二 3D数学————向量"></a>知识点二 3D数学————向量</h1><h2 id="一、向量模长和单位向量"><a href="#一、向量模长和单位向量" class="headerlink" title="一、向量模长和单位向量"></a>一、向量模长和单位向量</h2><p>标量：有数值大小，没方向<br>向量：有数值大小，有方向的矢量</p>
+<h3 id="1-向量"><a href="#1-向量" class="headerlink" title="1.向量"></a>1.向量</h3><p>三维向量 - Vector3</p>
+<p>Vector3有两种含义：<br>a.位置 - 代表一个点<br>b.方向 - 代表一个方向</p>
+<h3 id="2-两点决定一向量"><a href="#2-两点决定一向量" class="headerlink" title="2.两点决定一向量"></a>2.两点决定一向量</h3><p>计算方法：终点减起点，AB向量（B点 - A点）</p>
+<pre><code class="c#">Vector3 A = new Vector(1, 2, 3);
+Vector3 B = new Vector(5, 1, 5);
+Vector AB = B -  A;
+</code></pre>
+<h3 id="3-零向量和负向量"><a href="#3-零向量和负向量" class="headerlink" title="3.零向量和负向量"></a>3.零向量和负向量</h3><p>零向量<br>(0, 0, 0)<br>零向量是唯一一个大小为0的向量</p>
+<pre><code class="c#">Vector3.zero
+</code></pre>
+<p>负向量<br>(x, y, z)的负向量为(-x, -y, -z)<br>负向量和原向量大小相等、方向相反</p>
+<pre><code class="c#">Vector3.forward
+-Vector3.forward
+</code></pre>
+<h3 id="4-向量的模长"><a href="#4-向量的模长" class="headerlink" title="4.向量的模长"></a>4.向量的模长</h3><p>向量的模长就是向量的长度<br>向量是由两个点算出的，所以向量的模长就是两个点的距离</p>
+<p>Unity中获取向量模长 - magnitude</p>
+<pre><code class="c#">Vector3.forward.magnitude
+
+Vector3.Distance(A, B)
+</code></pre>
+<h3 id="5-单位向量"><a href="#5-单位向量" class="headerlink" title="5.单位向量"></a>5.单位向量</h3><p>模长为1的向量就是单位向量<br>任意一个向量经过归一化就是单位向量<br>只需要方向，不想让模长影响计算结果时使用单位向量</p>
+<p>单位向量 &#x3D; ( x&#x2F;模长, y&#x2F;模长, z&#x2F;模长 )</p>
+<p>Unity中获取单位向量的成员属性 - normalized</p>
+<h2 id="二、向量加减乘除"><a href="#二、向量加减乘除" class="headerlink" title="二、向量加减乘除"></a>二、向量加减乘除</h2><h3 id="1-向量加法"><a href="#1-向量加法" class="headerlink" title="1.向量加法"></a>1.向量加法</h3><p>位置 + 位置<br>没有集合意义</p>
+<p>向量 + 向量<br>可以得到一个新向量，向量相加，首位相连</p>
+<p>位置 + 向量<br>得到一个新位置</p>
+<h3 id="2-向量减法"><a href="#2-向量减法" class="headerlink" title="2.向量减法"></a>2.向量减法</h3><p>位置 - 位置<br>得到一个新向量</p>
+<p>向量 - 向量<br>得到一个新向量，头连头，尾指尾，A - B &#x3D; B头指A头</p>
+<p>位置 - 向量<br>得到一个位置，相当于加负向量</p>
+<p>向量 - 位置<br>没有任何几何意义</p>
+<h3 id="3-向量乘除"><a href="#3-向量乘除" class="headerlink" title="3.向量乘除"></a>3.向量乘除</h3><p>向量 * &#x2F; 标量 &#x3D; 向量<br>向量 * &#x2F; 正数 &#x3D; 方向不变，放大或缩小模长<br>向量 * &#x2F; 负数 &#x3D; 方向相反，放大或缩小模长<br>向量 * 0 &#x3D; 零向量  </p>
+<h2 id="三、向量点乘"><a href="#三、向量点乘" class="headerlink" title="三、向量点乘"></a>三、向量点乘</h2><h3 id="1-计算公式"><a href="#1-计算公式" class="headerlink" title="1.计算公式"></a>1.计算公式</h3><p>向量A &#x3D; (Xa, Ya, Za)<br>向量B &#x3D; (Xb, Yb, Zb)<br>A * B &#x3D; Xa * Xb + Ya * Yb + Za * Zb<br>向量 * 向量 &#x3D; 标量</p>
+<h3 id="2-几何意义"><a href="#2-几何意义" class="headerlink" title="2.几何意义"></a>2.几何意义</h3><p>点乘可以得到一个向量在自己向量的上的投影长度<br>点乘结果大于0，两向量的夹角为锐角<br>小于0，两向量的夹角为钝角<br>等于0，为直角<br>我们可以用这个规律大致判断敌方的大致位置</p>
+<h3 id="3-调试画线"><a href="#3-调试画线" class="headerlink" title="3.调试画线"></a>3.调试画线</h3><p>参数一：Vector3 开始点<br>参数二：Vector3 结束点<br>参数三：Color 颜色</p>
+<pre><code class="c#">Debug.DrawLine(this.transform.position, this.transform.position + this.transform.forward, Color.red);
+//在自己的正方向，画一条红色的，长度为1的线
+</code></pre>
+<p>参数一：Vector3 开始点<br>参数二：Vector3 方向向量<br>参数三：Color 颜色</p>
+<pre><code class="c#">Debug.DrawRay(this.transform.position, this.transform.forward, Color.red);
+//在自己的正方向，画一条红色的，长度为1的线
+</code></pre>
+<h3 id="4-通过点乘判断对象方位"><a href="#4-通过点乘判断对象方位" class="headerlink" title="4.通过点乘判断对象方位"></a>4.通过点乘判断对象方位</h3><p>Vector3提供了计算点乘的方法<br>Vector3.Dot(向量1, 向量2);<br>计算自己的正方向的向量与自己到A点的方向向量的点乘，返回一个float</p>
+<pre><code class="c#">float dotResult;
+dotResult = Vector3.Dot(this.transform.forward, A.position - this.transform.position);
+//dotResult &gt; 0，则在自己的前方
+//dotResult &lt; 0，则在自己的后方
+//dotResult = 0，则在自己的左方或右方
+</code></pre>
+<h3 id="5-通过点乘推导公式"><a href="#5-通过点乘推导公式" class="headerlink" title="5.通过点乘推导公式"></a>5.通过点乘推导公式</h3><p>单位向量A与单位向量B之间的夹角为：<br>cosβ &#x3D; 单位向量A * 单位向量B          ——&gt;          β &#x3D; Acos(单位向量A * 单位向量B)<br>计算范围：0° ~ 180°</p>
+<p>Unity中提供计算夹角的方法<br>Vector3.Angle(向量A，向量B);          &#x2F;&#x2F;返回一个角度<br>计算范围：0° ~ 180°</p>
+<h2 id="四、向量叉乘"><a href="#四、向量叉乘" class="headerlink" title="四、向量叉乘"></a>四、向量叉乘</h2><h3 id="1-叉乘的计算公式"><a href="#1-叉乘的计算公式" class="headerlink" title="1.叉乘的计算公式"></a>1.叉乘的计算公式</h3><p>向量 x 向量 &#x3D; 向量<br>A x B &#x3D; ( X, Y, Z )<br>X &#x3D; YaZb - YbZa<br>Y &#x3D; XbZa - XaZb <br>Z &#x3D; XaYb - XbYa</p>
+<h3 id="2-Unity中的计算叉乘的方法"><a href="#2-Unity中的计算叉乘的方法" class="headerlink" title="2.Unity中的计算叉乘的方法"></a>2.Unity中的计算叉乘的方法</h3><p>Vector3.Cross(向量A, 向量B);</p>
+<h3 id="3-几何意义"><a href="#3-几何意义" class="headerlink" title="3.几何意义"></a>3.几何意义</h3><p>A x B 得到的向量同时垂直A和B<br>A x B 得到的向量垂直于A和B组成的平面<br>A x B &#x3D; - ( B x A )</p>
+<p>假设向量 A和B 都在 xz平面上<br>向量A 叉乘 向量B <br>y大于0 证明 向量B在向量A的右侧<br>y小于0 证明 向量B在向量A的左侧</p>
+<h2 id="四、向量插值运算"><a href="#四、向量插值运算" class="headerlink" title="四、向量插值运算"></a>四、向量插值运算</h2><h3 id="1-线性插值"><a href="#1-线性插值" class="headerlink" title="1.线性插值"></a>1.线性插值</h3><pre><code class="c#">Vector3.Lerp(start, end, t);
+//对两个点，x、y、z三个值进行插值运算
+//t取值范围：0~1
+result = start + (end - start) * t;
+</code></pre>
+<h3 id="2-线性差值的运用"><a href="#2-线性差值的运用" class="headerlink" title="2.线性差值的运用"></a>2.线性差值的运用</h3><pre><code class="c#">public Transform A;
+public Transform B;
+public Transform target;
+
+private Vector3 startPos = B.position;
+private float time;
+private Vector3 nowTarget
+
+//A每帧改变start的值，先快后慢
+A.position = Vector3.Lerp( A.position, target.position, Time.deltaTime );
+
+//B每帧改变t的值，匀速移动
+if( nowTarget != target.position )
+&#123;
+        nowTarget = target.position;
+        time = 0;
+        start = B.position;
+&#125;
+time += Time.deltaTime;
+B.position = Vector3.Lerp( startPos, target.position, time );
+</code></pre>
+<h3 id="3-球形插值"><a href="#3-球形插值" class="headerlink" title="3.球形插值"></a>3.球形插值</h3><pre><code class="c#">Vector3.Slerp(start, end, t);
+</code></pre>
+<p>对两个向量进行插值运算<br>t的取值范围为0~1<br>弧形轨迹<br>用法与线性差值相同</p>
+<h1 id="知识点三-3D数学————Quaternion四元数"><a href="#知识点三-3D数学————Quaternion四元数" class="headerlink" title="知识点三 3D数学————Quaternion四元数"></a>知识点三 3D数学————Quaternion四元数</h1><h2 id="一、为什么使用四元数"><a href="#一、为什么使用四元数" class="headerlink" title="一、为什么使用四元数"></a>一、为什么使用四元数</h2><h3 id="1-欧拉角"><a href="#1-欧拉角" class="headerlink" title="1.欧拉角"></a>1.欧拉角</h3><p>由三个角度（x, y, z）组成<br>在特定坐标系下用于描述物体的旋转量<br>空间中的任意旋转都可以分解成 绕三个互相垂直轴的三个旋转角组成的序列</p>
+<h3 id="2-欧拉角旋转的约定"><a href="#2-欧拉角旋转的约定" class="headerlink" title="2.欧拉角旋转的约定"></a>2.欧拉角旋转的约定</h3><p>heading - pitch - bank</p>
+<p>是一种最常用的旋转序列约定<br>Y - X - Z 约定</p>
+<p>heading：物体绕自身的对象坐标系的Y轴，旋转角度<br>pitch：物体绕自身的对象坐标系的X轴，旋转角度<br>bank：物体绕自身的对象坐标系的Z轴，旋转角度</p>
+<h3 id="3-Unity中的欧拉角"><a href="#3-Unity中的欧拉角" class="headerlink" title="3.Unity中的欧拉角"></a>3.Unity中的欧拉角</h3><p>Inspertor 窗口中调节的 Rotation 就是欧拉角<br>this.transform.eulerAngles 得到的就是欧拉角</p>
+<h3 id="4-欧拉角的优缺点"><a href="#4-欧拉角的优缺点" class="headerlink" title="4.欧拉角的优缺点"></a>4.欧拉角的优缺点</h3><p>优点：<br>直观、易理解<br>存储空间小<br>可以进行从一个方向到另一个方向旋转大于180度的角度</p>
+<p>缺点：<br>同一旋转的表示不唯一<br>万向节锁死</p>
+<h3 id="5-万向节死锁"><a href="#5-万向节死锁" class="headerlink" title="5.万向节死锁"></a>5.万向节死锁</h3><p>当某个特定的轴达到某个特殊值时<br>绕一个轴旋转可能会覆盖住另一个轴旋转<br>从而失去一维的自由</p>
+<p>在Unity中X轴达到90度时<br>会产生万向节死锁</p>
+<h3 id="6-总结"><a href="#6-总结" class="headerlink" title="6.总结"></a>6.总结</h3><p>四元数不存在万向节死锁和同一角度不唯一的问题<br>因此在计算机中我们往往使用四元数来表示三维空间中的旋转信息</p>
+<h2 id="二、四元数简介"><a href="#二、四元数简介" class="headerlink" title="二、四元数简介"></a>二、四元数简介</h2><h3 id="1-四元数的构成"><a href="#1-四元数的构成" class="headerlink" title="1.四元数的构成"></a>1.四元数的构成</h3><ol>
+<li>四元数概念<br>四元数是简单的超复数<br>由实数加上三个虚数单位组成<br>主要用于三维空间中表示旋转</li>
+<li>四元数的构成<br>一个四元数包含一个标量和一个3D向量<br>[w, v], w为标量，v为3D向量<br>[w, (x, y, z)]<br>对于给定的任意一个四元数：表示3D空间中的一个旋转量</li>
+<li>轴 - 角对<br>在3D空间中，任意旋转都可以表示绕着某个轴旋转一个旋转角得到<br>注意：该轴不是空间中的x、y、z轴，而是任意轴</li>
+</ol>
+<p>对于给定的旋转，假设为绕着n轴，旋转β度，n轴为(x, y, z)<br>那么可以构成四元数为<br>四元数 Q &#x3D; [ cos(β&#x2F;2), sin(β&#x2F;2)n ]<br>四元数 Q &#x3D; [ cos(β&#x2F;2), sin(β&#x2F;2)x, sin(β&#x2F;2)y, sin(β&#x2F;2)z ]<br>四元数Q表示绕着轴n，旋转β度的旋转量</p>
+<h3 id="2-Unity中的四元数"><a href="#2-Unity中的四元数" class="headerlink" title="2.Unity中的四元数"></a>2.Unity中的四元数</h3><p>Quaternion<br>是Unity中表示四元数的结构体</p>
+<ol>
+<li>Unity中的四元数初始化方法<br>轴角对公式初始化<br>四元数Q &#x3D; [ cos(β&#x2F;2), sin(β&#x2F;2)x, sin(β&#x2F;2)y, sin(β&#x2F;2)z ]<br>Quaternion q &#x3D; new Quaternion(sin(β&#x2F;2)x, sin(β&#x2F;2)y, sin(β&#x2F;2)z, cos(β&#x2F;2));</li>
+</ol>
+<p>轴角对方法初始化<br>Quaternion q &#x3D; Quaternion.AngleAxis(角度, 轴);<br>例如<br>Quaternion q &#x3D; Quaternion.AngleAxis(60, Vector3.right);<br>2. 四元数和欧拉角相互转换<br>欧拉角转四元数<br>Quaternion.Euler(x, y, z);<br>例如<br>Quaternion q2 &#x3D; Quaternion.Euler(60, 0, 0);<br>也可以传入一个向量</p>
+<p>四元数转欧拉角<br>Quaternion q<br>q.eulerAngles</p>
+<h3 id="3-四元数弥补欧拉角的缺点"><a href="#3-四元数弥补欧拉角的缺点" class="headerlink" title="3.四元数弥补欧拉角的缺点"></a>3.四元数弥补欧拉角的缺点</h3><p>弥补同一旋转角度不唯一<br>弥补万向节死锁</p>
+<h2 id="三、四元数常用方法"><a href="#三、四元数常用方法" class="headerlink" title="三、四元数常用方法"></a>三、四元数常用方法</h2><h3 id="1-单位四元数"><a href="#1-单位四元数" class="headerlink" title="1.单位四元数"></a>1.单位四元数</h3><p>单位四元数表示没有旋转量（角位移）<br>当角度为0度或360度时，对于给定轴都会得到单位四元数<br>[ 1, (0, 0, 0) ] 和 [ -1, (0, 0, 0) ] 都是单位四元数，表示没有旋转量</p>
+<p>Unity中可以得到单位四元数</p>
+<pre><code class="c#">Quaternion.identity                        //返回单位四元数
+</code></pre>
+<p>当将单位四元数赋值给一个对象时，此对象的角度就会复原变成(0, 0, 0)</p>
+<h3 id="2-插值运算"><a href="#2-插值运算" class="headerlink" title="2.插值运算"></a>2.插值运算</h3><p>在四元数中，Lerp和Slerp只有一些细微差别<br>由于算法不同<br>Slerp的效果会好一点<br>Lerp效果相比Slerp更快但是如果旋转范围较大效果较差<br>所以建议使用Slerp进行插值运算</p>
+<ol>
+<li>无限接近，先快后慢</li>
+</ol>
+<pre><code class="c#">A.transform.rotation =
+Quaternion.Slerp(A.transform.rotation, B.transform.rotation, Time.deltaTime);
+</code></pre>
+<ol start="2">
+<li>可以达到，匀速旋转</li>
+</ol>
+<pre><code class="c#">if( bNow != B.transform.rotation )
+&#123;
+    bNowRotation = B.transform.rotation;
+    aStartRotation = A.transform.rotation;
+    time = 0;
+&#125;
+time += Time.deltaTime
+aStartRotation = Quaternion.Slerp(aStartRotation, bNowRotation, time);
+</code></pre>
+<h3 id="3-向量指向转四元数"><a href="#3-向量指向转四元数" class="headerlink" title="3.向量指向转四元数"></a>3.向量指向转四元数</h3><p>Quaternion.LookRotation(面朝向量);<br>LookRotation 方法可以将传入的面朝向量，转换为对应的四元数角度信息</p>
+<p>举例：当人物面朝向需要改变时，只需要把目标面朝向传入该函数，便可以得到目标的四元数角度信息，之后将人物四元数角度信息改为得到的信息即可达到转向</p>
+<h2 id="四、四元数计算"><a href="#四、四元数计算" class="headerlink" title="四、四元数计算"></a>四、四元数计算</h2><h3 id="1-四元数相乘"><a href="#1-四元数相乘" class="headerlink" title="1.四元数相乘"></a>1.四元数相乘</h3><p>q3 &#x3D; q1 * q3<br>两个四元数相乘得到一个新的四元数<br>代表两个旋转量的叠加<br>相当于旋转<br>注意：旋转的相对坐标系，是本地坐标系</p>
+<h3 id="2-四元数乘向量"><a href="#2-四元数乘向量" class="headerlink" title="2.四元数乘向量"></a>2.四元数乘向量</h3><p>v2 &#x3D; q1 * v1<br>四元数乘向量返回一个新向量<br>可以将指定向量旋转对应四元数的旋转量<br>相当于旋转向量</p>
+<h1 id="知识点五-MonoBehavior中的重要内容"><a href="#知识点五-MonoBehavior中的重要内容" class="headerlink" title="知识点五 MonoBehavior中的重要内容"></a>知识点五 MonoBehavior中的重要内容</h1><h2 id="一、延迟函数"><a href="#一、延迟函数" class="headerlink" title="一、延迟函数"></a>一、延迟函数</h2><h3 id="1-什么是延迟函数"><a href="#1-什么是延迟函数" class="headerlink" title="1.什么是延迟函数"></a>1.什么是延迟函数</h3><p>延迟函数顾名思义，就是会延迟执行的函数<br>我们可以自己设定延迟要执行的函数和具体延迟的时间<br>是MonoBehaviour基类中实现的好方法</p>
+<h3 id="2-延迟函数的使用"><a href="#2-延迟函数的使用" class="headerlink" title="2.延迟函数的使用"></a>2.延迟函数的使用</h3><ol>
+<li>延迟函数<br>Invoke<br>参数一：函数名 字符串<br>参数二：延迟时间 秒为单位</li>
+</ol>
+<p>注意：<br>a.延迟函数第一个参数传入的是函数名字符串<br>b.延迟函数无法传入参数，只能包裹一层，使用无参函数执行有参函数，再将无参函数的名字传入Invoke<br>如</p>
+<pre><code class="c#">void Test1(int i )
+&#123;
+    print(i);
+&#125;
+void Test2()
+&#123;
+    Test1(2);
+&#125;
+Invoke(&quot;Test1&quot;, 2);
+</code></pre>
+<p>c.函数名必须是该脚本上申明的函数，如果要使用其他脚本的函数，就需要包裹<br>2. 延迟重复执行函数<br>InvokeRepeating<br>参数一：函数名字符串<br>参数二：第一次执行的延迟时间<br>参数三：之后每次执行的间隔时间</p>
+<p>注意：<br>它的注意事项和延迟函数一样<br>3. 取消延迟函数<br>取消该脚本上的所有延迟函数</p>
+<pre><code class="c#">CancelInvoke();
+</code></pre>
+<p>指定函数名取消<br>只要取消了指定延迟，不管之前开了多少次延迟函数，都会取消</p>
+<pre><code class="c#">CancelInvoke(&quot;函数名&quot;);
+</code></pre>
+<ol start="4">
+<li>判断是否有延迟函数</li>
+</ol>
+<pre><code class="c#">IsInvoking()                        //返回一个bool值，若有延迟函数则返回true
+IsInvoking(&quot;函数名&quot;)           //返回一个bool值
+</code></pre>
+<h3 id="3-延迟函数受对象失活销毁影响"><a href="#3-延迟函数受对象失活销毁影响" class="headerlink" title="3.延迟函数受对象失活销毁影响"></a>3.延迟函数受对象失活销毁影响</h3><p>脚本或脚本依附对象失活，延迟函数可以继续执行<br>脚本或脚本依附对象销毁或者移除，延迟函数无法继续执行</p>
+<h2 id="二、协同程序（协程）"><a href="#二、协同程序（协程）" class="headerlink" title="二、协同程序（协程）"></a>二、协同程序（协程）</h2><h3 id="1-Unity是否支持多线程"><a href="#1-Unity是否支持多线程" class="headerlink" title="1.Unity是否支持多线程"></a>1.Unity是否支持多线程</h3><p>Unity支持多线程，只是新开线程无法访问Unity相关对象的内容<br>注意：Unity中的多线程，要记住关闭</p>
+<h3 id="2-协同程序是什么"><a href="#2-协同程序是什么" class="headerlink" title="2.协同程序是什么"></a>2.协同程序是什么</h3><p>简称协程<br>它是“假”的多线程，不是多线程</p>
+<p>它的主要作用：<br>将代码分时执行，不卡主线程<br>简单理解，是把可能会让主线程卡顿的耗时逻辑分时分步骤执行</p>
+<p>主要使用场景：<br>异步加载文件<br>异步下载文件<br>场景异步加载<br>批量创建时防止卡顿</p>
+<h3 id="3-协同程序和线程的区别"><a href="#3-协同程序和线程的区别" class="headerlink" title="3.协同程序和线程的区别"></a>3.协同程序和线程的区别</h3><p>新开一个线程是独立的一个管道，和主线程并行执行<br>新开一个协程是在原线程之上开启，进行逻辑分时分步执行</p>
+<h3 id="4-协程的使用"><a href="#4-协程的使用" class="headerlink" title="4.协程的使用"></a>4.协程的使用</h3><p>继承MonoBehavior的类，都可以开启，协程函数</p>
+<p>第一步：申明协程函数<br>协程函数2个关键点：<br>a.返回值为IEnumerator类型（接口）及其子类<br>b.函数中通过 yield return 返回值，进行返回<br>例子：<br>&#x2F;&#x2F;协同程序（协程）函数 返回值 必须是 IEnumerator或者继承它的类型</p>
+<pre><code class="c#">IEnumerator MyCoroutine(int i, string str)
+&#123;
+    print(i);                                                        
+    //协程函数中，必须使用 yield return 进行返回
+    yield return new WaitForSeconds(5f);
+    print(str);        
+    //以上两个步骤之间，会等待5秒钟
+&#125;
+</code></pre>
+<p>第二步：开启协程函数<br>常用开启方式（不能直接调用）</p>
+<pre><code class="c#">StartCoroutine(MyCoroutine(1, &quot;123&quot;));
+//或者
+IEnumerator ie = MyCoroutine(1, &quot;123&quot;);
+StartCoroutine(ie);
+</code></pre>
+<p>第三步：关闭协程<br>关闭所有协程</p>
+<pre><code class="c#">StopAllCoroutines();
+//关闭指定协程
+Coroutine c1 = StartCoroutine(MyCoroutine(1, &quot;123&quot;));     //先记录
+StopCoroutine(c1);               //通过 Coroutine 类型关闭
+</code></pre>
+<h3 id="5-yield-return-不同内容的含义"><a href="#5-yield-return-不同内容的含义" class="headerlink" title="5.yield return 不同内容的含义"></a>5.yield return 不同内容的含义</h3><ol>
+<li>下一帧执行</li>
+</ol>
+<pre><code class="c#">yield return 数字;
+yield return null;
+//在 Update 和 LateUpdate之间执行
+</code></pre>
+<ol start="2">
+<li>等待指定秒数后执行</li>
+</ol>
+<pre><code class="c#">yield return new WaitForSecond(float类型);
+//在 Update 和 LateUpdate之间执行
+</code></pre>
+<ol start="3">
+<li>等待下一个固定物理帧更新时执行</li>
+</ol>
+<pre><code class="c#">yield return new WaitForFixedUpdate();
+//在 FixedUpdate 和碰撞检测相关函数之后执行
+</code></pre>
+<ol start="4">
+<li>等待摄像机和GUI渲染完成后执行</li>
+</ol>
+<pre><code class="c#">yield return new WaitForEndOfFrame();
+//在 LateUpdate 之后的渲染相关处理完毕后执行
+</code></pre>
+<ol start="5">
+<li>一些特殊类型的对象 比如异步加载相关函数返回的对象<br>一般在 Update 和 LateUpdate 之间执行</li>
+<li>跳出协程</li>
+</ol>
+<pre><code class="c#">yield break;
+</code></pre>
+<h3 id="6-协程受对象和组件失活销毁的影响"><a href="#6-协程受对象和组件失活销毁的影响" class="headerlink" title="6.协程受对象和组件失活销毁的影响"></a>6.协程受对象和组件失活销毁的影响</h3><p>协程开启后<br>组件和物体销毁，协程不执行<br>物体失活协程不执行，组件失活协程执行</p>
+<h2 id="三、协同程序原理"><a href="#三、协同程序原理" class="headerlink" title="三、协同程序原理"></a>三、协同程序原理</h2><h3 id="1-协程的本质"><a href="#1-协程的本质" class="headerlink" title="1.协程的本质"></a>1.协程的本质</h3><p>协程可以分成两个部分<br>a.协程函数本体<br>b.协程调度器</p>
+<p>协程本体就是一个能够中间暂停返回的函数<br>协程调度器是Unity内部实现的，会在对应的时机帮助我们继续执行协程函数</p>
+<p>Unity只实现了协程调度部分<br>协程的本体本质上就是一个  c#的迭代器方法</p>
+<h3 id="2-协程本体是迭代器方法的体现"><a href="#2-协程本体是迭代器方法的体现" class="headerlink" title="2.协程本体是迭代器方法的体现"></a>2.协程本体是迭代器方法的体现</h3><h3 id="2-1协程函数本体"><a href="#2-1协程函数本体" class="headerlink" title="2.1协程函数本体"></a>2.1协程函数本体</h3><p>如果我们不通过 开启协程方法执行协程<br>Unity的协程调度器是不会帮助我们管理协程函数的</p>
+<p>但是我们可以自己执行迭代器函数内容</p>
+<pre><code class="c#">IEnumerator ie = Test();
+ie.MoveNext();  //执行遇到 yield return 之前的内容，执行完之后向后迭代，如果后面有 yield return 则返回true，如果没有则返回false
+ie.Current      //得到当前 yield return 返回的内容
+while( ie.MoveNext() )
+&#123;
+    print( ie.Current );
+&#125;
+</code></pre>
+<h3 id="2-2协程调度器"><a href="#2-2协程调度器" class="headerlink" title="2.2协程调度器"></a>2.2协程调度器</h3><p>继承MonoBehavior后，开启协程<br>相当于是把一个协程函数（迭代器）放入Unity的协程调度器中帮助我们管理进行执行<br>具体的 yield return 后面的规则，也是Unity定义的</p>
+<h3 id="2-3总结"><a href="#2-3总结" class="headerlink" title="2.3总结"></a>2.3总结</h3><p>你可以简化理解迭代器函数<br>c#看到迭代器函数和 yield return 语法糖<br>就会把原本是一个的 函数 变成几个部分<br>我们可以通过迭代器 从上到下遍历这几个部分进行执行<br>就达到了将一个函数中的逻辑分时执行的目的</p>
+<p>而协程调度器就是 利用迭代器函数返回的内容来进行之后的处理<br>比如Unity中的协程调度器<br>根据 yield return 返回的内容 决定了下一次在何时继续执行迭代器函数中的“下一部分”</p>
+<p>理论上来说，我们可以利用迭代器函数的特点，自己实现协程调度器来取代Unity自带的调度器</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2024 Paul
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 562px;
+    }
+    .nav.fullscreen {
+        margin-left: -562px;
+    }
+    .nav-left {
+        width: 140px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 512px;
+        }
+        .nav.fullscreen {
+            margin-left: -512px;
+        }
+        .nav-left {
+            width: 120px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 512px;
+            margin-left: -512px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
