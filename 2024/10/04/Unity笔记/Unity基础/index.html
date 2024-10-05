@@ -6,15 +6,15 @@
   <meta name="keywords" content=" Unity ">
   <meta name="description" content="Unity基础 | Paul的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="知识点一 Unity脚本基础一、生命周期函数1.了解帧的概念游戏本质就是一个死循环，每一次循环处理游戏逻辑，就会更新一次画面，之所以能看到画面在动，是因为切换画面的速度到达一定时，人眼就认为画面是流畅的。一帧就是执行一次循环。 FPS（Frames Per Second）：即每秒帧数。一般我们说的60帧30帧，就是一秒更新60次、30次画面。1s &#x3D; 1000ms60帧：1帧为16.66">
+<meta name="description" content="知识点一 3D数学————基础一、数学计算公共类Mathf1.Mathf和MathMath是c#中封装好的用于数学计算的工具类 —— 位于System命名空间中Mathf是Unity中封装好的用于数学计算的工具结构体 —— 位于UnityEngine命名空间中他们都是用来提供数学相关计算的 2.Math和Mathf的区别Math 和 Mathf中的相关方法几乎一样Math 是c#自带的工具类，主要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unity入门">
-<meta property="og:url" content="https://paulmmc.github.io/2024/09/27/Unity%E7%AC%94%E8%AE%B0/Unity%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:title" content="Unity基础">
+<meta property="og:url" content="https://paulmmc.github.io/2024/10/04/Unity%E7%AC%94%E8%AE%B0/Unity%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Paul的博客">
-<meta property="og:description" content="知识点一 Unity脚本基础一、生命周期函数1.了解帧的概念游戏本质就是一个死循环，每一次循环处理游戏逻辑，就会更新一次画面，之所以能看到画面在动，是因为切换画面的速度到达一定时，人眼就认为画面是流畅的。一帧就是执行一次循环。 FPS（Frames Per Second）：即每秒帧数。一般我们说的60帧30帧，就是一秒更新60次、30次画面。1s &#x3D; 1000ms60帧：1帧为16.66">
+<meta property="og:description" content="知识点一 3D数学————基础一、数学计算公共类Mathf1.Mathf和MathMath是c#中封装好的用于数学计算的工具类 —— 位于System命名空间中Mathf是Unity中封装好的用于数学计算的工具结构体 —— 位于UnityEngine命名空间中他们都是用来提供数学相关计算的 2.Math和Mathf的区别Math 和 Mathf中的相关方法几乎一样Math 是c#自带的工具类，主要">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-09-27T15:19:29.000Z">
-<meta property="article:modified_time" content="2024-10-04T14:31:34.695Z">
+<meta property="article:published_time" content="2024-10-04T14:30:55.000Z">
+<meta property="article:modified_time" content="2024-10-05T07:42:30.465Z">
 <meta property="article:author" content="Paul">
 <meta property="article:tag" content="Unity">
 <meta name="twitter:card" content="summary">
@@ -295,7 +295,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="17">
-<input type="hidden" id="yelog_site_word_count" value="74.6k">
+<input type="hidden" id="yelog_site_word_count" value="78.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -419,6 +419,15 @@
         </a>
         
         
+        <a  class="全部文章 CoscosCretor笔记 "
+           href="/2024/09/23/CocosCreator%E7%AC%94%E8%AE%B0/TS/TypeScript%E8%AF%AD%E8%A8%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TypeScript语言">TypeScript语言</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
         <a  class="全部文章 Unity笔记 Unity进阶 "
            href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Excel%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96/"
            data-tag=""
@@ -456,15 +465,6 @@
         
         
         <a  class="全部文章 Unity笔记 Unity进阶 "
-           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E7%BC%96%E8%BE%91%E5%99%A8/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Unity编辑器">Unity编辑器</span>
-            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
-        </a>
-        
-        
-        <a  class="全部文章 Unity笔记 Unity进阶 "
            href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E7%BD%91%E7%BB%9C%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/"
            data-tag=""
            data-author="" >
@@ -473,11 +473,11 @@
         </a>
         
         
-        <a  class="全部文章 理论基础 编程语言 "
-           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/TypeScript%E8%AF%AD%E8%A8%80/"
+        <a  class="全部文章 Unity笔记 Unity进阶 "
+           href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Unity%E7%BC%96%E8%BE%91%E5%99%A8/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="TypeScript">TypeScript</span>
+            <span class="post-title" title="Unity编辑器">Unity编辑器</span>
             <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
         </a>
         
@@ -491,11 +491,11 @@
         </a>
         
         
-        <a  class="全部文章 CoscosCretor笔记 "
-           href="/2024/09/23/CocosCreator%E7%AC%94%E8%AE%B0/TS/TypeScript%E8%AF%AD%E8%A8%80/"
+        <a  class="全部文章 理论基础 编程语言 "
+           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/TypeScript%E8%AF%AD%E8%A8%80/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="TypeScript语言">TypeScript语言</span>
+            <span class="post-title" title="TypeScript">TypeScript</span>
             <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
         </a>
         
@@ -555,12 +555,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-10-04 23:12:09'>2024-10-04 22:30</time>
+            发布时间 : <time class="date" title='最后更新: 2024-10-05 15:42:30'>2024-10-04 22:30</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:5.3k</span>
+        <span>字数:9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -579,7 +579,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-3D%E6%95%B0%E5%AD%A6%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80"><span class="toc-text">知识点一 3D数学————基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%85%AC%E5%85%B1%E7%B1%BBMathf"><span class="toc-text">一、数学计算公共类Mathf</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Mathf%E5%92%8CMath"><span class="toc-text">1.Mathf和Math</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Math%E5%92%8CMathf%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">2.Math和Mathf的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Mathf%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-%E2%80%94%E2%80%94-%E4%B8%80%E8%88%AC%E8%AE%A1%E7%AE%97%E4%B8%80%E6%AC%A1"><span class="toc-text">3.Mathf中的常用方法 —— 一般计算一次</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%CF%80-PI"><span class="toc-text">3.1 π - PI</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E5%8F%96%E7%BB%9D%E5%AF%B9%E5%80%BC-Abs"><span class="toc-text">3.2 取绝对值 - Abs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E5%90%91%E4%B8%8A%E5%8F%96%E6%95%B4-CeilToInt"><span class="toc-text">3.3 向上取整 - CeilToInt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E5%90%91%E4%B8%8B%E5%8F%96%E6%95%B4-FloorToInt"><span class="toc-text">3.4 向下取整 - FloorToInt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-%E9%92%B3%E5%88%B6%E5%87%BD%E6%95%B0-Clamp"><span class="toc-text">3.5 钳制函数 - Clamp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-%E8%8E%B7%E5%8F%96%E6%9C%80%E5%A4%A7%E5%80%BC-Max"><span class="toc-text">3.6 获取最大值 - Max</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7-%E8%8E%B7%E5%8F%96%E6%9C%80%E5%B0%8F%E5%80%BC-Min"><span class="toc-text">3.7 获取最小值 - Min</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-8-%E4%B8%80%E4%B8%AA%E6%95%B0%E7%9A%84n%E6%AC%A1%E5%B9%82-Pow"><span class="toc-text">3.8 一个数的n次幂 - Pow</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-9-%E5%9B%9B%E8%88%8D%E4%BA%94%E5%85%A5-RoundToInt"><span class="toc-text">3.9 四舍五入 - RoundToInt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-10-%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E6%95%B0%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9-Sqrt"><span class="toc-text">3.10 返回一个数的平方根 - Sqrt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-11-%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%95%B0%E6%98%AF%E5%90%A6%E6%98%AF2%E7%9A%84n%E6%AC%A1%E6%96%B9-IsPowerOfTwo"><span class="toc-text">3.11 判断一个数是否是2的n次方 - IsPowerOfTwo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-12%E5%88%A4%E6%96%AD%E6%AD%A3%E8%B4%9F%E6%95%B0-Sign"><span class="toc-text">3.12判断正负数 - Sign</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Mathf%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-%E4%B8%80%E8%88%AC%E4%B8%8D%E5%81%9C%E8%AE%A1%E7%AE%97"><span class="toc-text">4.Mathf中的常用方法 - 一般不停计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text">二、三角函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BC%A7%E5%BA%A6%E5%92%8C%E8%A7%92%E5%BA%A6%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-text">1.弧度和角度相互转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text">2.三角函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8F%8D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text">3.反三角函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">三、坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">1.世界坐标系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%89%A9%E4%BD%93%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">2.物体坐标系</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%8C-3D%E6%95%B0%E5%AD%A6%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E5%90%91%E9%87%8F"><span class="toc-text">知识点二 3D数学————向量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%90%91%E9%87%8F%E6%A8%A1%E9%95%BF%E5%92%8C%E5%8D%95%E4%BD%8D%E5%90%91%E9%87%8F"><span class="toc-text">一、向量模长和单位向量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%90%91%E9%87%8F"><span class="toc-text">1.向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%A4%E7%82%B9%E5%86%B3%E5%AE%9A%E4%B8%80%E5%90%91%E9%87%8F"><span class="toc-text">2.两点决定一向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%9B%B6%E5%90%91%E9%87%8F%E5%92%8C%E8%B4%9F%E5%90%91%E9%87%8F"><span class="toc-text">3.零向量和负向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%90%91%E9%87%8F%E7%9A%84%E6%A8%A1%E9%95%BF"><span class="toc-text">4.向量的模长</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%8D%95%E4%BD%8D%E5%90%91%E9%87%8F"><span class="toc-text">5.单位向量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%90%91%E9%87%8F%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4"><span class="toc-text">二、向量加减乘除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%90%91%E9%87%8F%E5%8A%A0%E6%B3%95"><span class="toc-text">1.向量加法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%90%91%E9%87%8F%E5%87%8F%E6%B3%95"><span class="toc-text">2.向量减法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%91%E9%87%8F%E4%B9%98%E9%99%A4"><span class="toc-text">3.向量乘除</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%90%91%E9%87%8F%E7%82%B9%E4%B9%98"><span class="toc-text">三、向量点乘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="toc-text">1.计算公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89"><span class="toc-text">2.几何意义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%B0%83%E8%AF%95%E7%94%BB%E7%BA%BF"><span class="toc-text">3.调试画线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%80%9A%E8%BF%87%E7%82%B9%E4%B9%98%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%96%B9%E4%BD%8D"><span class="toc-text">4.通过点乘判断对象方位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E9%80%9A%E8%BF%87%E7%82%B9%E4%B9%98%E6%8E%A8%E5%AF%BC%E5%85%AC%E5%BC%8F"><span class="toc-text">5.通过点乘推导公式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%90%91%E9%87%8F%E5%8F%89%E4%B9%98"><span class="toc-text">四、向量叉乘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8F%89%E4%B9%98%E7%9A%84%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="toc-text">1.叉乘的计算公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Unity%E4%B8%AD%E7%9A%84%E8%AE%A1%E7%AE%97%E5%8F%89%E4%B9%98%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">2.Unity中的计算叉乘的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89"><span class="toc-text">3.几何意义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%90%91%E9%87%8F%E6%8F%92%E5%80%BC%E8%BF%90%E7%AE%97"><span class="toc-text">四、向量插值运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%BA%BF%E6%80%A7%E6%8F%92%E5%80%BC"><span class="toc-text">1.线性插值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BA%BF%E6%80%A7%E5%B7%AE%E5%80%BC%E7%9A%84%E8%BF%90%E7%94%A8"><span class="toc-text">2.线性差值的运用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%90%83%E5%BD%A2%E6%8F%92%E5%80%BC"><span class="toc-text">3.球形插值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%89-3D%E6%95%B0%E5%AD%A6%E2%80%94%E2%80%94%E2%80%94%E2%80%94Quaternion%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-text">知识点三 3D数学————Quaternion四元数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-text">一、为什么使用四元数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%AC%A7%E6%8B%89%E8%A7%92"><span class="toc-text">1.欧拉角</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%AC%A7%E6%8B%89%E8%A7%92%E6%97%8B%E8%BD%AC%E7%9A%84%E7%BA%A6%E5%AE%9A"><span class="toc-text">2.欧拉角旋转的约定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Unity%E4%B8%AD%E7%9A%84%E6%AC%A7%E6%8B%89%E8%A7%92"><span class="toc-text">3.Unity中的欧拉角</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%AC%A7%E6%8B%89%E8%A7%92%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-text">4.欧拉角的优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E4%B8%87%E5%90%91%E8%8A%82%E6%AD%BB%E9%94%81"><span class="toc-text">5.万向节死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%80%BB%E7%BB%93"><span class="toc-text">6.总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9B%9B%E5%85%83%E6%95%B0%E7%AE%80%E4%BB%8B"><span class="toc-text">二、四元数简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9B%9B%E5%85%83%E6%95%B0%E7%9A%84%E6%9E%84%E6%88%90"><span class="toc-text">1.四元数的构成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Unity%E4%B8%AD%E7%9A%84%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-text">2.Unity中的四元数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%9B%9B%E5%85%83%E6%95%B0%E5%BC%A5%E8%A1%A5%E6%AC%A7%E6%8B%89%E8%A7%92%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-text">3.四元数弥补欧拉角的缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9B%9B%E5%85%83%E6%95%B0%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">三、四元数常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8D%95%E4%BD%8D%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-text">1.单位四元数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%8F%92%E5%80%BC%E8%BF%90%E7%AE%97"><span class="toc-text">2.插值运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%91%E9%87%8F%E6%8C%87%E5%90%91%E8%BD%AC%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-text">3.向量指向转四元数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%9B%9B%E5%85%83%E6%95%B0%E8%AE%A1%E7%AE%97"><span class="toc-text">四、四元数计算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9B%9B%E5%85%83%E6%95%B0%E7%9B%B8%E4%B9%98"><span class="toc-text">1.四元数相乘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9B%9B%E5%85%83%E6%95%B0%E4%B9%98%E5%90%91%E9%87%8F"><span class="toc-text">2.四元数乘向量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%94-MonoBehavior%E4%B8%AD%E7%9A%84%E9%87%8D%E8%A6%81%E5%86%85%E5%AE%B9"><span class="toc-text">知识点五 MonoBehavior中的重要内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%BB%B6%E8%BF%9F%E5%87%BD%E6%95%B0"><span class="toc-text">一、延迟函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%BB%B6%E8%BF%9F%E5%87%BD%E6%95%B0"><span class="toc-text">1.什么是延迟函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%BB%B6%E8%BF%9F%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">2.延迟函数的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%BB%B6%E8%BF%9F%E5%87%BD%E6%95%B0%E5%8F%97%E5%AF%B9%E8%B1%A1%E5%A4%B1%E6%B4%BB%E9%94%80%E6%AF%81%E5%BD%B1%E5%93%8D"><span class="toc-text">3.延迟函数受对象失活销毁影响</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%8D%8F%E5%90%8C%E7%A8%8B%E5%BA%8F%EF%BC%88%E5%8D%8F%E7%A8%8B%EF%BC%89"><span class="toc-text">二、协同程序（协程）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Unity%E6%98%AF%E5%90%A6%E6%94%AF%E6%8C%81%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-text">1.Unity是否支持多线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8D%8F%E5%90%8C%E7%A8%8B%E5%BA%8F%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">2.协同程序是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8D%8F%E5%90%8C%E7%A8%8B%E5%BA%8F%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">3.协同程序和线程的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%8D%8F%E7%A8%8B%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">4.协程的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-yield-return-%E4%B8%8D%E5%90%8C%E5%86%85%E5%AE%B9%E7%9A%84%E5%90%AB%E4%B9%89"><span class="toc-text">5.yield return 不同内容的含义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%8D%8F%E7%A8%8B%E5%8F%97%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BB%84%E4%BB%B6%E5%A4%B1%E6%B4%BB%E9%94%80%E6%AF%81%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-text">6.协程受对象和组件失活销毁的影响</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%8D%8F%E5%90%8C%E7%A8%8B%E5%BA%8F%E5%8E%9F%E7%90%86"><span class="toc-text">三、协同程序原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8D%8F%E7%A8%8B%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-text">1.协程的本质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8D%8F%E7%A8%8B%E6%9C%AC%E4%BD%93%E6%98%AF%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%93%E7%8E%B0"><span class="toc-text">2.协程本体是迭代器方法的体现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E5%8D%8F%E7%A8%8B%E5%87%BD%E6%95%B0%E6%9C%AC%E4%BD%93"><span class="toc-text">2.1协程函数本体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E5%8D%8F%E7%A8%8B%E8%B0%83%E5%BA%A6%E5%99%A8"><span class="toc-text">2.2协程调度器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3%E6%80%BB%E7%BB%93"><span class="toc-text">2.3总结</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-3D%E6%95%B0%E5%AD%A6%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80"><span class="toc-text">知识点一 3D数学————基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%85%AC%E5%85%B1%E7%B1%BBMathf"><span class="toc-text">一、数学计算公共类Mathf</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Mathf%E5%92%8CMath"><span class="toc-text">1.Mathf和Math</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Math%E5%92%8CMathf%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">2.Math和Mathf的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Mathf%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-%E2%80%94%E2%80%94-%E4%B8%80%E8%88%AC%E8%AE%A1%E7%AE%97%E4%B8%80%E6%AC%A1"><span class="toc-text">3.Mathf中的常用方法 —— 一般计算一次</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%CF%80-PI"><span class="toc-text">3.1 π - PI</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E5%8F%96%E7%BB%9D%E5%AF%B9%E5%80%BC-Abs"><span class="toc-text">3.2 取绝对值 - Abs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E5%90%91%E4%B8%8A%E5%8F%96%E6%95%B4-CeilToInt"><span class="toc-text">3.3 向上取整 - CeilToInt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E5%90%91%E4%B8%8B%E5%8F%96%E6%95%B4-FloorToInt"><span class="toc-text">3.4 向下取整 - FloorToInt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-%E9%92%B3%E5%88%B6%E5%87%BD%E6%95%B0-Clamp"><span class="toc-text">3.5 钳制函数 - Clamp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-%E8%8E%B7%E5%8F%96%E6%9C%80%E5%A4%A7%E5%80%BC-Max"><span class="toc-text">3.6 获取最大值 - Max</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7-%E8%8E%B7%E5%8F%96%E6%9C%80%E5%B0%8F%E5%80%BC-Min"><span class="toc-text">3.7 获取最小值 - Min</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-8-%E4%B8%80%E4%B8%AA%E6%95%B0%E7%9A%84n%E6%AC%A1%E5%B9%82-Pow"><span class="toc-text">3.8 一个数的n次幂 - Pow</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-9-%E5%9B%9B%E8%88%8D%E4%BA%94%E5%85%A5-RoundToInt"><span class="toc-text">3.9 四舍五入 - RoundToInt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-10-%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E6%95%B0%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9-Sqrt"><span class="toc-text">3.10 返回一个数的平方根 - Sqrt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-11-%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%95%B0%E6%98%AF%E5%90%A6%E6%98%AF2%E7%9A%84n%E6%AC%A1%E6%96%B9-IsPowerOfTwo"><span class="toc-text">3.11 判断一个数是否是2的n次方 - IsPowerOfTwo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-12%E5%88%A4%E6%96%AD%E6%AD%A3%E8%B4%9F%E6%95%B0-Sign"><span class="toc-text">3.12判断正负数 - Sign</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Mathf%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-%E4%B8%80%E8%88%AC%E4%B8%8D%E5%81%9C%E8%AE%A1%E7%AE%97"><span class="toc-text">4.Mathf中的常用方法 - 一般不停计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text">二、三角函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BC%A7%E5%BA%A6%E5%92%8C%E8%A7%92%E5%BA%A6%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-text">1.弧度和角度相互转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text">2.三角函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8F%8D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text">3.反三角函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">三、坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">1.世界坐标系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%89%A9%E4%BD%93%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">2.物体坐标系</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%8C-3D%E6%95%B0%E5%AD%A6%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E5%90%91%E9%87%8F"><span class="toc-text">知识点二 3D数学————向量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%90%91%E9%87%8F%E6%A8%A1%E9%95%BF%E5%92%8C%E5%8D%95%E4%BD%8D%E5%90%91%E9%87%8F"><span class="toc-text">一、向量模长和单位向量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%90%91%E9%87%8F"><span class="toc-text">1.向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%A4%E7%82%B9%E5%86%B3%E5%AE%9A%E4%B8%80%E5%90%91%E9%87%8F"><span class="toc-text">2.两点决定一向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%9B%B6%E5%90%91%E9%87%8F%E5%92%8C%E8%B4%9F%E5%90%91%E9%87%8F"><span class="toc-text">3.零向量和负向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%90%91%E9%87%8F%E7%9A%84%E6%A8%A1%E9%95%BF"><span class="toc-text">4.向量的模长</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%8D%95%E4%BD%8D%E5%90%91%E9%87%8F"><span class="toc-text">5.单位向量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%90%91%E9%87%8F%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4"><span class="toc-text">二、向量加减乘除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%90%91%E9%87%8F%E5%8A%A0%E6%B3%95"><span class="toc-text">1.向量加法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%90%91%E9%87%8F%E5%87%8F%E6%B3%95"><span class="toc-text">2.向量减法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%91%E9%87%8F%E4%B9%98%E9%99%A4"><span class="toc-text">3.向量乘除</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%90%91%E9%87%8F%E7%82%B9%E4%B9%98"><span class="toc-text">三、向量点乘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="toc-text">1.计算公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89"><span class="toc-text">2.几何意义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%B0%83%E8%AF%95%E7%94%BB%E7%BA%BF"><span class="toc-text">3.调试画线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%80%9A%E8%BF%87%E7%82%B9%E4%B9%98%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%96%B9%E4%BD%8D"><span class="toc-text">4.通过点乘判断对象方位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E9%80%9A%E8%BF%87%E7%82%B9%E4%B9%98%E6%8E%A8%E5%AF%BC%E5%85%AC%E5%BC%8F"><span class="toc-text">5.通过点乘推导公式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%90%91%E9%87%8F%E5%8F%89%E4%B9%98"><span class="toc-text">四、向量叉乘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8F%89%E4%B9%98%E7%9A%84%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="toc-text">1.叉乘的计算公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Unity%E4%B8%AD%E7%9A%84%E8%AE%A1%E7%AE%97%E5%8F%89%E4%B9%98%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">2.Unity中的计算叉乘的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89"><span class="toc-text">3.几何意义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%90%91%E9%87%8F%E6%8F%92%E5%80%BC%E8%BF%90%E7%AE%97"><span class="toc-text">四、向量插值运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%BA%BF%E6%80%A7%E6%8F%92%E5%80%BC"><span class="toc-text">1.线性插值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BA%BF%E6%80%A7%E5%B7%AE%E5%80%BC%E7%9A%84%E8%BF%90%E7%94%A8"><span class="toc-text">2.线性差值的运用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%90%83%E5%BD%A2%E6%8F%92%E5%80%BC"><span class="toc-text">3.球形插值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%89-3D%E6%95%B0%E5%AD%A6%E2%80%94%E2%80%94%E2%80%94%E2%80%94Quaternion%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-text">知识点三 3D数学————Quaternion四元数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-text">一、为什么使用四元数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%AC%A7%E6%8B%89%E8%A7%92"><span class="toc-text">1.欧拉角</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%AC%A7%E6%8B%89%E8%A7%92%E6%97%8B%E8%BD%AC%E7%9A%84%E7%BA%A6%E5%AE%9A"><span class="toc-text">2.欧拉角旋转的约定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Unity%E4%B8%AD%E7%9A%84%E6%AC%A7%E6%8B%89%E8%A7%92"><span class="toc-text">3.Unity中的欧拉角</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%AC%A7%E6%8B%89%E8%A7%92%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-text">4.欧拉角的优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E4%B8%87%E5%90%91%E8%8A%82%E6%AD%BB%E9%94%81"><span class="toc-text">5.万向节死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%80%BB%E7%BB%93"><span class="toc-text">6.总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9B%9B%E5%85%83%E6%95%B0%E7%AE%80%E4%BB%8B"><span class="toc-text">二、四元数简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9B%9B%E5%85%83%E6%95%B0%E7%9A%84%E6%9E%84%E6%88%90"><span class="toc-text">1.四元数的构成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Unity%E4%B8%AD%E7%9A%84%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-text">2.Unity中的四元数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%9B%9B%E5%85%83%E6%95%B0%E5%BC%A5%E8%A1%A5%E6%AC%A7%E6%8B%89%E8%A7%92%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-text">3.四元数弥补欧拉角的缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9B%9B%E5%85%83%E6%95%B0%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">三、四元数常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8D%95%E4%BD%8D%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-text">1.单位四元数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%8F%92%E5%80%BC%E8%BF%90%E7%AE%97"><span class="toc-text">2.插值运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%91%E9%87%8F%E6%8C%87%E5%90%91%E8%BD%AC%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-text">3.向量指向转四元数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%9B%9B%E5%85%83%E6%95%B0%E8%AE%A1%E7%AE%97"><span class="toc-text">四、四元数计算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9B%9B%E5%85%83%E6%95%B0%E7%9B%B8%E4%B9%98"><span class="toc-text">1.四元数相乘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9B%9B%E5%85%83%E6%95%B0%E4%B9%98%E5%90%91%E9%87%8F"><span class="toc-text">2.四元数乘向量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%94-MonoBehavior%E4%B8%AD%E7%9A%84%E9%87%8D%E8%A6%81%E5%86%85%E5%AE%B9"><span class="toc-text">知识点五 MonoBehavior中的重要内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%BB%B6%E8%BF%9F%E5%87%BD%E6%95%B0"><span class="toc-text">一、延迟函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%BB%B6%E8%BF%9F%E5%87%BD%E6%95%B0"><span class="toc-text">1.什么是延迟函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%BB%B6%E8%BF%9F%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">2.延迟函数的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%BB%B6%E8%BF%9F%E5%87%BD%E6%95%B0%E5%8F%97%E5%AF%B9%E8%B1%A1%E5%A4%B1%E6%B4%BB%E9%94%80%E6%AF%81%E5%BD%B1%E5%93%8D"><span class="toc-text">3.延迟函数受对象失活销毁影响</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%8D%8F%E5%90%8C%E7%A8%8B%E5%BA%8F%EF%BC%88%E5%8D%8F%E7%A8%8B%EF%BC%89"><span class="toc-text">二、协同程序（协程）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Unity%E6%98%AF%E5%90%A6%E6%94%AF%E6%8C%81%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-text">1.Unity是否支持多线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8D%8F%E5%90%8C%E7%A8%8B%E5%BA%8F%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">2.协同程序是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8D%8F%E5%90%8C%E7%A8%8B%E5%BA%8F%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">3.协同程序和线程的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%8D%8F%E7%A8%8B%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">4.协程的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-yield-return-%E4%B8%8D%E5%90%8C%E5%86%85%E5%AE%B9%E7%9A%84%E5%90%AB%E4%B9%89"><span class="toc-text">5.yield return 不同内容的含义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%8D%8F%E7%A8%8B%E5%8F%97%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BB%84%E4%BB%B6%E5%A4%B1%E6%B4%BB%E9%94%80%E6%AF%81%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-text">6.协程受对象和组件失活销毁的影响</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%8D%8F%E5%90%8C%E7%A8%8B%E5%BA%8F%E5%8E%9F%E7%90%86"><span class="toc-text">三、协同程序原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8D%8F%E7%A8%8B%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-text">1.协程的本质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8D%8F%E7%A8%8B%E6%9C%AC%E4%BD%93%E6%98%AF%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%93%E7%8E%B0"><span class="toc-text">2.协程本体是迭代器方法的体现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E5%8D%8F%E7%A8%8B%E5%87%BD%E6%95%B0%E6%9C%AC%E4%BD%93"><span class="toc-text">2.1协程函数本体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E5%8D%8F%E7%A8%8B%E8%B0%83%E5%BA%A6%E5%99%A8"><span class="toc-text">2.2协程调度器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3%E6%80%BB%E7%BB%93"><span class="toc-text">2.3总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%85%AD-Resources%E8%B5%84%E6%BA%90%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD"><span class="toc-text">知识点六 Resources资源动态加载</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81Unity%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">一、Unity中的特殊文件夹</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%B7%A5%E7%A8%8B%E8%B7%AF%E5%BE%84%E8%8E%B7%E5%8F%96"><span class="toc-text">1.工程路径获取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Resources-%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">2.Resources 资源文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-StreamingAssets-%E6%B5%81%E5%8A%A8%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">3.StreamingAssets 流动资源文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-persistentDataPath-%E6%8C%81%E4%B9%85%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">4.persistentDataPath 持久数据文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Plugins-%E6%8F%92%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">5.Plugins 插件文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Editor-%E7%BC%96%E8%BE%91%E5%99%A8%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">6.Editor 编辑器文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-Standard-Assets-%E9%BB%98%E8%AE%A4%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">7.Standard Assets 默认资源文件夹</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Resources%E5%90%8C%E6%AD%A5%E5%8A%A0%E8%BD%BD"><span class="toc-text">二、Resources同步加载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Resources-%E8%B5%84%E6%BA%90%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">1.Resources 资源动态加载的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.常用资源类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%B5%84%E6%BA%90%E5%90%8C%E6%AD%A5%E5%8A%A0%E8%BD%BD-%E6%99%AE%E9%80%9A%E6%96%B9%E6%B3%95"><span class="toc-text">3.资源同步加载 普通方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%B5%84%E6%BA%90%E5%90%8C%E6%AD%A5%E5%8A%A0%E8%BD%BD-%E6%B3%9B%E5%9E%8B%E6%96%B9%E6%B3%95"><span class="toc-text">4.资源同步加载 泛型方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81Resources%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD"><span class="toc-text">三、Resources异步加载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Resources%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">1.Resources异步加载是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Resources%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">2.Resources异步加载的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%80%BB%E7%BB%93"><span class="toc-text">3.总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81Resources%E5%8D%B8%E8%BD%BD%E8%B5%84%E6%BA%90"><span class="toc-text">四、Resources卸载资源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Resources%E9%87%8D%E5%A4%8D%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90%E4%BC%9A%E6%B5%AA%E8%B4%B9%E5%86%85%E5%AD%98%E5%90%97%EF%BC%9F"><span class="toc-text">1.Resources重复加载资源会浪费内存吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%A6%82%E4%BD%95%E6%89%8B%E5%8A%A8%E9%87%8A%E6%94%BE%E6%8E%89%E7%BC%93%E5%AD%98%E4%B8%AD%E7%9A%84%E8%B5%84%E6%BA%90"><span class="toc-text">2.如何手动释放掉缓存中的资源</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%83-%E5%9C%BA%E6%99%AF%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD"><span class="toc-text">知识点七 场景异步加载</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9C%BA%E6%99%AF%E5%BC%82%E6%AD%A5%E5%88%87%E6%8D%A2"><span class="toc-text">一、场景异步切换</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E5%85%AB-%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%8C%83%E5%9B%B4%E6%A3%80%E6%B5%8B"><span class="toc-text">知识点八 物理系统之范围检测</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E8%8C%83%E5%9B%B4%E6%A3%80%E6%B5%8B"><span class="toc-text">一、什么是范围检测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%8C%83%E5%9B%B4%E6%A3%80%E6%B5%8B"><span class="toc-text">二、如何进行范围检测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%9B%92%E7%8A%B6%E8%8C%83%E5%9B%B4%E6%A3%80%E6%B5%8B"><span class="toc-text">1.盒状范围检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%90%83%E5%BD%A2%E8%8C%83%E5%9B%B4%E6%A3%80%E6%B5%8B"><span class="toc-text">2.球形范围检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%83%B6%E5%9B%8A%E8%8C%83%E5%9B%B4%E6%A3%80%E6%B5%8B"><span class="toc-text">3.胶囊范围检测</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B9%9D-%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%B0%84%E7%BA%BF%E6%A3%80%E6%B5%8B"><span class="toc-text">知识点九 物理系统之射线检测</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%B0%84%E7%BA%BF%E6%A3%80%E6%B5%8B"><span class="toc-text">一、什么是射线检测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%B0%84%E7%BA%BF%E5%AF%B9%E8%B1%A1"><span class="toc-text">二、射线对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3D%E4%B8%96%E7%95%8C%E4%B8%AD%E7%9A%84%E5%B0%84%E7%BA%BF"><span class="toc-text">1.3D世界中的射线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%91%84%E5%83%8F%E6%9C%BA%E5%8F%91%E5%B0%84%E5%87%BA%E7%9A%84%E5%B0%84%E7%BA%BF"><span class="toc-text">2.摄像机发射出的射线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E5%87%BD%E6%95%B0"><span class="toc-text">三、碰撞检测函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9C%80%E5%8E%9F%E5%A7%8B%E7%9A%84%E5%B0%84%E7%BA%BF%E6%A3%80%E6%B5%8B"><span class="toc-text">1.最原始的射线检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%8E%B7%E5%8F%96%E7%9B%B8%E4%BA%A4%E7%9A%84%E5%8D%95%E4%B8%AA%E7%89%A9%E4%BD%93%E4%BF%A1%E6%81%AF"><span class="toc-text">2.获取相交的单个物体信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%BE%97%E5%88%B0%E7%9B%B8%E4%BA%A4%E7%9A%84%E5%A4%9A%E4%B8%AA%E7%89%A9%E4%BD%93"><span class="toc-text">3.得到相交的多个物体</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%BD%BF%E7%94%A8%E6%97%B6%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">四、使用时注意的问题</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -954,6 +954,197 @@ while( ie.MoveNext() )
 <h3 id="2-3总结"><a href="#2-3总结" class="headerlink" title="2.3总结"></a>2.3总结</h3><p>你可以简化理解迭代器函数<br>c#看到迭代器函数和 yield return 语法糖<br>就会把原本是一个的 函数 变成几个部分<br>我们可以通过迭代器 从上到下遍历这几个部分进行执行<br>就达到了将一个函数中的逻辑分时执行的目的</p>
 <p>而协程调度器就是 利用迭代器函数返回的内容来进行之后的处理<br>比如Unity中的协程调度器<br>根据 yield return 返回的内容 决定了下一次在何时继续执行迭代器函数中的“下一部分”</p>
 <p>理论上来说，我们可以利用迭代器函数的特点，自己实现协程调度器来取代Unity自带的调度器</p>
+<h1 id="知识点六-Resources资源动态加载"><a href="#知识点六-Resources资源动态加载" class="headerlink" title="知识点六 Resources资源动态加载"></a>知识点六 Resources资源动态加载</h1><h2 id="一、Unity中的特殊文件夹"><a href="#一、Unity中的特殊文件夹" class="headerlink" title="一、Unity中的特殊文件夹"></a>一、Unity中的特殊文件夹</h2><h3 id="1-工程路径获取"><a href="#1-工程路径获取" class="headerlink" title="1.工程路径获取"></a>1.工程路径获取</h3><pre><code class="c#">string str = Application.dataPath;      //获取该工程文件夹的路径
+</code></pre>
+<p>注意：<br>该方式获取的路径，一般情况下，只在编辑模式下使用<br>我们不在实际发布游戏后，还使用该路径<br>游戏发布过后，该路径就不存在了</p>
+<h3 id="2-Resources-资源文件夹"><a href="#2-Resources-资源文件夹" class="headerlink" title="2.Resources 资源文件夹"></a>2.Resources 资源文件夹</h3><p>需要先手动创建一个名为 Resources 的文件夹</p>
+<p>路径一般不获取，如果硬要获取，可以通过工程路径拼接获取<br>只能使用 Resources 相关API进行加载</p>
+<p>作用：<br>资源文件夹<br>a.需要通过 Resources 相关API动态加载的资源需要放在其中<br>b.该文件夹下所有文件都会被打包出去<br>c.打包时，Unity会对其进行压缩加密<br>d.该文件夹打包后只读，只能通过 Resources 相关API加载</p>
+<h3 id="3-StreamingAssets-流动资源文件夹"><a href="#3-StreamingAssets-流动资源文件夹" class="headerlink" title="3.StreamingAssets 流动资源文件夹"></a>3.StreamingAssets 流动资源文件夹</h3><p>路径获取：<br>string str &#x3D; Application.streamingAssetsPath;</p>
+<p>注意：<br>需要我们自己创建</p>
+<p>作用：<br>流文件夹<br>a.打包出去不会被压缩加密，可以任由我们摆布<br>b.移动平台只读，PC平台可读可写<br>c.可以放入一些需要自定义动态加载的初始资源</p>
+<h3 id="4-persistentDataPath-持久数据文件夹"><a href="#4-persistentDataPath-持久数据文件夹" class="headerlink" title="4.persistentDataPath 持久数据文件夹"></a>4.persistentDataPath 持久数据文件夹</h3><p>路径获取：<br>string str &#x3D; Aplication.persistentDataPath;</p>
+<p>注意：<br>不需要我们自己创建</p>
+<p>作用：<br>固定数据文件夹<br>a.所有平台都可读可写<br>b.一般用于放置动态下载或者动态创建的文件，游戏中创建或者获取的文件都放在其中</p>
+<h3 id="5-Plugins-插件文件夹"><a href="#5-Plugins-插件文件夹" class="headerlink" title="5.Plugins 插件文件夹"></a>5.Plugins 插件文件夹</h3><p>路径获取：<br>一般不获取</p>
+<p>注意：<br>一般需要我们自己创建</p>
+<p>作用：<br>插件文件夹<br>不同平台的插件相关文件放在其中<br>比如 IOS 和 Android 平台</p>
+<h3 id="6-Editor-编辑器文件夹"><a href="#6-Editor-编辑器文件夹" class="headerlink" title="6.Editor 编辑器文件夹"></a>6.Editor 编辑器文件夹</h3><p>路径获取：<br>一般不获取，硬要获取也可以通过拼接获取</p>
+<p>注意：<br>需要我们自己创建</p>
+<p>作用：<br>编辑器文件夹<br>a.开发Unity编辑器时，编辑器相关脚本放在该文件夹中<br>b.该文件夹内容不会被打包出去</p>
+<h3 id="7-Standard-Assets-默认资源文件夹"><a href="#7-Standard-Assets-默认资源文件夹" class="headerlink" title="7.Standard Assets 默认资源文件夹"></a>7.Standard Assets 默认资源文件夹</h3><p>路径获取：<br>一般不获取</p>
+<p>注意：<br>需要我们自己创建</p>
+<p>作用：<br>默认资源文件夹<br>一般Unity自带资源都放在这个文件夹下<br>代码和资源都优先被编译</p>
+<h2 id="二、Resources同步加载"><a href="#二、Resources同步加载" class="headerlink" title="二、Resources同步加载"></a>二、Resources同步加载</h2><h3 id="1-Resources-资源动态加载的作用"><a href="#1-Resources-资源动态加载的作用" class="headerlink" title="1.Resources 资源动态加载的作用"></a>1.Resources 资源动态加载的作用</h3><p>通过代码动态加载 Resources 文件夹下指定路径资源<br>避免繁琐的拖曳操作</p>
+<h3 id="2-常用资源类型"><a href="#2-常用资源类型" class="headerlink" title="2.常用资源类型"></a>2.常用资源类型</h3><p>a.预设体对象 —— GameObject<br>b.音效文件 —— AudioClip<br>c.文本文件 —— TextAsset<br>d.图片文件 —— Texture<br>e.其他类型 —— 需要什么用什么类型</p>
+<p>注意：<br>预设体对象加载需要实例化<br>其他资源加载一般直接用</p>
+<h3 id="3-资源同步加载-普通方法"><a href="#3-资源同步加载-普通方法" class="headerlink" title="3.资源同步加载 普通方法"></a>3.资源同步加载 普通方法</h3><p>在一个工程中，Resources文件夹，可以有多个，通过API加载时，它会自己去这些Resources名字的文件夹中去找资源<br>打包时，所有Resources文件夹的文件都会被整合到一起</p>
+<ol>
+<li><p>预设体对象（想要创建在场景上，记住实例化）<br>Object obj &#x3D; Resources.Load(“名字”);   &#x2F;&#x2F;加载预设体资源文件（本质就是加载配制数据在内存中）<br>Instantiate(obj);                                        &#x2F;&#x2F;实例化物体</p>
+</li>
+<li><p>音效资源<br>Object obj &#x3D; Resources.Load(“Music&#x2F;BKMusic”);              &#x2F;&#x2F;加载Music文件夹下的BKMusic文件<br>audioS.clip &#x3D; obj as AudioClip;</p>
+</li>
+<li><p>文本资源<br>文本资源支持的格式：.txt、.xml、.bytes、.json、.html、.csv、…<br>TextAsset ta &#x3D; Resources.Load(“名字”) as TestAsset; <br>print(ta.text)  &#x2F;&#x2F;得到文本内容<br>print(ta.bytes) &#x2F;&#x2F;字节数据内容（二进制内容）</p>
+</li>
+<li><p>图片<br>Texture tex &#x3D; Resources.Load(“名字”) as Texture;</p>
+</li>
+<li><p>其他类型</p>
+</li>
+<li><p>问题：资源同名怎么办<br>Resources.Load 加载同名资源时，无法准确地加载出你想要的内容</p>
+</li>
+</ol>
+<p>可以使用另外的API<br>a.加载指定类型资源<br>Object obj &#x3D; Resources.Load(“Test”, typeof(Texture));<br>b.加载指定名字的所有资源<br>Object[] objs &#x3D; Resources.LoadAll(“名字”);  &#x2F;&#x2F;返回一个数组</p>
+<h3 id="4-资源同步加载-泛型方法"><a href="#4-资源同步加载-泛型方法" class="headerlink" title="4.资源同步加载 泛型方法"></a>4.资源同步加载 泛型方法</h3><p>TextAsset ta &#x3D; Resources.Load<TextAsset>(“名字”);</p>
+<h2 id="三、Resources异步加载"><a href="#三、Resources异步加载" class="headerlink" title="三、Resources异步加载"></a>三、Resources异步加载</h2><h3 id="1-Resources异步加载是什么？"><a href="#1-Resources异步加载是什么？" class="headerlink" title="1.Resources异步加载是什么？"></a>1.Resources异步加载是什么？</h3><p>在Resources同步加载中，如果加载过大的资源可能会造成程序卡顿<br>Resources异步加载，就是在内部新开一个线程进行资源加载，不会造成主线程卡顿</p>
+<h3 id="2-Resources异步加载的方法"><a href="#2-Resources异步加载的方法" class="headerlink" title="2.Resources异步加载的方法"></a>2.Resources异步加载的方法</h3><p>注意：异步加载不能马上得到加载的资源，至少需要等一帧</p>
+<ol>
+<li>通过异步加载中的完成事件监听，使用加载的资源</li>
+</ol>
+<pre><code class="c#">//a.用于装载加载出的资源
+public Object obj;
+//b.开启异步加载
+ResourcesRequest rq = Resources.LoadAsync&lt;文件类型&gt;(&quot;路径/文件名&quot;);
+//c.为监听事件添加方法，该监听事件会在异步加载完成后执行
+rq.completed += LoadOver;
+//d.添加的方法，必须传入一个 AsyncOperation 类型的对象
+private void LoadOver( AsyncOperation rq )
+&#123;
+    //e.( rq as ResourcesRequest ).asset 即为加载出的资源，而因为 AsyncOperation 是 ResourcesRequest 的父类，asset 是 ResourcesRequest的成员，所以需要 as
+    obj = ( rq as ResourcesRequest ).asset;
+&#125;
+</code></pre>
+<ol start="2">
+<li>通过协程，使用加载的资源</li>
+</ol>
+<pre><code class="c#">//a.开启协程
+StartCoroutine(Load());
+//b.协程函数
+IEnumerator Load()
+&#123;
+    //c.先开启异步加载
+    ResourcesRequest rq = Resources.LoadAsync&lt;文件类型&gt;(&quot;路径/文件名&quot;)
+    //e.返回异步加载 ResourcesRequest 类型 rq，则 yield return 以下的函数只会在加载完毕后执行
+    yield return rq;
+    //f. rq.isDone 若加载完成则返回true，rq.priority 打印加载进度（0 ~ 1），以下代码结合起来可以一直打印加载进度
+    while(! rq.isDone)
+    &#123;
+        print(rq.priority);
+    &#125;
+    //g.加载完成装载到 obj 中
+    obj = rq.asset;
+&#125;
+</code></pre>
+<h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h3><p>a.完成事件监听异步加载<br>好处：写法简单<br>坏处：只能在资源加载结束后处理<br>线性加载</p>
+<p>b.协程异步加载<br>好处：可以在协程中处理复杂逻辑，比如同时加载多个资源，更新进度条<br>坏处：写法麻烦<br>并行加载</p>
+<h2 id="四、Resources卸载资源"><a href="#四、Resources卸载资源" class="headerlink" title="四、Resources卸载资源"></a>四、Resources卸载资源</h2><h3 id="1-Resources重复加载资源会浪费内存吗？"><a href="#1-Resources重复加载资源会浪费内存吗？" class="headerlink" title="1.Resources重复加载资源会浪费内存吗？"></a>1.Resources重复加载资源会浪费内存吗？</h3><p>Resources加载一次资源后，该资源就一直存放在内存中作为缓存，第二次加载时发现缓存中存在该资源，会直接取出来进行使用，所以多次重复加载并不会浪费内存，但是会浪费性能</p>
+<h3 id="2-如何手动释放掉缓存中的资源"><a href="#2-如何手动释放掉缓存中的资源" class="headerlink" title="2.如何手动释放掉缓存中的资源"></a>2.如何手动释放掉缓存中的资源</h3><ol>
+<li>卸载指定资源</li>
+</ol>
+<pre><code class="c#">Resources.UnloadAsset(传入一个Object对象);
+</code></pre>
+<p>注意：<br>该方法不能释放 GameObject对象 因为它会用于实例化对象<br>它只能用于一些 不需要实例化的内容，比如图片、音效和文本等<br>一般情况下，我们很少单独使用它</p>
+<ol start="2">
+<li>卸载未使用的资源<br>注意：<br>一般在过场景和GC一起使用</li>
+</ol>
+<pre><code class="c#">Resources.UnloadUnusedAssets();
+</code></pre>
+<h1 id="知识点七-场景异步加载"><a href="#知识点七-场景异步加载" class="headerlink" title="知识点七 场景异步加载"></a>知识点七 场景异步加载</h1><h2 id="一、场景异步切换"><a href="#一、场景异步切换" class="headerlink" title="一、场景异步切换"></a>一、场景异步切换</h2><p>场景异步加载和资源异步加载 几乎一致 有两种方式</p>
+<ol>
+<li>通过事件回调函数 异步加载</li>
+</ol>
+<pre><code class="c#">AsyncOperation ao = SceneManager.LoadSceneAsync(&quot;场景名&quot;);
+//场景异步加载完成后，会执行的事件
+ao.complete += (a) =&gt;
+&#123;
+
+&#125;;
+</code></pre>
+<ol start="2">
+<li>通过协程异步加载<br>需要注意的是，加载场景会把当前场景上，没有特别处理的对象，都删除了<br>所以，协程中的部分逻辑是执行不了的。<br>可以让处理场景加载的脚本依附的对象，在过场景时，不被移除</li>
+</ol>
+<pre><code class="c#">StartCoroutine(LoadScene());
+DontDestroyOnLoad(this.gameObject); //过场景时不删除该脚本依附的对象，保证协程中场景加载完成后的逻辑都能被执行
+
+IEnumerator LoadScene()
+&#123;
+    //开始场景异步加载
+    AsyncOperation ao = SceneManager.LoadSceneAsync(&quot;场景名&quot;);
+    yield return ao;
+    //加载完毕后处理的逻辑
+&#125;
+</code></pre>
+<h1 id="知识点八-物理系统之范围检测"><a href="#知识点八-物理系统之范围检测" class="headerlink" title="知识点八 物理系统之范围检测"></a>知识点八 物理系统之范围检测</h1><h2 id="一、什么是范围检测"><a href="#一、什么是范围检测" class="headerlink" title="一、什么是范围检测"></a>一、什么是范围检测</h2><p>游戏中瞬时的攻击范围判断一般会使用范围检测<br>举例：<br>玩家在前方10m处释放一个地刺魔法，在此处范围内的对象将受到地刺伤害<br>玩家攻击，在前方1m圆形范围内对象都收到伤害<br>等待<br>类似这种没有实体，只想要检测指定范围内是否让敌方受到伤害时，便可以使用范围判断<br>简而言之，<br>在指定位置进行范围判断我们可以得到处于指定范围内的对象<br>目的是对对象进行处理</p>
+<h2 id="二、如何进行范围检测"><a href="#二、如何进行范围检测" class="headerlink" title="二、如何进行范围检测"></a>二、如何进行范围检测</h2><p>必备条件：想要被范围检测到的对象，必须具备碰撞器<br>注意点：<br>范围检测相关API，只有当执行该句代码时，进行一次范围检测，它是瞬时的<br>范围检测相关API，并不会真正产生一个碰撞器，只是碰撞判断计算而已</p>
+<p>范围检测API</p>
+<h3 id="1-盒状范围检测"><a href="#1-盒状范围检测" class="headerlink" title="1.盒状范围检测"></a>1.盒状范围检测</h3><p>参数一：立方体中心点<br>参数二：立方体三边大小<br>参数三：立方体角度<br>参数四：检测指定层级（不填检测所有层）<br>参数五：是否忽略触发器 UseGlobal - 使用全局设置  Collide - 检测触发器  Ignore - 忽略触发器 <br>不填使用 UseGlobal <br>返回值：在该范围内的触发器（得到了对象触发器就可以得到对象的所有信息）</p>
+<p>重要知识点：<br>关于层级<br>通过名字得到层级编号 LayerMask.NameToLayer<br>我们需要通过编号左移构建二进制数<br>这样每一个编号的层级都是对应位为1的2进制数<br>我们通过 位运算 可以选择想要检测层级<br>这样一个int 就可以表示所有想要检测的层级信息</p>
+<pre><code class="c#">Collider[] colliders =
+Physics.OverlapBox(Vector3.zero, Vector3.one, Quaternion.AngleAxis(45, Vector3.up),  1&lt;&lt;LayerMask.NameToLayer(&quot;UI&quot;) |  1 &lt;&lt; LayerMask.NameToLayer(&quot;Water&quot;), 
+ QueryTriggerInteraction.UseGlobal);
+
+//另一个API
+//返回值：碰撞到的碰撞器数量
+//参数：传入一个数组进行存储
+Collider[] colliders;
+Physics.OverlapBoxNonAlloc(Vector3.zero, Vector3.one, colliders,  1&lt;&lt;LayerMask.NameToLayer(&quot;UI&quot;) |  1 &lt;&lt; LayerMask.NameToLayer(&quot;Water&quot;), 
+ QueryTriggerInteraction.UseGlobal);
+</code></pre>
+<h3 id="2-球形范围检测"><a href="#2-球形范围检测" class="headerlink" title="2.球形范围检测"></a>2.球形范围检测</h3><p>参数一：中心点<br>参数二：球半径<br>参数三：检测指定层级（不填检测所有层级）<br>参数四：是否忽略触发器 UseGlobal - 使用全局设置  Collide - 检测触发器  Ignore - 忽略触发器 <br>不填使用 UseGlobal<br>返回值：在该范围内的触发器（得到了对象触发器就可以得到对象的所有信息）</p>
+<pre><code class="c#">Collider[] colliders =
+Physics.OverlapSphere(Vector3.zero, 5, 1 &lt;&lt; LayerMask.NameToLayer(&quot;UI&quot;), QueryTriggerInteraction.UseGlobal);
+
+//另一个API
+//返回值：碰撞到的碰撞器数量
+//参数：传入一个数组进行存储
+Physics.OverlapSphereNonAlloc
+</code></pre>
+<h3 id="3-胶囊范围检测"><a href="#3-胶囊范围检测" class="headerlink" title="3.胶囊范围检测"></a>3.胶囊范围检测</h3><p>参数一：半圆一中心点<br>参数二：半圆二中心点<br>参数三：半圆半径<br>参数四：检测指定层级（不填默认所有层）<br>参数五：是否忽略触发器 UseGlobal - 使用全局设置  Collide - 检测触发器  Ignore - 忽略触发器 <br>不填使用 UseGlobal</p>
+<pre><code class="c#">Physice.OverlapCapsule()
+
+//另一个API
+//返回值：碰撞到的碰撞器数量
+//参数：传入一个数组进行存储
+Physics.OverlapCapsuleNonAlloc
+</code></pre>
+<h1 id="知识点九-物理系统之射线检测"><a href="#知识点九-物理系统之射线检测" class="headerlink" title="知识点九 物理系统之射线检测"></a>知识点九 物理系统之射线检测</h1><h2 id="一、什么是射线检测"><a href="#一、什么是射线检测" class="headerlink" title="一、什么是射线检测"></a>一、什么是射线检测</h2><p>它可以在指定点发射一个指定方向的射线<br>判断该射线与哪些碰撞器相交，得到对应对象<br>比如在FPS中的射击可以使用</p>
+<h2 id="二、射线对象"><a href="#二、射线对象" class="headerlink" title="二、射线对象"></a>二、射线对象</h2><h3 id="1-3D世界中的射线"><a href="#1-3D世界中的射线" class="headerlink" title="1.3D世界中的射线"></a>1.3D世界中的射线</h3><p>申明一个射线对象<br>参数一：起点<br>参数二：方向（不是两点决定方向，第二个参数就代表方向）</p>
+<pre><code class="c#">Ray r = new Ray(new Vector3(0, 0, 0), Vector3.forward);
+print(r.origin);        //起点
+print(r.direction);     //方向
+</code></pre>
+<h3 id="2-摄像机发射出的射线"><a href="#2-摄像机发射出的射线" class="headerlink" title="2.摄像机发射出的射线"></a>2.摄像机发射出的射线</h3><p>得到一条从屏幕位置作为起点<br>摄像机视口方向为 方向的射线</p>
+<pre><code class="c#">Ray r = Camer.main.ScreenPointToRay(Input.mousePosition);
+</code></pre>
+<p>注意：<br>单独的射线对于我们来说没有实际意义<br>我们需要用它结合物理系统进行射线碰撞判断</p>
+<h2 id="三、碰撞检测函数"><a href="#三、碰撞检测函数" class="headerlink" title="三、碰撞检测函数"></a>三、碰撞检测函数</h2><p>Physics类中提供了很多进行射线检测的静态函数<br>他们有很多种重载类型，我们只需要掌握核心的几个函数，其他函数自然就明白什么意思了<br>注意：<br>射线检测也是瞬时的<br>执行代码时进行一次射线检测</p>
+<h3 id="1-最原始的射线检测"><a href="#1-最原始的射线检测" class="headerlink" title="1.最原始的射线检测"></a>1.最原始的射线检测</h3><p>准备一条射线<br>Ray r &#x3D; new Ray(Vector3.zero, Vector3.forward);<br>进行射线检测，如果碰撞到对象。返回true<br>参数一：射线<br>参数二：检测的最大距离，超出这个距离不检测<br>参数三：检测指定层级（不填检测所有层）<br>参数四：是否忽略触发器 UseGlobal - 使用全局设置 Collide - 检测触发器  Ignore - 忽略触发器 <br>不填使用 UseGlobal<br>返回值：bool 当碰撞到对象时，返回true 没有 返回false</p>
+<pre><code class="c#">if( Physics.Raycast(r, 1000, 1 &lt;&lt; LayerMask.NameToLayer(&quot;Monster&quot;), QueryTriggerInteraction.UseGlobal) )
+&#123;
+
+&#125;
+</code></pre>
+<p>另一种重载，不用传入射线，直接传入起点和方向，就是把第一个射线参数 变成了 起点 和 方向</p>
+<h3 id="2-获取相交的单个物体信息"><a href="#2-获取相交的单个物体信息" class="headerlink" title="2.获取相交的单个物体信息"></a>2.获取相交的单个物体信息</h3><p>物体信息类 RaycastHit<br>参数一：射线<br>参数二：RaycastHit 是结构体，是值类型，Unity会通过out，关键在函数内部处理后，得到碰撞数据后返回该参数中<br>参数三：距离<br>参数四：检测指定层级（不填检测所有层）<br>参数五：是否忽略触发器 UseGlobal - 使用全局设置  Collide - 检测触发器  Ignore - 忽略触发器 <br>不填使用 UseGlobal </p>
+<pre><code class="c#">RaycastHit hitInfo; //申明一个射线碰撞物体信息
+if( Physics.Raycast(r, out hitInfo, 1000, 1 &lt;&lt; LayerMask.NameToLayer(&quot;Monster&quot;), QueryTriggerInteraction.UseGlobal) )
+&#123;
+    print( hitInfo.collider.gameObject.name );  //碰撞的gameObject对象
+    print( hitInfo.point );                     //碰撞点
+    print( hitInfo.normal );                //垂直于碰撞面的直线
+    print( hitInfo.transform );             //得到碰撞对象的位置
+    print( hitInfo.distance );              //得到碰撞对象离自己的距离
+&#125;
+</code></pre>
+<p>还有一种重载 不用传入射线，直接传入起点和方向</p>
+<h3 id="3-得到相交的多个物体"><a href="#3-得到相交的多个物体" class="headerlink" title="3.得到相交的多个物体"></a>3.得到相交的多个物体</h3><p>可以得到碰撞到的多个对象<br>如果没有，就是容量为0的数组<br>参数一：射线<br>参数二：距离<br>参数三：检测指定层级（不填检测所有层）<br>参数四：是否忽略触发器 UseGlobal - 使用全局设置  Collide - 检测触发器  Ignore - 忽略触发器 <br>不填使用 UseGlobal </p>
+<pre><code class="c#">RaycastHit[ ] hits =
+Physics.RaycastAll( r, 1000, 1 &lt;&lt; LayerMask.NameToLayer(&#123;&quot;Monster&quot;), QueryTriggerInteraction.UseGlobal );
+</code></pre>
+<p>还有一种重载 不用传入 射线 直接传入 起点 和 方向</p>
+<p>还有一种函数，返回一个int，代表碰撞的数量，通过out得到数据</p>
+<pre><code class="c#">Physics.RaycastNonAlloc(r, hits, 1000, 1 &lt;&lt; LayerMask.NameToLayer(&#123;&quot;Monster&quot;), QueryTriggerInteraction.UseGlobal);
+</code></pre>
+<h2 id="四、使用时注意的问题"><a href="#四、使用时注意的问题" class="headerlink" title="四、使用时注意的问题"></a>四、使用时注意的问题</h2><p>距离、层级两个参数都是Int类型</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
