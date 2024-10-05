@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Unity中的MVC思想 | Paul的博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Unity中的MVC思想 | Paul的博客">
+  <title>Unity核心 | Paul的博客</title>
+  <meta name="keywords" content=" Unity ">
+  <meta name="description" content="Unity核心 | Paul的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="知识点一 认识模型的制作过程一、模型的制作过程建模：建模、展UV、材质和纹理贴图动作：骨骼绑定、动画制作 二、建模美术通过建模软件（3Dmax或Maya等）用一个个面片将模型制作出来面片：3点构成一个面，面的最小单位是三角形，建模时，可以使用3点以上的面，但是建议都使用三角面。网格信息：一般指的就是模型的这些顶点面片信息 三、展UVUV是纹理贴图坐标的简称，它有U轴和V轴，类似空间中的xyz轴。纹">
 <meta property="og:type" content="article">
@@ -550,9 +550,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-Unity笔记/Unity进阶/Unity中的MVC思想" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Unity核心" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Unity中的MVC思想</h1>
+        <h1 class="article-title">Unity核心</h1>
     
     <div class="article-meta">
         
@@ -564,20 +564,27 @@
             
             <a  data-rel="Unity笔记">Unity笔记</a> > 
             
-            <a  data-rel="Unity笔记&lt;---&gt;Unity进阶">Unity进阶</a>
+            <a  data-rel="Unity笔记&lt;---&gt;Unity核心">Unity核心</a>
             
         </span>
         
         
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">Unity</a>
+            
+        </span>
+        
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-09-23 18:19:20'>2024-09-23 18:00</time>
+            发布时间 : <time class="date" title='最后更新: 2024-10-05 15:54:56'>2024-10-05 15:53</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:281</span>
+        <span>字数:547</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -596,7 +603,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-MVC%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">知识点一 MVC的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81MVC%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="toc-text">一、MVC的历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81MVC%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">二、MVC的基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81MVC%E5%9C%A8%E6%B8%B8%E6%88%8F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">三、MVC在游戏中的应用</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-%E8%AE%A4%E8%AF%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%88%B6%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="toc-text">知识点一 认识模型的制作过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%88%B6%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="toc-text">一、模型的制作过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%BB%BA%E6%A8%A1"><span class="toc-text">二、建模</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%B1%95UV"><span class="toc-text">三、展UV</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%9D%90%E8%B4%A8%E5%92%8C%E7%BA%B9%E7%90%86%E8%B4%B4%E5%9B%BE"><span class="toc-text">四、材质和纹理贴图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E9%AA%A8%E9%AA%BC%E7%BB%91%E5%AE%9A"><span class="toc-text">五、骨骼绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%8A%A8%E7%94%BB%E5%88%B6%E4%BD%9C"><span class="toc-text">六、动画制作</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -612,11 +619,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="知识点一-MVC的基本概念"><a href="#知识点一-MVC的基本概念" class="headerlink" title="知识点一 MVC的基本概念"></a>知识点一 MVC的基本概念</h1><h2 id="一、MVC的历史"><a href="#一、MVC的历史" class="headerlink" title="一、MVC的历史"></a>一、MVC的历史</h2><p>是一种软件开发的编程思想<br>自定前提：粗略地将计算机上的使用工具分为应用软件、网页、游戏<br>MVC是应用软件开发、网页开发最常用和流行的通用开发框架<br>应用软件和网页基本是由UI、Data(数据)构成</p>
-<h2 id="二、MVC的基本概念"><a href="#二、MVC的基本概念" class="headerlink" title="二、MVC的基本概念"></a>二、MVC的基本概念</h2><p>全名是 Model View Controller<br>模型(Model) - 视图(View) - 控制器(Controller) 的缩写<br>是一种软件设计规范，用一种业务逻辑、数据、界面显示 分离的方法组织代码<br>将业务逻辑聚集到一个部件里，再改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑</p>
-<h2 id="三、MVC在游戏中的应用"><a href="#三、MVC在游戏中的应用" class="headerlink" title="三、MVC在游戏中的应用"></a>三、MVC在游戏中的应用</h2><p>注意：<br>它不是必备内容<br>它主要用于开发游戏UI系统逻辑</p>
-<p>将UI面板逻辑一分为三，数据、界面、业务逻辑</p>
-<p>好处：降低耦合，方便修改、逻辑清晰，适合协同开发<br>坏处：脚本变多，体量变大，流程变复杂</p>
+        <h1 id="知识点一-认识模型的制作过程"><a href="#知识点一-认识模型的制作过程" class="headerlink" title="知识点一 认识模型的制作过程"></a>知识点一 认识模型的制作过程</h1><h2 id="一、模型的制作过程"><a href="#一、模型的制作过程" class="headerlink" title="一、模型的制作过程"></a>一、模型的制作过程</h2><p>建模：建模、展UV、材质和纹理贴图<br>动作：骨骼绑定、动画制作</p>
+<h2 id="二、建模"><a href="#二、建模" class="headerlink" title="二、建模"></a>二、建模</h2><p>美术通过建模软件（3Dmax或Maya等）用一个个面片将模型制作出来<br>面片：3点构成一个面，面的最小单位是三角形，建模时，可以使用3点以上的面，但是建议都使用三角面。<br>网格信息：一般指的就是模型的这些顶点面片信息</p>
+<h2 id="三、展UV"><a href="#三、展UV" class="headerlink" title="三、展UV"></a>三、展UV</h2><p>UV是纹理贴图坐标的简称，它有U轴和V轴，类似空间中的xyz轴。纹理坐标中的每一个点都和3D模型上的位置信息是相互联系的</p>
+<p>展UV就像是把做好的3D模型平铺到一张2D图片上，并且这张图片上对应位置的信息和3D建模上位置信息对应起来，为之后给模型上色做准备</p>
+<p>为方便上色，而展UV</p>
+<h2 id="四、材质和纹理贴图"><a href="#四、材质和纹理贴图" class="headerlink" title="四、材质和纹理贴图"></a>四、材质和纹理贴图</h2><p>纹理：一张2D图片<br>贴图：把纹理通过UV坐标映射到3D物理表面<br>纹理贴图：代指模型的颜色信息、UV信息等等</p>
+<p>材质：模型的表现，通过纹理贴图提供的信息，使用不同的着色器算法，呈现出不同的表现效果。比如：金属、塑料、玻璃、透明等等效果。</p>
+<p>着色器：Shader就是着色器，它决定了材质的表现效果</p>
+<h2 id="五、骨骼绑定"><a href="#五、骨骼绑定" class="headerlink" title="五、骨骼绑定"></a>五、骨骼绑定</h2><p>完成前三步后，模型就制作完成了<br>接着如果想让模型能够栩栩如生的动起来<br>首先要进行骨骼绑定</p>
+<p>骨骼绑定就是为模型定义骨骼信息<br>定义骨骼信息控制哪些网格信息</p>
+<h2 id="六、动画制作"><a href="#六、动画制作" class="headerlink" title="六、动画制作"></a>六、动画制作</h2><p>骨骼绑定完成后<br>我们可以利用这些骨骼的旋转来制作3D动画了<br>在一条世界轴上，制作关键帧的位置，通过一些规则决定从上一关键帧到这一关键帧的变化应该如何过渡<br>不停地制作关键帧就可以制作出最终的动画效果</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
