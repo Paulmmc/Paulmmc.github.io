@@ -6,15 +6,15 @@
   <meta name="keywords" content="">
   <meta name="description" content="Unity编辑器 | Paul的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="知识点一 3D数学————基础一、数学计算公共类Mathf1.Mathf和MathMath是c#中封装好的用于数学计算的工具类 —— 位于System命名空间中Mathf是Unity中封装好的用于数学计算的工具结构体 —— 位于UnityEngine命名空间中他们都是用来提供数学相关计算的 2.Math和Mathf的区别Math 和 Mathf中的相关方法几乎一样Math 是c#自带的工具类，主要">
+<meta name="description" content="知识点一 Unity脚本基础一、生命周期函数1.了解帧的概念游戏本质就是一个死循环，每一次循环处理游戏逻辑，就会更新一次画面，之所以能看到画面在动，是因为切换画面的速度到达一定时，人眼就认为画面是流畅的。一帧就是执行一次循环。 FPS（Frames Per Second）：即每秒帧数。一般我们说的60帧30帧，就是一秒更新60次、30次画面。1s &#x3D; 1000ms60帧：1帧为16.66">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unity基础">
-<meta property="og:url" content="https://paulmmc.github.io/2024/10/04/Unity%E7%AC%94%E8%AE%B0/Unity%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="Unity入门">
+<meta property="og:url" content="https://paulmmc.github.io/2024/09/27/Unity%E7%AC%94%E8%AE%B0/Unity%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="Paul的博客">
-<meta property="og:description" content="知识点一 3D数学————基础一、数学计算公共类Mathf1.Mathf和MathMath是c#中封装好的用于数学计算的工具类 —— 位于System命名空间中Mathf是Unity中封装好的用于数学计算的工具结构体 —— 位于UnityEngine命名空间中他们都是用来提供数学相关计算的 2.Math和Mathf的区别Math 和 Mathf中的相关方法几乎一样Math 是c#自带的工具类，主要">
+<meta property="og:description" content="知识点一 Unity脚本基础一、生命周期函数1.了解帧的概念游戏本质就是一个死循环，每一次循环处理游戏逻辑，就会更新一次画面，之所以能看到画面在动，是因为切换画面的速度到达一定时，人眼就认为画面是流畅的。一帧就是执行一次循环。 FPS（Frames Per Second）：即每秒帧数。一般我们说的60帧30帧，就是一秒更新60次、30次画面。1s &#x3D; 1000ms60帧：1帧为16.66">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-10-04T14:30:55.000Z">
-<meta property="article:modified_time" content="2024-10-04T15:12:09.339Z">
+<meta property="article:published_time" content="2024-09-27T15:19:29.000Z">
+<meta property="article:modified_time" content="2024-10-04T14:31:34.695Z">
 <meta property="article:author" content="Paul">
 <meta property="article:tag" content="Unity">
 <meta name="twitter:card" content="summary">
@@ -419,15 +419,6 @@
         </a>
         
         
-        <a  class="全部文章 CoscosCretor笔记 "
-           href="/2024/09/23/CocosCreator%E7%AC%94%E8%AE%B0/TS/TypeScript%E8%AF%AD%E8%A8%80/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="TypeScript语言">TypeScript语言</span>
-            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
-        </a>
-        
-        
         <a  class="全部文章 Unity笔记 Unity进阶 "
            href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Excel%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96/"
            data-tag=""
@@ -483,6 +474,15 @@
         
         
         <a  class="全部文章 理论基础 编程语言 "
+           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/TypeScript%E8%AF%AD%E8%A8%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TypeScript">TypeScript</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 理论基础 编程语言 "
            href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/C++/"
            data-tag=""
            data-author="" >
@@ -491,11 +491,11 @@
         </a>
         
         
-        <a  class="全部文章 理论基础 编程语言 "
-           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/TypeScript%E8%AF%AD%E8%A8%80/"
+        <a  class="全部文章 CoscosCretor笔记 "
+           href="/2024/09/23/CocosCreator%E7%AC%94%E8%AE%B0/TS/TypeScript%E8%AF%AD%E8%A8%80/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="TypeScript">TypeScript</span>
+            <span class="post-title" title="TypeScript语言">TypeScript语言</span>
             <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
         </a>
         
