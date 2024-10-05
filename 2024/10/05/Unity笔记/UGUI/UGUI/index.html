@@ -2,22 +2,24 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Unity核心 | Paul的博客</title>
-  <meta name="keywords" content=" Unity ">
-  <meta name="description" content="Unity核心 | Paul的博客">
+  <title>UGUI | Paul的博客</title>
+  <meta name="keywords" content=" UI ">
+  <meta name="description" content="UGUI | Paul的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="知识点一 认识模型的制作过程一、模型的制作过程建模：建模、展UV、材质和纹理贴图动作：骨骼绑定、动画制作 二、建模美术通过建模软件（3Dmax或Maya等）用一个个面片将模型制作出来面片：3点构成一个面，面的最小单位是三角形，建模时，可以使用3点以上的面，但是建议都使用三角面。网格信息：一般指的就是模型的这些顶点面片信息 三、展UVUV是纹理贴图坐标的简称，它有U轴和V轴，类似空间中的xyz轴。纹">
+<meta name="description" content="知识点一 概述UGUI是 Unity 引擎自带的UI系统官方称之为：Unity UI是目前 Unity商业游戏开发中使用最广泛的UI系统开发解决方案它是基于 Unity 游戏对象的 UI系统，只能用来做游戏 UI功能不能用于开发 Unity 编辑器中内置的用户界面 知识点二 六大基础组件一、Canvas 渲染模式的控制1.Canvas 组件用来干啥Canvas 的意思是画布它是 UGUI 中所有">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unity核心">
-<meta property="og:url" content="https://paulmmc.github.io/2024/10/05/Unity%E6%A0%B8%E5%BF%83/index.html">
+<meta property="og:title" content="UGUI">
+<meta property="og:url" content="https://paulmmc.github.io/2024/10/05/Unity%E7%AC%94%E8%AE%B0/UGUI/UGUI/index.html">
 <meta property="og:site_name" content="Paul的博客">
-<meta property="og:description" content="知识点一 认识模型的制作过程一、模型的制作过程建模：建模、展UV、材质和纹理贴图动作：骨骼绑定、动画制作 二、建模美术通过建模软件（3Dmax或Maya等）用一个个面片将模型制作出来面片：3点构成一个面，面的最小单位是三角形，建模时，可以使用3点以上的面，但是建议都使用三角面。网格信息：一般指的就是模型的这些顶点面片信息 三、展UVUV是纹理贴图坐标的简称，它有U轴和V轴，类似空间中的xyz轴。纹">
+<meta property="og:description" content="知识点一 概述UGUI是 Unity 引擎自带的UI系统官方称之为：Unity UI是目前 Unity商业游戏开发中使用最广泛的UI系统开发解决方案它是基于 Unity 游戏对象的 UI系统，只能用来做游戏 UI功能不能用于开发 Unity 编辑器中内置的用户界面 知识点二 六大基础组件一、Canvas 渲染模式的控制1.Canvas 组件用来干啥Canvas 的意思是画布它是 UGUI 中所有">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-10-05T07:53:05.000Z">
-<meta property="article:modified_time" content="2024-10-05T07:54:56.419Z">
+<meta property="og:image" content="https://paulmmc.github.io/Graphic%20Raycaster-1.png">
+<meta property="article:published_time" content="2024-10-05T08:23:45.000Z">
+<meta property="article:modified_time" content="2024-10-05T08:43:29.788Z">
 <meta property="article:author" content="Paul">
-<meta property="article:tag" content="Unity">
+<meta property="article:tag" content="UI">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://paulmmc.github.io/Graphic%20Raycaster-1.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -144,7 +146,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(18)</small>
+                <small>(19)</small>
             
         </div>
     </li>
@@ -282,6 +284,21 @@
     
         
             
+                
+    <li>
+        <div data-rel="UI">
+            
+            UI
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
         
     
         
@@ -309,8 +326,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="18">
-<input type="hidden" id="yelog_site_word_count" value="78.9k">
+<input type="hidden" id="yelog_site_posts_number" value="19">
+<input type="hidden" id="yelog_site_word_count" value="80.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -360,6 +377,10 @@
             </li>
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>UI</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>Unity</a>
             </li>
         
@@ -371,8 +392,17 @@
     <nav id="title-list-nav">
         
         
+        <a  class="全部文章 UI "
+           href="/2024/10/05/Unity%E7%AC%94%E8%AE%B0/UGUI/UGUI/"
+           data-tag="UI"
+           data-author="" >
+            <span class="post-title" title="UGUI">UGUI</span>
+            <span class="post-date" title="2024-10-05 16:23:45">2024/10/05</span>
+        </a>
+        
+        
         <a  class="全部文章 Unity笔记 Unity核心 "
-           href="/2024/10/05/Unity%E6%A0%B8%E5%BF%83/"
+           href="/2024/10/05/Unity%E7%AC%94%E8%AE%B0/Unity%E6%A0%B8%E5%BF%83/"
            data-tag="Unity"
            data-author="" >
             <span class="post-title" title="Unity核心">Unity核心</span>
@@ -452,6 +482,15 @@
         </a>
         
         
+        <a  class="全部文章 理论基础 编程语言 "
+           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/C++/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++">C++</span>
+            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
+        </a>
+        
+        
         <a  class="全部文章 Unity笔记 Unity进阶 "
            href="/2024/09/23/Unity%E7%AC%94%E8%AE%B0/Unity%E8%BF%9B%E9%98%B6/Excel%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96/"
            data-tag=""
@@ -507,15 +546,6 @@
         
         
         <a  class="全部文章 理论基础 编程语言 "
-           href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/C++/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="C++">C++</span>
-            <span class="post-date" title="2024-09-23 18:00:16">2024/09/23</span>
-        </a>
-        
-        
-        <a  class="全部文章 理论基础 编程语言 "
            href="/2024/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TypeScript/TypeScript%E8%AF%AD%E8%A8%80/"
            data-tag=""
            data-author="" >
@@ -550,9 +580,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-Unity核心" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Unity笔记/UGUI/UGUI" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Unity核心</h1>
+        <h1 class="article-title">UGUI</h1>
     
     <div class="article-meta">
         
@@ -562,9 +592,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Unity笔记">Unity笔记</a> > 
-            
-            <a  data-rel="Unity笔记&lt;---&gt;Unity核心">Unity核心</a>
+            <a  data-rel="UI">UI</a>
             
         </span>
         
@@ -572,19 +600,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color1">Unity</a>
+            <a class="color3">UI</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-10-05 15:54:56'>2024-10-05 15:53</time>
+            发布时间 : <time class="date" title='最后更新: 2024-10-05 16:43:29'>2024-10-05 16:23</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:547</span>
+        <span>字数:939</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -603,7 +631,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-%E8%AE%A4%E8%AF%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%88%B6%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="toc-text">知识点一 认识模型的制作过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%88%B6%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="toc-text">一、模型的制作过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%BB%BA%E6%A8%A1"><span class="toc-text">二、建模</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%B1%95UV"><span class="toc-text">三、展UV</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%9D%90%E8%B4%A8%E5%92%8C%E7%BA%B9%E7%90%86%E8%B4%B4%E5%9B%BE"><span class="toc-text">四、材质和纹理贴图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E9%AA%A8%E9%AA%BC%E7%BB%91%E5%AE%9A"><span class="toc-text">五、骨骼绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%8A%A8%E7%94%BB%E5%88%B6%E4%BD%9C"><span class="toc-text">六、动画制作</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-%E6%A6%82%E8%BF%B0"><span class="toc-text">知识点一 概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%8C-%E5%85%AD%E5%A4%A7%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6"><span class="toc-text">知识点二 六大基础组件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81Canvas-%E6%B8%B2%E6%9F%93%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%8E%A7%E5%88%B6"><span class="toc-text">一、Canvas 渲染模式的控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Canvas-%E7%BB%84%E4%BB%B6%E7%94%A8%E6%9D%A5%E5%B9%B2%E5%95%A5"><span class="toc-text">1.Canvas 组件用来干啥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9C%BA%E6%99%AF%E4%B8%AD%E5%8F%AF%E4%BB%A5%E6%9C%89%E5%A4%9A%E4%B8%AA-Canvas-%E5%AF%B9%E8%B1%A1"><span class="toc-text">2.场景中可以有多个 Canvas 对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Canvas-%E7%BB%84%E4%BB%B6%E7%9A%843%E7%A7%8D%E6%B8%B2%E6%9F%93%E6%96%B9%E5%BC%8F"><span class="toc-text">3.Canvas 组件的3种渲染方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81CanvasScaler-%E7%94%BB%E5%B8%83%E7%BC%A9%E6%94%BE%E6%8E%A7%E5%88%B6%E5%99%A8%E7%BB%84%E4%BB%B6"><span class="toc-text">二、CanvasScaler 画布缩放控制器组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-CanvasScaler-%E7%BB%84%E4%BB%B6%E7%94%A8%E6%9D%A5%E5%B9%B2%E5%95%A5"><span class="toc-text">1.CanvasScaler 组件用来干啥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-CanvasScaler-%E7%BB%84%E4%BB%B6%E5%AD%A6%E5%89%8D%E5%87%86%E5%A4%87"><span class="toc-text">2.CanvasScaler 组件学前准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-CanvasScaler-%E7%9A%84%E4%B8%89%E7%A7%8D%E9%80%82%E9%85%8D%E6%A8%A1%E5%BC%8F"><span class="toc-text">3.CanvasScaler 的三种适配模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81Graphic-Raycater-%E5%9B%BE%E5%BD%A2%E5%B0%84%E7%BA%BF%E6%8A%95%E5%B0%84%E5%99%A8%E7%BB%84%E4%BB%B6"><span class="toc-text">三、Graphic Raycater 图形射线投射器组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Graphic-Raycaster-%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">1.Graphic Raycaster 组件的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Graphic-Raycaster-%E5%8F%82%E6%95%B0"><span class="toc-text">2.Graphic Raycaster 参数</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -619,17 +647,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="知识点一-认识模型的制作过程"><a href="#知识点一-认识模型的制作过程" class="headerlink" title="知识点一 认识模型的制作过程"></a>知识点一 认识模型的制作过程</h1><h2 id="一、模型的制作过程"><a href="#一、模型的制作过程" class="headerlink" title="一、模型的制作过程"></a>一、模型的制作过程</h2><p>建模：建模、展UV、材质和纹理贴图<br>动作：骨骼绑定、动画制作</p>
-<h2 id="二、建模"><a href="#二、建模" class="headerlink" title="二、建模"></a>二、建模</h2><p>美术通过建模软件（3Dmax或Maya等）用一个个面片将模型制作出来<br>面片：3点构成一个面，面的最小单位是三角形，建模时，可以使用3点以上的面，但是建议都使用三角面。<br>网格信息：一般指的就是模型的这些顶点面片信息</p>
-<h2 id="三、展UV"><a href="#三、展UV" class="headerlink" title="三、展UV"></a>三、展UV</h2><p>UV是纹理贴图坐标的简称，它有U轴和V轴，类似空间中的xyz轴。纹理坐标中的每一个点都和3D模型上的位置信息是相互联系的</p>
-<p>展UV就像是把做好的3D模型平铺到一张2D图片上，并且这张图片上对应位置的信息和3D建模上位置信息对应起来，为之后给模型上色做准备</p>
-<p>为方便上色，而展UV</p>
-<h2 id="四、材质和纹理贴图"><a href="#四、材质和纹理贴图" class="headerlink" title="四、材质和纹理贴图"></a>四、材质和纹理贴图</h2><p>纹理：一张2D图片<br>贴图：把纹理通过UV坐标映射到3D物理表面<br>纹理贴图：代指模型的颜色信息、UV信息等等</p>
-<p>材质：模型的表现，通过纹理贴图提供的信息，使用不同的着色器算法，呈现出不同的表现效果。比如：金属、塑料、玻璃、透明等等效果。</p>
-<p>着色器：Shader就是着色器，它决定了材质的表现效果</p>
-<h2 id="五、骨骼绑定"><a href="#五、骨骼绑定" class="headerlink" title="五、骨骼绑定"></a>五、骨骼绑定</h2><p>完成前三步后，模型就制作完成了<br>接着如果想让模型能够栩栩如生的动起来<br>首先要进行骨骼绑定</p>
-<p>骨骼绑定就是为模型定义骨骼信息<br>定义骨骼信息控制哪些网格信息</p>
-<h2 id="六、动画制作"><a href="#六、动画制作" class="headerlink" title="六、动画制作"></a>六、动画制作</h2><p>骨骼绑定完成后<br>我们可以利用这些骨骼的旋转来制作3D动画了<br>在一条世界轴上，制作关键帧的位置，通过一些规则决定从上一关键帧到这一关键帧的变化应该如何过渡<br>不停地制作关键帧就可以制作出最终的动画效果</p>
+        <h1 id="知识点一-概述"><a href="#知识点一-概述" class="headerlink" title="知识点一 概述"></a>知识点一 概述</h1><p>UGUI是 Unity 引擎自带的UI系统<br>官方称之为：Unity UI<br>是目前 Unity商业游戏开发中使用最广泛的UI系统开发解决方案<br>它是基于 Unity 游戏对象的 UI系统，只能用来做游戏 UI功能<br>不能用于开发 Unity 编辑器中内置的用户界面</p>
+<h1 id="知识点二-六大基础组件"><a href="#知识点二-六大基础组件" class="headerlink" title="知识点二 六大基础组件"></a>知识点二 六大基础组件</h1><h2 id="一、Canvas-渲染模式的控制"><a href="#一、Canvas-渲染模式的控制" class="headerlink" title="一、Canvas 渲染模式的控制"></a>一、Canvas 渲染模式的控制</h2><h3 id="1-Canvas-组件用来干啥"><a href="#1-Canvas-组件用来干啥" class="headerlink" title="1.Canvas 组件用来干啥"></a>1.Canvas 组件用来干啥</h3><p>Canvas 的意思是画布<br>它是 UGUI 中所有 UI 元素能够被显示的根本<br>它主要负责渲染自己的所有 UI 子对象</p>
+<p>如果 UI 控件对象不是 Canvas 的子对象，那么控件将不能被渲染<br>我们可以通过修改 Canvas 组件上的参数修改渲染方式</p>
+<h3 id="2-场景中可以有多个-Canvas-对象"><a href="#2-场景中可以有多个-Canvas-对象" class="headerlink" title="2.场景中可以有多个 Canvas 对象"></a>2.场景中可以有多个 Canvas 对象</h3><p>场景中允许有多个 Canvas 对象<br>可以分别管理不同画布的渲染方式，分辨率适应方式等等参数</p>
+<p>如果没有特殊需求<br>一般情况场景上一个 Canvas 即可</p>
+<h3 id="3-Canvas-组件的3种渲染方式"><a href="#3-Canvas-组件的3种渲染方式" class="headerlink" title="3.Canvas 组件的3种渲染方式"></a>3.Canvas 组件的3种渲染方式</h3><p>a.Screen Space - Overlay : 屏幕空间，覆盖模式，UI始终在前</p>
+<p>b.Screen Space - Camera : 屏幕空间，摄像机模式，3D物体可以显示在UI之前<br>RenderCamera 不建议关联主摄像机，建议单独使用一个摄像机渲染</p>
+<p>c.World Space : 世界空间，3D模式</p>
+<h2 id="二、CanvasScaler-画布缩放控制器组件"><a href="#二、CanvasScaler-画布缩放控制器组件" class="headerlink" title="二、CanvasScaler 画布缩放控制器组件"></a>二、CanvasScaler 画布缩放控制器组件</h2><h3 id="1-CanvasScaler-组件用来干啥"><a href="#1-CanvasScaler-组件用来干啥" class="headerlink" title="1.CanvasScaler 组件用来干啥"></a>1.CanvasScaler 组件用来干啥</h3><p>CanvasScaler 意思是画布缩放控制器<br>它是用于分辨率自适应的组件</p>
+<p>它主要负责在不同分辨率下 UI 控件大小自适应<br>它并不负责位置，位置由 RectTransform 组件负责</p>
+<p>它主要提供了 三种用于分辨率自适应的模式<br>我们可以选择符合我们项目需求的方式进行分辨率自适应</p>
+<h3 id="2-CanvasScaler-组件学前准备"><a href="#2-CanvasScaler-组件学前准备" class="headerlink" title="2.CanvasScaler 组件学前准备"></a>2.CanvasScaler 组件学前准备</h3><ol>
+<li>屏幕分辨率<br>Game 窗口中的 Stats 统计数据窗口<br>看到的当前“屏幕” 分辨率<br>会参与分辨率自适应的计算</li>
+<li>画布大小和缩放系数<br>选中 Canvas 对象后在 RectTransform 组件中看到的宽高和缩放<br>宽高 * 缩放系数 &#x3D; 屏幕分辨率</li>
+<li>Reference Resolution<br>参考分辨率<br>在缩放模式的宽高模式中出现的参数，参与分辨率自适应的计算</li>
+<li>解释<br>分辨率大小自适应主要是通过不同的算法计算出一个缩放系数<br>用该系数去缩放所有 UI 控件<br>让其在不同分辨率下达到一个较为理想的显示效果<br>简单理解，屏幕大，按钮大，屏幕小，按钮小</li>
+</ol>
+<h3 id="3-CanvasScaler-的三种适配模式"><a href="#3-CanvasScaler-的三种适配模式" class="headerlink" title="3.CanvasScaler 的三种适配模式"></a>3.CanvasScaler 的三种适配模式</h3><p>Constant Pixel Size（恒定像素模式）：无论屏幕大小如何，UI始终保持相同像素大小<br>Scale With Screen Size（缩放模式）：根据屏幕尺寸进行缩放，随着屏幕尺寸放大缩小<br>Constant Physical Size（恒定物理模式）：无论屏幕大小和分辨率如何，UI元素始终保持相同物理大小</p>
+<h2 id="三、Graphic-Raycater-图形射线投射器组件"><a href="#三、Graphic-Raycater-图形射线投射器组件" class="headerlink" title="三、Graphic Raycater 图形射线投射器组件"></a>三、Graphic Raycater 图形射线投射器组件</h2><h3 id="1-Graphic-Raycaster-组件的作用"><a href="#1-Graphic-Raycaster-组件的作用" class="headerlink" title="1.Graphic Raycaster 组件的作用"></a>1.Graphic Raycaster 组件的作用</h3><p>Graphic Raycaster 意思是图形射线投射器<br>它是用于检测UI输入事件的射线发射器</p>
+<p>它主要是负责通过射线检测玩家和UI元素的交互<br>判断是否点击到了 UI 元素</p>
+<p>注意是通过图形检测射线，而不是碰撞器检测</p>
+<h3 id="2-Graphic-Raycaster-参数"><a href="#2-Graphic-Raycaster-参数" class="headerlink" title="2.Graphic Raycaster 参数"></a>2.Graphic Raycaster 参数</h3><p><img src="/Graphic%20Raycaster-1.png" alt="alt text"><br>Ignore Reversed Graphic：是否忽略反转图形<br>Blocking Object：射线被哪些类型的碰撞器阻挡（在覆盖渲染模式下无效）<br>Blocking Mask：射线被哪些层级的碰撞器阻挡（在覆盖渲染模式下无效）</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
